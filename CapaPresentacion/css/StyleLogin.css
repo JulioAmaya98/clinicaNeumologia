@@ -1,0 +1,77 @@
+﻿body {
+    background-image: url("../img/loginImg.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+
+
+
+.mi-div {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 30%;
+    height: auto;
+}
+
+.mi2-div {
+    width: 100%;
+    margin: auto;
+    background: #367586;
+    padding: 15%;
+    box-shadow: inset 0 -3em 3em;
+    border: 1px;
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+}
+
+#boton {
+    background-color: #5acfc5;
+    border: none;
+    margin-left: 25%;
+    width: 50%;
+    margin-bottom:-40px;
+}
+
+img {
+    width: 40%;
+    height: 40%;
+    margin-left: 30%
+}
+
+#titulo {
+    margin-left: 6%;
+    margin-top: 1%;
+}
+
+p {
+    font-family: Modern Sample;
+    font-size: 400%;
+    color: white;
+}
+
+h2 {
+    font-family: Modern Sample;
+    font-weight: bolder;
+    margin-left: 40%;
+    color: white;
+}
+
+
+.ocul{
+    width:20%;
+    height:5%;
+    background-color:antiquewhite;
+}
+
+
+
+
+
+
+
