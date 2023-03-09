@@ -41,11 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="EUsuarios.cs" />
-=======
     <Compile Include="EUsuario.cs" />
->>>>>>> 9b292af1e25b579d6a91f2e0e0ee9b6ad8cba3ac
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
