@@ -52,5 +52,17 @@ namespace CapaNegocio
             tabla = usuarios.existenciaUsername(user);
             return tabla;
         }
+
+        public void modifiUsuarios(EUsuarios eusuario)
+        {
+            usuarios.modificarUsuario(eusuario);
+        }
+
+        public DataTable verTablaById(EUsuarios eUsuarios)
+        {
+            DataTable tabla = new DataTable();
+            tabla = usuarios.sp_modificarById( eUsuarios);
+            return tabla;
+        }
     }
 }

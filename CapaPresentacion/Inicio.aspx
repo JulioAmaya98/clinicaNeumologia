@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="CapaPresentacion.Inicio" %>
+﻿<%@ Page EnableEventValidation="false"  Language="C#" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="CapaPresentacion.Inicio" %>
 
 <!DOCTYPE html>
 
@@ -42,7 +42,7 @@
                                 <Columns>
                                     <asp:TemplateField HeaderText="Opciones">
                                         <ItemTemplate>
-                                            <asp:Button ID="ButtonEditar" runat="server" Text="Editar" CssClass="btn btn-outline-warning" />
+                                            <asp:Button ID="ButtonEditar" runat="server" Text="Editar" CssClass="btn btn-outline-warning" OnClick="ButtonEditar_Click" />
                                             <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger" />
                                         </ItemTemplate>
                                     </asp:TemplateField>

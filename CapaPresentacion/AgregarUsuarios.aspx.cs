@@ -51,7 +51,6 @@ namespace CapaPresentacion
                 usuarios.username = TextBoxuserName.Text;
                 usuarios.telefono = TextBoxTelefono.Text;
                 usuarios.pass = TextBoxPassword.Text;
-                usuarios.clave = "clinic_neumologia";
                 usuarios.id_roles = Convert.ToInt32(DropDownListRol.SelectedValue.ToString());
                 usuarios.estado = "Activo";
                 objusuario.agregarUsuarios(usuarios);

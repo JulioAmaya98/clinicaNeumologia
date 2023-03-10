@@ -101,5 +101,38 @@ namespace CapaDatos
             objConn.cerrarConexion();
             return tabla;
         }
+
+
+        public void modificarUsuario(EUsuarios eUsuario)
+        {
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_modificar_usuario";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id", eUsuario.id_usuario);
+            comando.Parameters.AddWithValue("@nombre", eUsuario.nombre);
+            comando.Parameters.AddWithValue("@apellido", eUsuario.apellido);
+            comando.Parameters.AddWithValue("@username", eUsuario.username);
+            comando.Parameters.AddWithValue("@telefono", eUsuario.telefono);
+            comando.Parameters.AddWithValue("@pass", eUsuario.pass);
+            comando.Parameters.AddWithValue("@id_rol", eUsuario.id_roles);
+            comando.Parameters.AddWithValue("@estado", eUsuario.estado);
+            comando.ExecuteNonQuery();
+            objConn.cerrarConexion();
+        }
+
+
+        public DataTable sp_modificarById(EUsuarios eUsuarios)
+        {
+
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_modificarById";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id", eUsuarios.id_usuario);
+            leer = comando.ExecuteReader();
+            tablaDatos.Load(leer);
+            objConn.cerrarConexion();
+            return tablaDatos;
+
+        }
     }
 }
