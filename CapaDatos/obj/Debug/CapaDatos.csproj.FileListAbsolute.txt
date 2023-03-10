@@ -1,0 +1,45 @@
+C:\Users\Julio Amaya\source\repos\Clinica De Neumologia\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Julio Amaya\source\repos\Clinica De Neumologia\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Julio Amaya\source\repos\Clinica De Neumologia\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Users\Julio Amaya\source\repos\Clinica De Neumologia\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\Julio Amaya\source\repos\Clinica De Neumologia\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Julio Amaya\source\repos\Clinica De Neumologia\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Julio Amaya\source\repos\Clinica De Neumologia\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\Julio Amaya\source\repos\Clinica De Neumologia\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Julio Amaya\source\repos\Clinica De Neumologia\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\china\source\repos\Clinica De Neumologia\Clinica De Neumologia\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\china\source\repos\Clinica De Neumologia\Clinica De Neumologia\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\china\source\repos\Clinica De Neumologia\Clinica De Neumologia\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Users\china\source\repos\Clinica De Neumologia\Clinica De Neumologia\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\china\source\repos\Clinica De Neumologia\Clinica De Neumologia\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\china\source\repos\Clinica De Neumologia\Clinica De Neumologia\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\china\source\repos\Clinica De Neumologia\Clinica De Neumologia\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\china\source\repos\Clinica De Neumologia\Clinica De Neumologia\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\china\source\repos\Clinica De Neumologia\Clinica De Neumologia\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\china\Source\Repos\clinicaNeumologia\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\china\Source\Repos\clinicaNeumologia\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\china\Source\Repos\clinicaNeumologia\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Users\china\Source\Repos\clinicaNeumologia\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\china\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\china\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\china\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\china\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\china\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Angel Gomez\Downloads\clinicaNeumologia-master\clinicaNeumologia-master\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Angel Gomez\Downloads\clinicaNeumologia-master\clinicaNeumologia-master\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Angel Gomez\Downloads\clinicaNeumologia-master\clinicaNeumologia-master\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Users\Angel Gomez\Downloads\clinicaNeumologia-master\clinicaNeumologia-master\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\Angel Gomez\Downloads\clinicaNeumologia-master\clinicaNeumologia-master\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Angel Gomez\Downloads\clinicaNeumologia-master\clinicaNeumologia-master\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Angel Gomez\Downloads\clinicaNeumologia-master\clinicaNeumologia-master\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\Angel Gomez\Downloads\clinicaNeumologia-master\clinicaNeumologia-master\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Angel Gomez\Downloads\clinicaNeumologia-master\clinicaNeumologia-master\CapaDatos\obj\Debug\CapaDatos.pdb
