@@ -19,5 +19,38 @@ namespace CapaNegocio
             tabla = usuarios.comprobarUsuarios(user);
             return tabla;
         }
+
+        public DataTable mostrarUsuarios()
+        {
+            DataTable tabla = new DataTable();
+            tabla = usuarios.obtenerUsuarios();
+            return tabla;
+        }
+        public void actualizarEstado()
+        {
+            usuarios.actualizarEstado();
+        }
+        public void registroSesion(EUsuarios user)
+        {
+            usuarios.registroSesion(user);
+        }
+        public DataTable obtenerRoles()
+        {
+            DataTable tabla = new DataTable();
+            tabla= usuarios.obtenerRoles();
+            return tabla;
+        }
+
+        public void agregarUsuarios(EUsuarios eusuario)
+        {
+            usuarios.addUsuarios(eusuario);
+        }
+
+        public DataTable existenciaUser(EUsuarios user)
+        {
+            DataTable tabla = new DataTable();
+            tabla = usuarios.existenciaUsername(user);
+            return tabla;
+        }
     }
 }

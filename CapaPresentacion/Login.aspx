@@ -51,11 +51,11 @@
                                 Please choose a username.
                             </div>
                         </div>
-                       
-                        <div style="margin-top:3%"  class="alert alert-danger" role="alert" runat="server" id="error">
+
+                        <div style="margin-top: 3%" class="alert alert-danger" role="alert" runat="server" id="error">
                             Usuario o contraseña incorrecta
                         </div>
-                        
+
                         <asp:Button ID="boton" class="btn" runat="server" Text="Ingresar" OnClick="boton_Click" />
 
                     </div>
@@ -71,7 +71,6 @@
 
 
         </form>
-
     </div>
 </body>
 </html>

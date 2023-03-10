@@ -11,6 +11,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        
         <div>
 
             <div class="container mt-3">
@@ -30,7 +31,27 @@
                 </ul>
 
             </div>
-
+            <div>
+                <div class="container">
+                    <h4>Bienvenido Dr. Julio</h4>
+                    <asp:Button ID="ButtonAgregar" runat="server" Text="Agregar" CssClass="btn btn-info" OnClick="ButtonAgregar_Click"/>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <asp:GridView ID="GridViewUsuarios" runat="server" CssClass="table table-bordered table-light table-hover" OnRowDataBound="GridViewUsuarios_RowDataBound">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Opciones">
+                                        <ItemTemplate>
+                                            <asp:Button ID="ButtonEditar" runat="server" Text="Editar" CssClass="btn btn-outline-warning" />
+                                            <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 </body>
