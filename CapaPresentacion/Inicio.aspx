@@ -20,7 +20,7 @@
                         <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="WebForm2.aspx">Menu 1</a>
+                        <a class="nav-link" href="producto.aspx">Mostrar Productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="text-decoration: none" data-bs-toggle="tab" href="#menu2">Menu 2</a>

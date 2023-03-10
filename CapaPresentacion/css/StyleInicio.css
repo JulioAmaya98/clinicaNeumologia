@@ -1,9 +1,10 @@
 ﻿body {
-    background-image: url("../img/loginImg.jpg");
+    background-image: url('../img/loginImg.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+    height: 557px;
 }
 
 
@@ -22,5 +23,5 @@ a {
 }
 
     .nav-link:hover {
-        color: red;
+        color: white;
     }
