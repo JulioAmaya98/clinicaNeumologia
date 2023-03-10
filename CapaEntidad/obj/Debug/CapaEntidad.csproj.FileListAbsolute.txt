@@ -22,3 +22,9 @@ C:\Users\pc\Source\Repos\clinicaNeumologia3\CapaEntidad\obj\Debug\CapaEntidad.cs
 C:\Users\pc\Source\Repos\clinicaNeumologia3\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 C:\Users\pc\Source\Repos\clinicaNeumologia3\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Users\pc\Source\Repos\clinicaNeumologia3\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\pc\Source\Repos\clinicaNeumologia\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\pc\Source\Repos\clinicaNeumologia\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\pc\Source\Repos\clinicaNeumologia\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\pc\Source\Repos\clinicaNeumologia\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\pc\Source\Repos\clinicaNeumologia\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\pc\Source\Repos\clinicaNeumologia\CapaEntidad\obj\Debug\CapaEntidad.pdb

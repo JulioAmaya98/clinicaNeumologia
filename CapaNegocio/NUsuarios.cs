@@ -26,6 +26,12 @@ namespace CapaNegocio
             tabla = usuarios.obtenerUsuarios();
             return tabla;
         }
+        public DataTable mostrarProduct()
+        {
+            DataTable tablaproducto = new DataTable();
+            tablaproducto = usuarios.mostraProducto();
+            return tablaproducto;
+        }
         public void actualizarEstado()
         {
             usuarios.actualizarEstado();
