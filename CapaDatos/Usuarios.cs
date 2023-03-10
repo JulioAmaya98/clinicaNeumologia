@@ -26,6 +26,18 @@ namespace CapaDatos
             objConn.cerrarConexion();
             return tablaDatos;
         }
+        public DataTable mostraProducto()
+        {
+            DataTable tablaDatosProd = new DataTable();
+
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_mostrar_productos";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            tablaDatosProd.Load(leer);
+            objConn.cerrarConexion();
+            return tablaDatosProd;
+        }
 
         public void addUsuarios(EUsuarios eUsuario)
         {
