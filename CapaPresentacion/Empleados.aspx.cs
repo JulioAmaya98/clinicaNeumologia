@@ -48,5 +48,21 @@ namespace CapaPresentacion
             Response.Redirect("EditarUsuario.aspx?id_usuario=" + EUsuarios.id_usuario );
 
         }
+
+        protected void ButtonEliminar_Click(object sender, EventArgs e)
+        {
+            NUsuarios obEliminar= new NUsuarios();
+            EUsuarios obUsuario= new EUsuarios();
+            Button btn = (Button)sender;
+            GridViewRow selector = (GridViewRow)btn.NamingContainer;
+            obUsuario.id_usuario = Convert.ToInt32(selector.Cells[1].Text);
+            obEliminar.eliminarUsuarios(obUsuario);
+            Response.Redirect("Inicio.aspx");
+        }
+
+        protected void GridViewUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

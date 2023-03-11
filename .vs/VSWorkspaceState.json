@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CapaDatos"
   ],
-  "SelectedNode": "\\Clinica De Neumologia.sln",
+  "SelectedNode": "\\CapaDatos\\Usuarios.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,110 @@
+﻿body {
+    background-image: url("../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+    a:hover {
+        background-color: #367586;
+        color: white;
+    }
+
+.nav-link {
+    color: white;
+}
+
+    .nav-link:hover {
+        color: white;
+    }
+
+
+
+
+
+
+
+.myGridView {
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+
+
+
+
+#conten {
+    background-color: white;
+    width: 100%;
+    padding: 1%;
+    box-shadow: 10px 5px 5px black;
+    border: 1px;
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    position: absolute;
+}
+
+#encabezado {
+    padding: 2%;
+}
+
+
+.ancho {
+    max-width: 20%;
+}
+
+
+.botoRedondo {
+    border-radius: 40px;
+    width: 40%;
+}
+
+
+.botonera {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.ALL {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    right: auto;
+}
+
+
+.ancho {
+    width: 30%;
+}
+
+#AgregarALL {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    width: 30%;
+    right: 50%;
+}
+
+#AgregarConten {
+    background-color: white;
+    width: 100%;
+    padding: 3%;
+    box-shadow: 10px 5px 5px black;
+    border: 1px;
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    position: absolute;
+}

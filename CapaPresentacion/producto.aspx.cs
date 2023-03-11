@@ -11,10 +11,24 @@ namespace CapaPresentacion
 {
     public partial class producto : System.Web.UI.Page
     {
-        NUsuarios usuario= new NUsuarios(); 
+        NProductos nproductos = new NProductos();
         protected void Page_Load(object sender, EventArgs e)
         {
-            gridProducto.DataSource = usuario.mostrarProduct();
+
+           
+            gridProducto.PageSize = 5;
+            gridProducto.DataSource = nproductos.mostrarProduct();
+            gridProducto.DataBind();
+
+           
+            
+        }
+
+        protected void gridProducto_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gridProducto.PageIndex = e.NewPageIndex;
+
+
             gridProducto.DataBind();
         }
     }

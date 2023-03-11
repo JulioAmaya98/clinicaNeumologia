@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="producto.aspx.cs" Inherits="CapaPresentacion.producto" %>
+﻿<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="Empleados.aspx.cs" Inherits="CapaPresentacion.Inicio" %>
 
 <!DOCTYPE html>
 
@@ -6,13 +6,13 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="css/StyleLProducto.css" rel="stylesheet" />
+    <link href="css/StyleEmpleados.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
 
 
-    
+
 
     <div class="container mt-3">
         <ul class="nav nav-tabs justify-content-end " role="tablist">
@@ -20,10 +20,10 @@
                 <a class="nav-link " data-bs-toggle="tab" href="Inicio.html">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active " data-bs-toggle="tab" href="producto.aspx">Productos</a>
+                <a class="nav-link  " data-bs-toggle="tab" href="producto.aspx">Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " data-bs-toggle="tab" href="Empleados.aspx">Empleados</a>
+                <a class="nav-link  active" data-bs-toggle="tab" href="Empleados.aspx">Empleados</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link  " data-bs-toggle="tab" href="#menu3">Menu 3</a>
@@ -37,7 +37,14 @@
 
         <div class="row">
 
+
+
+
+
             <form id="form1" runat="server">
+
+
+                   
 
                     <div class="ALL">
 
@@ -47,11 +54,11 @@
 
 
                             <nav class="navbar navbar-expand-lg">
-                                <h4>Productos</h4>
+                                <h4>Empleados</h4>
                                 <div class="container-fluid">
 
 
-                                    <asp:Button ID="Button1" runat="server" Text="Agregar" CssClass="btn btn-outline-success botoRedondo " />
+                                    <asp:Button ID="Button1" runat="server" Text="Agregar" CssClass="btn btn-outline-success botoRedondo " OnClick="ButtonAgregar_Click" />
 
 
 
@@ -70,13 +77,12 @@
 
                         </div>
 
-                        <asp:GridView OnPageIndexChanging="gridProducto_PageIndexChanging" AllowPaging="true" ID="gridProducto" runat="server" CssClass="table table-hover  myGridView" HorizontalAlign="Justify">
-                            <PagerSettings Mode="NumericFirstLast" Position="Bottom" /> 
+                        <asp:GridView ID="GridViewUsuarios" runat="server" CssClass="table  table-hover myGridView" OnRowDataBound="GridViewUsuarios_RowDataBound" HorizontalAlign="Center" OnSelectedIndexChanged="GridViewUsuarios_SelectedIndexChanged">
                             <Columns>
                                 <asp:TemplateField  ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                     <ItemTemplate>
-                                        <asp:Button ID="ButtonEditar" runat="server" Text="Editar" CssClass="btn btn-outline-warning"  />
-                                        <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger" />
+                                        <asp:Button ID="ButtonEditar" runat="server" Text="Editar" CssClass="btn btn-outline-warning" OnClick="ButtonEditar_Click" />
+                                        <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger" OnClick="ButtonEliminar_Click" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>

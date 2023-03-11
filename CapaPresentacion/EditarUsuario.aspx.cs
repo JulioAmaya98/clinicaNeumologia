@@ -43,7 +43,6 @@ namespace CapaPresentacion
                     TextBoxApellido.Text = tabla.Rows[0]["apellido"].ToString();
                     TextBoxuserName.Text = tabla.Rows[0]["username"].ToString();
                     TextBoxTelefono.Text = tabla.Rows[0]["telefono"].ToString();
-                    TextBoxPassword.Text = tabla.Rows[0]["pass"].ToString();
                     DropDownListRol.SelectedValue = tabla.Rows[0]["id_roles"].ToString();
 
                 }
@@ -57,12 +56,12 @@ namespace CapaPresentacion
             EUsuarios.nombre = TextBoxNombre.Text;
             EUsuarios.apellido = TextBoxApellido.Text;
             EUsuarios.username = TextBoxuserName.Text;
-            EUsuarios.pass = TextBoxPassword.Text;
+           
             EUsuarios.telefono = TextBoxTelefono.Text;
             EUsuarios.estado = "Activo";
             EUsuarios.id_roles = Convert.ToInt32( DropDownListRol.SelectedValue.ToString());
             objusuario.modifiUsuarios(EUsuarios);
-            Response.Redirect("Inicio.aspx");
+            Response.Redirect("Empleados.aspx");
         }
     }
 }

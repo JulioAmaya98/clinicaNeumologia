@@ -26,19 +26,7 @@ namespace CapaDatos
             objConn.cerrarConexion();
             return tablaDatos;
         }
-        public DataTable mostraProducto()
-        {
-            DataTable tablaDatosProd = new DataTable();
-
-            comando.Connection = objConn.abrirConexion();
-            comando.CommandText = "sp_mostrar_productos";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-            tablaDatosProd.Load(leer);
-            objConn.cerrarConexion();
-            return tablaDatosProd;
-        }
-
+       
         public void addUsuarios(EUsuarios eUsuario)
         {
             comando.Connection = objConn.abrirConexion();
@@ -125,7 +113,7 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@apellido", eUsuario.apellido);
             comando.Parameters.AddWithValue("@username", eUsuario.username);
             comando.Parameters.AddWithValue("@telefono", eUsuario.telefono);
-            comando.Parameters.AddWithValue("@pass", eUsuario.pass);
+           
             comando.Parameters.AddWithValue("@id_rol", eUsuario.id_roles);
             comando.Parameters.AddWithValue("@estado", eUsuario.estado);
             comando.ExecuteNonQuery();
@@ -145,6 +133,17 @@ namespace CapaDatos
             objConn.cerrarConexion();
             return tablaDatos;
 
+        }
+
+        public void eliminarUsuario(EUsuarios user)
+        {
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_eliminar_usuario";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_usuario", user.id_usuario);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            objConn.cerrarConexion();
         }
     }
 }

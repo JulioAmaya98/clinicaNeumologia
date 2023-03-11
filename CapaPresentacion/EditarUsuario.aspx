@@ -10,87 +10,108 @@
     <title></title>
 </head>
 <body>
+   
+    <div class="container mt-3">
+        <ul class="nav nav-tabs justify-content-end " role="tablist">
+            <li class="nav-item">
+                <a class="nav-link " data-bs-toggle="tab" href="Inicio.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="producto.aspx">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="text-decoration: none" data-bs-toggle="tab" href="Empleados.aspx">Empleados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#menu3">Menu 3</a>
+            </li>
+        </ul>
+
+    </div>
+
+
     <form id="form1" runat="server">
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        <div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 mt-1">
-                        <div class="card shadow-lg border-primary">
-                            <div class="card-header bg-primary text-white">
-                                Crear cuenta
-                            </div>
+        <asp:Label ID="Label1" Visible="false" runat="server" Text="Label"></asp:Label>
+        <div class="container">
+            <div class="row">
 
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-12 col-sm-12">
-                                        <label class="form-label">Nombre</label>
 
-                                        <asp:TextBox
-                                            ID="TextBoxNombre"
-                                            runat="server"
-                                            CssClass="form-control"
-                                            placeholder="Ingresa su nombre"></asp:TextBox>
-                                    </div>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" ControlToValidate="TextBoxNombre" runat="server" ErrorMessage="Ingrese nombre!" CssClass="text-danger"></asp:RequiredFieldValidator>
-                                    <div class="col-lg-12 col-sm-12">
-                                        <label class="form-label">Apellido</label>
-                                        <asp:TextBox
-                                            ID="TextBoxApellido"
-                                            runat="server"
-                                            CssClass="form-control"
-                                            placeholder="Ingresa su apellido"></asp:TextBox>
-                                    </div>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorApellido" ControlToValidate="TextBoxApellido" runat="server" ErrorMessage="Ingrese apellido!" CssClass="text-danger"></asp:RequiredFieldValidator>
-                                    <div class="col-lg-12 col-sm-12">
-                                        <label class="form-label">Nombre de usuario</label>
-                                        <asp:TextBox
-                                            ID="TextBoxuserName"
-                                            runat="server"
-                                            CssClass="form-control"
-                                            placeholder="Ingresa su usuario"></asp:TextBox>
-                                    </div>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatoruserName" ControlToValidate="TextBoxuserName" runat="server" ErrorMessage="El usuario es requerido!" CssClass="text-danger"></asp:RequiredFieldValidator>
-                                    <div class="col-lg-12 col-sm-12">
-                                        <label class="form-label">Telefono</label>
-                                        <asp:TextBox
-                                            ID="TextBoxTelefono"
-                                            runat="server"
-                                            CssClass="form-control"
-                                            placeholder="Ingresa su telefono"
-                                            TextMode="Number"></asp:TextBox>
-                                    </div>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorTelefono" ControlToValidate="TextBoxTelefono" runat="server" ErrorMessage="Ingrese numero de telefono" CssClass="text-danger"></asp:RequiredFieldValidator>
-                                    <div class="col-lg-12 col-sm-12">
-                                        <label class="form-label">Contraseña</label>
-                                        <asp:TextBox
-                                            ID="TextBoxPassword"
-                                            runat="server"
-                                            CssClass="form-control"
-                                            placeholder="Ingresa tu contraseña"
-                                            TextMode="Password"></asp:TextBox>
-                                    </div>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorContrasenia" ControlToValidate="TextBoxPassword" runat="server" ErrorMessage="La contraseña es requerida" CssClass="text-danger"></asp:RequiredFieldValidator>
-                                    <div class="col-lg-12 col-sm-12">
-                                        <label class="form-label">Rol</label>
-                                        <asp:DropDownList ID="DropDownListRol"
-                                            runat="server">
-                                        </asp:DropDownList>
-                                    </div>
 
-                                </div>
-                            </div>
-                            
-                            <div class="card-footer">
-                                <asp:Button ID="ButtonGuardar" runat="server" Text="Crear Usuario" CssClass="btn btn-primary"  OnClick="ButtonGuardar_Click" />
-                            </div>
+                <div id="AgregarALL">
+                     <div id="AgregarConten">
+
+
+                    <div class="card shadow-lg border-primary">
+                        <div class="card-header bg-primary text-white">
+                            Crear cuenta
                         </div>
-                    </div>
 
-                    <div class="col-12">
+                        <div class="card-body">
+
+                               <div >
+                          
+                                    <label class="form-label">Nombre</label>
+
+                                    <asp:TextBox
+                                        ID="TextBoxNombre"
+                                        runat="server"
+                                        CssClass="form-control"
+                                        placeholder="Ingresa su nombre"></asp:TextBox>
+                                </div>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" ControlToValidate="TextBoxNombre" runat="server" ErrorMessage="Ingrese nombre!" CssClass="text-danger"></asp:RequiredFieldValidator>
+                                <div >
+                                    <label class="form-label">Apellido</label>
+                                    <asp:TextBox
+                                        ID="TextBoxApellido"
+                                        runat="server"
+                                        CssClass="form-control"
+                                        placeholder="Ingresa su apellido"></asp:TextBox>
+                                </div>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorApellido" ControlToValidate="TextBoxApellido" runat="server" ErrorMessage="Ingrese apellido!" CssClass="text-danger"></asp:RequiredFieldValidator>
+                                <div >
+                                    <label class="form-label">Nombre de usuario</label>
+                                    <asp:TextBox
+                                        ID="TextBoxuserName"
+                                        runat="server"
+                                        CssClass="form-control"
+                                        placeholder="Ingresa su usuario"></asp:TextBox>
+                                </div>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidatoruserName" ControlToValidate="TextBoxuserName" runat="server" ErrorMessage="El usuario es requerido!" CssClass="text-danger"></asp:RequiredFieldValidator>
+                                <div >
+                                    <label class="form-label">Telefono</label>
+                                    <asp:TextBox
+                                        ID="TextBoxTelefono"
+                                        runat="server"
+                                        CssClass="form-control"
+                                        placeholder="Ingresa su telefono"
+                                        TextMode="Number"></asp:TextBox>
+                                </div>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTelefono" ControlToValidate="TextBoxTelefono" runat="server" ErrorMessage="Ingrese numero de telefono" CssClass="text-danger"></asp:RequiredFieldValidator>
+                                
+                                <div>
+                                    <label class="form-label">Rol</label>
+                                    <asp:DropDownList ID="DropDownListRol"
+                                        runat="server">
+                                    </asp:DropDownList>
+                                </div>
+
+                     
+                        <div class="card-footer">
+                            <asp:Button ID="ButtonGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="ButtonGuardar_Click" />
+                        </div>
+
                     </div>
+                    </div>
+                         </div>
+
+
+                
                 </div>
             </div>
+
+            <div class="col-12">
+            </div>
+
         </div>
     </form>
 </body>
