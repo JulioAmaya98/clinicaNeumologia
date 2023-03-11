@@ -14,7 +14,7 @@ namespace CapaPresentacion
     {
         NRoles objnroles = new NRoles();
         NUsuarios objRoles=new NUsuarios();
-       
+        String clave = "clinic_neumologia";
         NUsuarios objusuario = new NUsuarios();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -51,11 +51,11 @@ namespace CapaPresentacion
                 usuarios.username = TextBoxuserName.Text;
                 usuarios.telefono = TextBoxTelefono.Text;
                 usuarios.pass = TextBoxPassword.Text;
-                usuarios.clave = "clinic_neumologia";
+                usuarios.clave = clave;
                 usuarios.id_roles = Convert.ToInt32(DropDownListRol.SelectedValue.ToString());
                 usuarios.estado = "Activo";
                 objusuario.agregarUsuarios(usuarios);
-                Response.Redirect("Inicio.aspx");
+                Response.Redirect("Empleados.aspx");
             }
             
         }

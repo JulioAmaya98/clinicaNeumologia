@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace CapaDatos
 {
@@ -12,7 +13,7 @@ namespace CapaDatos
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-QI9J8OQ;Initial Catalog=clinic;Integrated Security=True");
 
-
+       
         public SqlConnection abrirConexion()
         {
             if (conn.State == ConnectionState.Closed)

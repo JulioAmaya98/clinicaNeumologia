@@ -1,0 +1,53 @@
+﻿body {
+    background-image: url("../img/loginImg.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+    a:hover {
+        background-color: #367586;
+        color: white;
+    }
+
+.nav-link {
+    color: white;
+}
+
+    .nav-link:hover {
+        color: white;
+    }
+
+
+
+
+#AgregarALL {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    width: 30%;
+    right: 50%;
+}
+
+#AgregarConten {
+    background-color: white;
+    width: 100%;
+    padding: 3%;
+    box-shadow: 10px 5px 5px black;
+    border: 1px;
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    position: absolute;
+}
+
+
+
+
+

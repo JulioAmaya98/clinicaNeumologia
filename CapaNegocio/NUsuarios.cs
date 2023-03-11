@@ -26,6 +26,7 @@ namespace CapaNegocio
             tabla = usuarios.obtenerUsuarios();
             return tabla;
         }
+       
         public void actualizarEstado()
         {
             usuarios.actualizarEstado();
@@ -51,6 +52,23 @@ namespace CapaNegocio
             DataTable tabla = new DataTable();
             tabla = usuarios.existenciaUsername(user);
             return tabla;
+        }
+
+        public void modifiUsuarios(EUsuarios eusuario)
+        {
+            usuarios.modificarUsuario(eusuario);
+        }
+
+        public DataTable verTablaById(EUsuarios eUsuarios)
+        {
+            DataTable tabla = new DataTable();
+            tabla = usuarios.sp_modificarById( eUsuarios);
+            return tabla;
+        }
+
+        public void eliminarUsuarios(EUsuarios user )
+        {
+            usuarios.eliminarUsuario(user);
         }
     }
 }

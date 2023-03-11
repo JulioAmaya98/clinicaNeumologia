@@ -30,11 +30,11 @@ namespace CapaPresentacion
             user.pass = txtContra.Value;
             user.clave = clave;
             objUsersesion.username = txtNombre.Value;
-            tabla = objNUsuario.loginUsuario(user);
+            tabla = objsesion.loginUsuario(user);
             if (tabla.Rows.Count > 0)
             {
-                objsesion.registroSesion(objUsersesion);
-                Response.Redirect("Inicio.aspx"); 
+                objNUsuario.registroSesion(objUsersesion);
+                Response.Redirect("Inicio.html"); 
                 
             }
             else
