@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="css/StyleLProducto.css" rel="stylesheet" />
     <title></title>
@@ -17,17 +18,13 @@
     <div class="container mt-3">
         <ul class="nav nav-tabs justify-content-end " role="tablist">
             <li class="nav-item">
-                <a class="nav-link " data-bs-toggle="tab" href="Inicio.html">Inicio</a>
+                <a class="nav-link " href="Inicio.html">Inicio</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active " data-bs-toggle="tab" href="producto.aspx">Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " data-bs-toggle="tab" href="Empleados.aspx">Empleados</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link  " data-bs-toggle="tab" href="#menu3"></a>
-            </li>
+                <a class="nav-link  " href="Empleados.aspx">Empleados</a>
         </ul>
 
     </div>
@@ -59,9 +56,7 @@
                                 <div class="container-fluid">
                                     <form class="d-flex" role="search">
 
-                                        <input style="margin-right: 1%" class="form-control " type="search" placeholder="Search" aria-label="Search">
-
-                                        <button class="btn btn-outline-success " type="submit">Search</button>
+                                        <input id="myInput" style="margin-right: 1%" class="form-control " placeholder="Search" aria-label="Search">
                                     </form>
                                 </div>
 
@@ -69,8 +64,7 @@
 
 
                         </div>
-
-                        <asp:GridView OnPageIndexChanging="gridProducto_PageIndexChanging" AllowPaging="true" ID="gridProducto" runat="server" CssClass="table table-hover  myGridView" HorizontalAlign="Justify">
+                        <asp:GridView OnPageIndexChanging="gridProducto_PageIndexChanging" AllowPaging="false" ID="gridProducto" runat="server" CssClass="table table-hover  myGridView" HorizontalAlign="Justify">
                             <PagerSettings Mode="NumericFirstLast" Position="Bottom" /> 
                             <Columns>
                                 <asp:TemplateField  ItemStyle-CssClass="ancho" HeaderText="Opciones">
@@ -81,6 +75,7 @@
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
+                           
                     </div>
                 </div>
    
@@ -90,6 +85,15 @@
     </form>
     </div>
    </div>
-
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#gridProducto tbody tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 </body>
 </html>
