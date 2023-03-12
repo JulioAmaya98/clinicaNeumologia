@@ -71,8 +71,12 @@
     <Content Include="EditarUsuario.aspx" />
     <Content Include="Empleados.aspx" />
     <Content Include="Inicio.html" />
+    <Content Include="InicioBod.html" />
+    <Content Include="InicioSec.html" />
     <Content Include="Login.aspx" />
     <Content Include="producto.aspx" />
+    <Content Include="ProductosBodega.aspx" />
+    <Content Include="ProductosSecretaria.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +114,20 @@
     </Compile>
     <Compile Include="producto.aspx.designer.cs">
       <DependentUpon>producto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosBodega.aspx.cs">
+      <DependentUpon>ProductosBodega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductosBodega.aspx.designer.cs">
+      <DependentUpon>ProductosBodega.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosSecretaria.aspx.cs">
+      <DependentUpon>ProductosSecretaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductosSecretaria.aspx.designer.cs">
+      <DependentUpon>ProductosSecretaria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaEntidad;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +16,13 @@ namespace CapaNegocio
         {
             DataTable tabla = new DataTable();
             tabla = objroles.obtenerRoles();
+            return tabla;
+        }
+
+        public DataTable MostarRolPorUsuarios(EUsuarios usuarios)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objroles.RolesPorUsuairo(usuarios);
             return tabla;
         }
     }

@@ -16,6 +16,8 @@
     <div id="principal">
         <form id="form1" runat="server">
 
+            <asp:Label ID="Label1" runat="server" Visible="false" Text="Label"></asp:Label>
+
             <div id="titulo">
 
                 <p>Unidad de neumología</p>
