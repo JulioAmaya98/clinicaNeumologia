@@ -388,3 +388,4 @@ C:\Users\pc\Source\Repos\clinicaNeumologia\CapaPresentacion\obj\Debug\CapaPresen
 C:\Users\pc\Source\Repos\clinicaNeumologia\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 C:\Users\pc\Source\Repos\clinicaNeumologia\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 C:\Users\pc\Source\Repos\clinicaNeumologia\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\pc\Source\Repos\clinicaNeumologia\CapaPresentacion\bin\CapaDatos.dll.config

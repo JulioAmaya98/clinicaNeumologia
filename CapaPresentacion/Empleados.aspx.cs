@@ -8,16 +8,26 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace CapaPresentacion
 {
-    public partial class Inicio : System.Web.UI.Page
+    public partial class Inicio : BasePage
     {
         NUsuarios objusuario = new NUsuarios();
         EUsuarios EUsuarios = new EUsuarios();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             GridViewUsuarios.DataSource = objusuario.mostrarUsuarios();
             GridViewUsuarios.DataBind();
+
+            foreach (GridViewRow row in GridViewUsuarios.Rows)
+            {
+                if (row.Cells[4].Text == "JL")
+                {
+                    row.Visible = false;
+                }
+            }
         }
 
         protected void ButtonAgregar_Click(object sender, EventArgs e)
@@ -63,6 +73,12 @@ namespace CapaPresentacion
         protected void GridViewUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Cerrar_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");    
         }
     }
 }

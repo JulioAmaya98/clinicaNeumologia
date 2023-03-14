@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 
 namespace CapaPresentacion
 {
-    public partial class EditarUsuario : System.Web.UI.Page
+    public partial class EditarUsuario : BasePage
     {
         NRoles objnroles = new NRoles();
         NUsuarios objRoles = new NUsuarios();

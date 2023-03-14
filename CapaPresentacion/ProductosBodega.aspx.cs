@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace CapaPresentacion
 {
-    public partial class ProductosBodega : System.Web.UI.Page
+    public partial class ProductosBodega : BasePage
     {
         NProductos nproductos = new NProductos();
         protected void Page_Load(object sender, EventArgs e)
@@ -29,6 +29,12 @@ namespace CapaPresentacion
 
 
             gridProducto.DataBind();
+        }
+
+        protected void Cerrar_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
         }
     }
 }

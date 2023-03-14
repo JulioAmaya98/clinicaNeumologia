@@ -34,7 +34,8 @@
                             <label for="validationCustomUsername" class="form-label" style="font-family: Modern Sample; font-size: 17px; color: white" class="form-label">Usuario</label>
                             <div class="input-group has-validation">
                                 <span class="input-group-text" id="inputGroupPrepend"></span>
-                                <input type="text" class="form-control" runat="server" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                                <input type="text" class="form-control" runat="server" id="txtNombre" 
+                                    aria-describedby="inputGroupPrepend" required>
                                 <div class="invalid-feedback">
                                     Please choose a username.
                                 </div>

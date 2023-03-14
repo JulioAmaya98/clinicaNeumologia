@@ -64,3 +64,4 @@ C:\Users\pc\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.csp
 C:\Users\pc\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\pc\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\pc\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\pc\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaDatos.dll.config

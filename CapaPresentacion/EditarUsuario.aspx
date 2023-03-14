@@ -10,48 +10,19 @@
     <title></title>
 </head>
 <body>
-   
-    <div class="container mt-3">
-        <ul class="nav nav-tabs justify-content-end " role="tablist">
-            <li class="nav-item">
-                <a class="nav-link " data-bs-toggle="tab" href="Inicio.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="producto.aspx">Productos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="text-decoration: none" data-bs-toggle="tab" href="Empleados.aspx">Empleados</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#menu3">Menu 3</a>
-            </li>
-        </ul>
-
-    </div>
-
-
     <form id="form1" runat="server">
         <asp:Label ID="Label1" Visible="false" runat="server" Text="Label"></asp:Label>
         <div class="container">
             <div class="row">
-
-
-
                 <div id="AgregarALL">
                      <div id="AgregarConten">
-
-
                     <div class="card shadow-lg border-primary">
                         <div class="card-header bg-primary text-white">
                             Crear cuenta
                         </div>
-
                         <div class="card-body">
-
                                <div >
-                          
                                     <label class="form-label">Nombre</label>
-
                                     <asp:TextBox
                                         ID="TextBoxNombre"
                                         runat="server"
@@ -94,24 +65,16 @@
                                         runat="server">
                                     </asp:DropDownList>
                                 </div>
-
-                     
                         <div class="card-footer">
                             <asp:Button ID="ButtonGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="ButtonGuardar_Click" />
                         </div>
-
                     </div>
                     </div>
                          </div>
-
-
-                
                 </div>
             </div>
-
             <div class="col-12">
             </div>
-
         </div>
     </form>
 </body>

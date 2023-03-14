@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace CapaPresentacion
 {
-    public partial class AgregarUsuarios : System.Web.UI.Page
+    public partial class AgregarUsuarios : BasePage
     {
         NRoles objnroles = new NRoles();
         NUsuarios objRoles=new NUsuarios();

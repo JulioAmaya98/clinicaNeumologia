@@ -13,8 +13,9 @@
 </head>
 <body>
 
-
-
+    <div>
+        
+            <form id="form1" runat="server">
 
     <div class="container mt-3">
         <ul class="nav nav-tabs justify-content-end " role="tablist">
@@ -26,6 +27,10 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link  active" data-bs-toggle="tab" href="Empleados.aspx">Empleados</a>
+                </li>
+            <li class="nav-item">
+                <asp:Button ID="Cerrar" runat="server" CssClass="btn btn-danger" Text="Cerrar Session" OnClick="Cerrar_Click" />
+            </li>
         </ul>
 
     </div>
@@ -39,7 +44,6 @@
 
 
 
-            <form id="form1" runat="server">
 
 
                    
@@ -89,10 +93,11 @@
        
    
 
-    </form>
+    
     </div>
    </div>
-
+        </form>
+</div>
         <script>
         $(document).ready(function () {
             $("#myInput").on("keyup", function () {

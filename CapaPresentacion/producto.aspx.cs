@@ -9,7 +9,7 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class producto : System.Web.UI.Page
+    public partial class producto : BasePage
     {
         NProductos nproductos = new NProductos();
         protected void Page_Load(object sender, EventArgs e)
@@ -30,6 +30,12 @@ namespace CapaPresentacion
 
 
             gridProducto.DataBind();
+        }
+
+        protected void Cerrar_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
         }
     }
 }

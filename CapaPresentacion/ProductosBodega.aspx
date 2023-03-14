@@ -11,46 +11,31 @@
     <title></title>
 </head>
 <body>
-
-
-    
-
+    <div>
+        <form id="form1" runat="server">
+   
     <div class="container mt-3">
         <ul class="nav nav-tabs justify-content-end " role="tablist">
             <li class="nav-item">
                 <a class="nav-link " href="InicioBod.html">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active " data-bs-toggle="tab" href="productosBodega.aspx">Productos</a>
+                <a class="nav-link active " href="productosBodega.aspx">Productos</a>
             </li>
-           
+                 <li class="nav-item">
+                <asp:Button ID="Cerrar" runat="server" CssClass="btn btn-danger" Text="Cerrar Session" OnClick="Cerrar_Click" />
+            </li>
         </ul>
-
     </div>
-
-
     <div class="container">
-
         <div class="row">
-
-            <form id="form1" runat="server">
-
                     <div class="ALL">
-
                     <div  id="conten">
-
                         <div id="encabezado">
-
-
                             <nav class="navbar navbar-expand-lg">
                                 <h4>Productos</h4>
                                 <div class="container-fluid">
-
-
                                     <asp:Button ID="Button1" runat="server" Text="Agregar" CssClass="btn btn-outline-success botoRedondo " />
-
-
-
                                 </div>
                                 <div class="container-fluid">
                                     <form class="d-flex" role="search">
@@ -58,10 +43,7 @@
                                         <input id="myInput" style="margin-right: 1%" class="form-control " placeholder="Search" aria-label="Search">
                                     </form>
                                 </div>
-
                             </nav>
-
-
                         </div>
                         <asp:GridView OnPageIndexChanging="gridProducto_PageIndexChanging" AllowPaging="false" ID="gridProducto" runat="server" CssClass="table table-hover  myGridView" HorizontalAlign="Justify">
                             <PagerSettings Mode="NumericFirstLast" Position="Bottom" /> 
@@ -73,17 +55,13 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
-                        </asp:GridView>
-                           
+                        </asp:GridView>     
                     </div>
                 </div>
-   
-       
-   
-
-    </form>
     </div>
    </div>
+        </form>
+     </div>
     <script>
         $(document).ready(function () {
             $("#myInput").on("keyup", function () {

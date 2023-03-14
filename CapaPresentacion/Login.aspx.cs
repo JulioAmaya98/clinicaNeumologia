@@ -22,7 +22,6 @@ namespace CapaPresentacion
         {
             error.Visible = false;
 
-
         }
 
         protected void boton_Click(object sender, EventArgs e)
@@ -40,19 +39,16 @@ namespace CapaPresentacion
             objUsersesion.username = txtNombre.Value;
             tabla = objsesion.loginUsuario(user);
 
-            DataTable tablaRol = new DataTable();
-            tablaRol = objRoles.MostarRolPorUsuarios(user);
-            Label1.Text = tablaRol.Rows[0]["nombre_rol"].ToString();
-            string i = Label1.Text;
-
-
-
 
             if (tabla.Rows.Count > 0)
             {
                 objNUsuario.registroSesion(objUsersesion);
+                Session["username"]=txtNombre.Value;
 
-
+                DataTable tablaRol = new DataTable();
+                tablaRol = objRoles.MostarRolPorUsuarios(user);
+                Label1.Text = tablaRol.Rows[0]["nombre_rol"].ToString();
+                string i = Label1.Text;
 
 
 
@@ -71,8 +67,7 @@ namespace CapaPresentacion
                 }
 
 
-
-
+               
             }
             else
             {

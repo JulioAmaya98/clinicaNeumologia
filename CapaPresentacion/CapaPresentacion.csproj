@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgregarUsuarios.aspx" />
+    <Content Include="BasePage.aspx" />
     <Content Include="EditarUsuario.aspx" />
     <Content Include="Empleados.aspx" />
     <Content Include="Inicio.html" />
@@ -86,6 +87,13 @@
     </Compile>
     <Compile Include="AgregarUsuarios.aspx.designer.cs">
       <DependentUpon>AgregarUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BasePage.aspx.cs">
+      <DependentUpon>BasePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BasePage.aspx.designer.cs">
+      <DependentUpon>BasePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditarUsuario.aspx.cs">
       <DependentUpon>EditarUsuario.aspx</DependentUpon>
