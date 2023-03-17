@@ -36,5 +36,10 @@ namespace CapaPresentacion
             Session.Clear();
             Response.Redirect("Login.aspx");
         }
+
+        protected void ButtonAgregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AgregarProductos.aspx");
+        }
     }
 }

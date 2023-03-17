@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaEntidad;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,6 +18,11 @@ namespace CapaNegocio
             DataTable tablaproducto = new DataTable();
             tablaproducto = productos.mostraProducto();
             return tablaproducto;
+        }
+
+        public void agregarProductos(EProducto eProducto)
+        {
+            productos.addProducto(eProducto);
         }
     }
 }
