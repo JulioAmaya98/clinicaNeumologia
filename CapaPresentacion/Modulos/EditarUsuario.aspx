@@ -111,8 +111,8 @@
         });
     </script>
       <script>
-          var rol = window.location.search.substring(1); // Obtiene la cadena de consulta, por ejemplo, "?id=123"
-          rol = rol.split("=")[1];
+          var rol = window.location.search.substring(1);
+          rol = rol.split("rol=")[1];
           const inventario = document.getElementById('navInventario');
           inventario.setAttribute('href', '../Bodeguero/Inventario.aspx?rol=' + rol);
           const empleados = document.getElementById('navEmpleados');

@@ -24,7 +24,7 @@
                 </li>
                  
             <li class="nav-item">
-                <a class="nav-link  " id="navInventario" href="#">Inventario</a>
+                <a class="nav-link  " runat="server" id="navInventario" href="#">Inventario</a>
             </li>
                         <li class="nav-item">
                 <asp:Button ID="Cerrar" runat="server" CssClass="btn btn-danger" Text="Cerrar Session" OnClick="Cerrar_Click" />
@@ -77,16 +77,26 @@
         });
     </script>
       <script>
-          var rol = window.location.search.substring(1); // Obtiene la cadena de consulta, por ejemplo, "?id=123"
-          rol = rol.split("=")[1];
-          const inventario = document.getElementById('navInventario');
-          inventario.setAttribute('href', '../Bodeguero/Inventario.aspx?rol=' + rol);
-          const empleados = document.getElementById('navEmpleados');
-          empleados.setAttribute('href', 'Empleados.aspx?rol=' + rol);
-          const productos = document.getElementById('navProductos');
-          productos.setAttribute('href', 'producto.aspx?rol=' + rol);
-          const inicio = document.getElementById('navInicio');
-          inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
+
+          var rol = window.location.search.substring(1);
+          rol = rol.split("rol=")[1];
+
+          if (rol == "TQBlAGQAaQBjAG8A") {
+
+              const empleados = document.getElementById('navEmpleados');
+              empleados.setAttribute('href', 'Empleados.aspx?rol=' + rol);
+              const inventario = document.getElementById('navInventario');
+              inventario.setAttribute('href', '../Bodeguero/Inventario.aspx?rol=' + rol);
+              const productos = document.getElementById('navProductos');
+              productos.setAttribute('href', 'producto.aspx?rol=' + rol);
+              const inicio = document.getElementById('navInicio');
+              inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
+          }  else if (rol == "UwBlAGMAcgBlAHQAYQByAGkAYQA=") {
+              const productos = document.getElementById('navProductos');
+              productos.setAttribute('href', 'producto.aspx?rol=' + rol);
+              const inicio = document.getElementById('navInicio');
+              inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
+          }
 
       </script>
 </body>

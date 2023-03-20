@@ -72,14 +72,10 @@
     <Content Include="BasePage.aspx" />
     <Content Include="Modulos\EditarUsuario.aspx" />
     <Content Include="Modulos\Empleados.aspx" />
-    <Content Include="Inicio.html" />
-    <Content Include="InicioBod.html" />
-    <Content Include="InicioSec.html" />
     <Content Include="Layout\Login.aspx" />
     <Content Include="Modulos\Inicio.aspx" />
     <Content Include="Modulos\producto.aspx" />
     <Content Include="Bodeguero\Inventario.aspx" />
-    <Content Include="Secretaria\ProductosSecretaria.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -145,13 +141,6 @@
     </Compile>
     <Compile Include="Bodeguero\Inventario.aspx.designer.cs">
       <DependentUpon>Inventario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Secretaria\ProductosSecretaria.aspx.cs">
-      <DependentUpon>ProductosSecretaria.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Secretaria\ProductosSecretaria.aspx.designer.cs">
-      <DependentUpon>ProductosSecretaria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

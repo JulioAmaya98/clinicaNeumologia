@@ -34,28 +34,19 @@
             </div>
 
           
-
+            
         </div>
 
     </form>
 
 
-    <script>
-        $(document).ready(function () {
-            $("#myInput").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $("#GridViewUsuarios tbody tr").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-    </script>
+    
     <script>
 
        
 
         var rol = window.location.search.substring(1);
-        rol = rol.split("=")[1];
+        rol = rol.split("rol=")[1];
 
       
 
@@ -73,7 +64,7 @@
             const inventario = document.getElementById('navInventario');
             inventario.setAttribute('href', '../Bodeguero/Inventario.aspx?rol=' + rol);
             const inicio = document.getElementById('navInicio');
-             inicio = document.getElementById('navInicio');
+            inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
         } else if (rol =="UwBlAGMAcgBlAHQAYQByAGkAYQA=") {
             const productos = document.getElementById('navProductos');
             productos.setAttribute('href', 'producto.aspx?rol=' + rol);
