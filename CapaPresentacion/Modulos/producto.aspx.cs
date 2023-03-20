@@ -35,6 +35,7 @@ namespace CapaPresentacion
                     gridProducto.DataSource = nproductos.mostrarProduct();
                     gridProducto.DataBind();
                     navEmpleados.Visible = false;
+                    navInventario.Visible = false;
 
                 }
                 else

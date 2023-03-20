@@ -60,7 +60,7 @@
 
 
                             <nav class="navbar navbar-expand-lg">
-                                <h4 id="kk" runat="server">Empleados</h4>
+                                <h4>Empleados</h4>
                                 <div class="container-fluid">
 
 
@@ -113,7 +113,7 @@
         });
         </script>
     <script>
-        var rol = window.location.search.substring(1); // Obtiene la cadena de consulta, por ejemplo, "?id=123"
+        var rol = window.location.search.substring(1);
         rol = rol.split("=")[1];
         const empleados = document.getElementById('navEmpleados');
         empleados.setAttribute('href', 'Empleados.aspx?rol=' + rol);

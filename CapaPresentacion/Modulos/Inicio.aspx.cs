@@ -29,13 +29,14 @@ namespace CapaPresentacion.Modulos
                    
                     navEmpleados.Visible= false;
                     navInventario.Visible= false;
-
+                   
 
                 }
                 else if (Request.QueryString["rol"] == encrypBodeguero && Session["username"].ToString() == encrypBodeguero)
                 {
                     navProductos.Visible= false;
                     navEmpleados.Visible = false;
+                    
 
                 }
                 else
