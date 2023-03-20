@@ -18,14 +18,48 @@ namespace CapaPresentacion
         NUsuarios objusuario = new NUsuarios();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+
+
+
+            try
             {
-                DropDownListRol.DataSource = objRoles.obtenerRoles();
-                DropDownListRol.DataTextField = "nombre_rol";
-                DropDownListRol.DataValueField = "id_roles";
-                DropDownListRol.DataBind();
+
+                string emcrypMedico = Encriptar("Medico");
+
+                if (Request.QueryString["rol"] == emcrypMedico && Session["username"].ToString() == emcrypMedico)
+                {
+
+
+                    if (!IsPostBack)
+                    {
+
+
+                        DropDownListRol.DataSource = objRoles.obtenerRoles();
+                        DropDownListRol.DataTextField = "nombre_rol";
+                        DropDownListRol.DataValueField = "id_roles";
+                        DropDownListRol.DataBind();
+
+
+
+                    }
+                    mensajeError.Visible = false;
+
+                }
+                else
+                {
+                    Response.Redirect("../Layout/Login.aspx");
+                }
+
             }
-            mensajeError.Visible = false;
+            catch (Exception)
+            {
+
+                Response.Redirect("../Layout/Login.aspx");
+            }
+
+
+
+
         }
 
         protected void ButtonGuardar_Click(object sender, EventArgs e)
@@ -55,9 +89,17 @@ namespace CapaPresentacion
                 usuarios.id_roles = Convert.ToInt32(DropDownListRol.SelectedValue.ToString());
                 usuarios.estado = "Activo";
                 objusuario.agregarUsuarios(usuarios);
-                Response.Redirect("Empleados.aspx");
+                Response.Redirect("Empleados.aspx?rol=" + Request.QueryString["rol"]);
             }
             
+        }
+
+        public string Encriptar(string _cadenaAencriptar)
+        {
+            string result = string.Empty;
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(_cadenaAencriptar);
+            result = Convert.ToBase64String(encryted);
+            return result;
         }
 
         public void limpiarCampos()
@@ -67,6 +109,13 @@ namespace CapaPresentacion
             TextBoxTelefono.Text = "";
             TextBoxuserName.Text = "";
             TextBoxPassword.Text = "";
+        }
+
+        protected void Cerrar_Click(object sender, EventArgs e)
+        {
+
+            Session.Clear();
+            Response.Redirect("../Layout/Login.aspx");
         }
     }
 }

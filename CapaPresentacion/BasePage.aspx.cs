@@ -14,10 +14,7 @@ namespace CapaPresentacion
             base.OnLoad(e);
 
             //Verificar si el usuario ha iniciado sesión
-            if (Session["username"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
+            
         }
     }
 }

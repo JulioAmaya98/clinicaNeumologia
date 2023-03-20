@@ -8,26 +8,30 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="css/StyleEmpleados.css" rel="stylesheet" />
+    <link href="../css/StyleEmpleados.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
 
     <div>
+
         
             <form id="form1" runat="server">
 
     <div class="container mt-3">
         <ul class="nav nav-tabs justify-content-end " role="tablist">
             <li class="nav-item">
-                <a class="nav-link " href="Inicio.html">Inicio</a>
+                <a class="nav-link " id="navInicio" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="producto.aspx">Productos</a>
+                <a class="nav-link" id="navProductos" href="#" >Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  active" data-bs-toggle="tab" href="Empleados.aspx">Empleados</a>
+                <a class="nav-link  active" data-bs-toggle="tab" id="navEmpleados" href="#">Empleados</a>
                 </li>
+              <li class="nav-item">
+                <a class="nav-link " id="navInventario" href="#">Inventario</a>
+            </li>
             <li class="nav-item">
                 <asp:Button ID="Cerrar" runat="server" CssClass="btn btn-danger" Text="Cerrar Session" OnClick="Cerrar_Click" />
             </li>
@@ -56,7 +60,7 @@
 
 
                             <nav class="navbar navbar-expand-lg">
-                                <h4>Empleados</h4>
+                                <h4 id="kk" runat="server">Empleados</h4>
                                 <div class="container-fluid">
 
 
@@ -108,5 +112,18 @@
             });
         });
         </script>
+    <script>
+        var rol = window.location.search.substring(1); // Obtiene la cadena de consulta, por ejemplo, "?id=123"
+        rol = rol.split("=")[1];
+        const empleados = document.getElementById('navEmpleados');
+        empleados.setAttribute('href', 'Empleados.aspx?rol=' + rol);
+        const inventario = document.getElementById('navInventario');
+        inventario.setAttribute('href', '../Bodeguero/Inventario.aspx?rol=' + rol);
+        const productos = document.getElementById('navProductos');
+        productos.setAttribute('href', 'producto.aspx?rol=' + rol);
+        const inicio = document.getElementById('navInicio');
+        inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
+
+    </script>
 </body>
 </html>

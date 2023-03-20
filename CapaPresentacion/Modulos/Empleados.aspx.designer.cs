@@ -11,7 +11,7 @@ namespace CapaPresentacion
 {
 
 
-    public partial class ProductosBodega
+    public partial class Inicio
     {
 
         /// <summary>
@@ -24,21 +24,30 @@ namespace CapaPresentacion
         protected global::System.Web.UI.WebControls.Button Cerrar;
 
         /// <summary>
-        /// Control ButtonAgregar.
+        /// Control kk.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAgregar;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl kk;
 
         /// <summary>
-        /// Control gridProducto.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridProducto;
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Control GridViewUsuarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewUsuarios;
     }
 }

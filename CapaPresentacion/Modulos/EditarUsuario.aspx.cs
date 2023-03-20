@@ -24,7 +24,10 @@ namespace CapaPresentacion
 
             if (!IsPostBack)
             {
-                if (Request.QueryString["id_usuario"] != null)
+
+                string encrypMedico = Encriptar("Medico"); 
+
+                if (Request.QueryString["id_usuario"] != null && Request.QueryString["rol"]==encrypMedico && Session["username"].ToString() == encrypMedico)
                 {
                     var id = Request.QueryString["id_usuario"].ToString();
                     Label1.Text = id;
@@ -45,9 +48,19 @@ namespace CapaPresentacion
                     TextBoxTelefono.Text = tabla.Rows[0]["telefono"].ToString();
                     DropDownListRol.SelectedValue = tabla.Rows[0]["id_roles"].ToString();
 
+                }else
+                {
+                    Response.Redirect("../Layout/Login.aspx");
                 }
             }
 
+        }
+        public string Encriptar(string _cadenaAencriptar)
+        {
+            string result = string.Empty;
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(_cadenaAencriptar);
+            result = Convert.ToBase64String(encryted);
+            return result;
         }
 
         protected void ButtonGuardar_Click(object sender, EventArgs e)
@@ -61,7 +74,13 @@ namespace CapaPresentacion
             EUsuarios.estado = "Activo";
             EUsuarios.id_roles = Convert.ToInt32( DropDownListRol.SelectedValue.ToString());
             objusuario.modifiUsuarios(EUsuarios);
-            Response.Redirect("Empleados.aspx");
+            Response.Redirect("Empleados.aspx?rol=" + Request.QueryString["rol"]);
+        }
+
+        protected void Cerrar_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("../Layout/Login.aspx");
         }
     }
 }

@@ -53,3 +53,13 @@ C:\Users\pc\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.csproj.
 C:\Users\pc\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\pc\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.pdb
 C:\Users\pc\Source\Repos\clinicaNeumologia\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\Users\china\source\repos\clinicaNeumologiaa\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\Users\china\source\repos\clinicaNeumologiaa\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\china\source\repos\clinicaNeumologiaa\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\china\source\repos\clinicaNeumologiaa\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Users\china\source\repos\clinicaNeumologiaa\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\china\source\repos\clinicaNeumologiaa\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\china\source\repos\clinicaNeumologiaa\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\china\source\repos\clinicaNeumologiaa\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\china\source\repos\clinicaNeumologiaa\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\china\source\repos\clinicaNeumologiaa\CapaDatos\obj\Debug\CapaDatos.pdb

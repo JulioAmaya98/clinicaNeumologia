@@ -67,25 +67,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AgregarUsuarios.aspx" />
+    <Content Include="Bodeguero\AgregarProductos.aspx" />
+    <Content Include="Modulos\AgregarUsuarios.aspx" />
     <Content Include="BasePage.aspx" />
-    <Content Include="EditarUsuario.aspx" />
-    <Content Include="Empleados.aspx" />
+    <Content Include="Modulos\EditarUsuario.aspx" />
+    <Content Include="Modulos\Empleados.aspx" />
     <Content Include="Inicio.html" />
     <Content Include="InicioBod.html" />
     <Content Include="InicioSec.html" />
-    <Content Include="Login.aspx" />
-    <Content Include="producto.aspx" />
-    <Content Include="ProductosBodega.aspx" />
-    <Content Include="ProductosSecretaria.aspx" />
+    <Content Include="Layout\Login.aspx" />
+    <Content Include="Modulos\Inicio.aspx" />
+    <Content Include="Modulos\producto.aspx" />
+    <Content Include="Bodeguero\Inventario.aspx" />
+    <Content Include="Secretaria\ProductosSecretaria.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarUsuarios.aspx.cs">
+    <Compile Include="Bodeguero\AgregarProductos.aspx.cs">
+      <DependentUpon>AgregarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bodeguero\AgregarProductos.aspx.designer.cs">
+      <DependentUpon>AgregarProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AgregarUsuarios.aspx.cs">
       <DependentUpon>AgregarUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AgregarUsuarios.aspx.designer.cs">
+    <Compile Include="Modulos\AgregarUsuarios.aspx.designer.cs">
       <DependentUpon>AgregarUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="BasePage.aspx.cs">
@@ -95,46 +104,53 @@
     <Compile Include="BasePage.aspx.designer.cs">
       <DependentUpon>BasePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditarUsuario.aspx.cs">
+    <Compile Include="Modulos\EditarUsuario.aspx.cs">
       <DependentUpon>EditarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditarUsuario.aspx.designer.cs">
+    <Compile Include="Modulos\EditarUsuario.aspx.designer.cs">
       <DependentUpon>EditarUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Empleados.aspx.cs">
+    <Compile Include="Modulos\Empleados.aspx.cs">
       <DependentUpon>Empleados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Empleados.aspx.designer.cs">
+    <Compile Include="Modulos\Empleados.aspx.designer.cs">
       <DependentUpon>Empleados.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="Layout\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="Layout\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="producto.aspx.cs">
+    <Compile Include="Modulos\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\producto.aspx.cs">
       <DependentUpon>producto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="producto.aspx.designer.cs">
+    <Compile Include="Modulos\producto.aspx.designer.cs">
       <DependentUpon>producto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductosBodega.aspx.cs">
-      <DependentUpon>ProductosBodega.aspx</DependentUpon>
+    <Compile Include="Bodeguero\Inventario.aspx.cs">
+      <DependentUpon>Inventario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductosBodega.aspx.designer.cs">
-      <DependentUpon>ProductosBodega.aspx</DependentUpon>
+    <Compile Include="Bodeguero\Inventario.aspx.designer.cs">
+      <DependentUpon>Inventario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductosSecretaria.aspx.cs">
+    <Compile Include="Secretaria\ProductosSecretaria.aspx.cs">
       <DependentUpon>ProductosSecretaria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductosSecretaria.aspx.designer.cs">
+    <Compile Include="Secretaria\ProductosSecretaria.aspx.designer.cs">
       <DependentUpon>ProductosSecretaria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,6 +174,7 @@
       <Name>CapaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

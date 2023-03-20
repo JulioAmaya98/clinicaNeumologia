@@ -23,11 +23,17 @@ namespace CapaPresentacion
             error.Visible = false;
 
         }
+        public  string Encriptar( string _cadenaAencriptar)
+        {
+            string result = string.Empty;
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(_cadenaAencriptar);
+            result = Convert.ToBase64String(encryted);
+            return result;
+        }
 
         protected void boton_Click(object sender, EventArgs e)
         {
             EUsuarios objUsersesion = new EUsuarios();
-            SqlCommand comando = new SqlCommand();
             NUsuarios objsesion = new NUsuarios();
             DataTable tabla = new DataTable();
 
@@ -49,21 +55,26 @@ namespace CapaPresentacion
                 tablaRol = objRoles.MostarRolPorUsuarios(user);
                 Label1.Text = tablaRol.Rows[0]["nombre_rol"].ToString();
                 string i = Label1.Text;
-
+                string encr = Encriptar(Label1.Text);
 
 
                 if (i == "Medico")
                 {
-                    Response.Redirect("Inicio.html");
+                    Session["username"] = encr;
+                    Response.Redirect("../Modulos/Inicio.aspx?rol="+encr);
                 }
                 else if (i == "Secretaria")
                 {
-                    Response.Redirect("InicioSec.html");
+                    Session["username"] = encr; 
+                    Response.Redirect("../Modulos/Inicio.aspx?rol="+encr);
+                   
 
                 }
                 else if (i == "Bodeguero")
                 {
-                    Response.Redirect("InicioBod.html");
+                    Session["username"] = encr;
+                    Response.Redirect("../Modulos/Inicio.aspx?rol="+encr);
+                    
                 }
 
 
