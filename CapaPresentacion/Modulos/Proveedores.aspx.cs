@@ -5,13 +5,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CapaNegocio;
 
-namespace CapaPresentacion
+namespace CapaPresentacion.Modulos
 {
-    public partial class producto : BasePage
+    public partial class Proveedores : System.Web.UI.Page
     {
-        NProductos nproductos = new NProductos();
+        NProveedores nProveedores = new NProveedores();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,21 +18,21 @@ namespace CapaPresentacion
             {
 
                 string encrypMedico = Encriptar("Medico");
-                
+
                 string encrypSecretaria = Encriptar("Secretaria");
-                
+
 
                 if (Request.QueryString["rol"] == encrypMedico && Session["username"].ToString() == encrypMedico)
                 {
-                    gridProducto.PageSize = 5;
-                    gridProducto.DataSource = nproductos.mostrarProduct();
-                    gridProducto.DataBind();
+                    gridProveedores.PageSize = 5;
+                    gridProveedores.DataSource = nProveedores.mostrarProveedores();
+                    gridProveedores.DataBind();
                 }
                 else if (Request.QueryString["rol"] == encrypSecretaria && Session["username"].ToString() == encrypSecretaria)
                 {
-                    gridProducto.PageSize = 5;
-                    gridProducto.DataSource = nproductos.mostrarProduct();
-                    gridProducto.DataBind();
+                    gridProveedores.PageSize = 5;
+                    gridProveedores.DataSource = nProveedores.mostrarProveedores();
+                    gridProveedores.DataBind();
                     navEmpleados.Visible = false;
                     navInventario.Visible = false;
 
@@ -60,23 +59,16 @@ namespace CapaPresentacion
         }
 
 
-        protected void gridProducto_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void gridProveedores_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            gridProducto.PageIndex = e.NewPageIndex;
-
-
-            gridProducto.DataBind();
+            gridProveedores.PageIndex = e.NewPageIndex;
+            gridProveedores.DataBind();
         }
 
         protected void Cerrar_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Redirect("../Layout/Login.aspx");
-        }
-
-        protected void gridProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

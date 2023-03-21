@@ -7,12 +7,30 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CapaPresentacion
+namespace CapaPresentacion.Modulos
 {
 
 
-    public partial class Inicio
+    public partial class Proveedores
     {
+
+        /// <summary>
+        /// Control form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
+        /// <summary>
+        /// Control navProductos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navProductos;
 
         /// <summary>
         /// Control navProveedores.
@@ -22,6 +40,24 @@ namespace CapaPresentacion
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor navProveedores;
+
+        /// <summary>
+        /// Control navEmpleados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navEmpleados;
+
+        /// <summary>
+        /// Control navInventario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navInventario;
 
         /// <summary>
         /// Control Cerrar.
@@ -42,12 +78,12 @@ namespace CapaPresentacion
         protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Control GridViewUsuarios.
+        /// Control gridProveedores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewUsuarios;
+        protected global::System.Web.UI.WebControls.GridView gridProveedores;
     }
 }

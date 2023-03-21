@@ -54,6 +54,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Proveedores.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>

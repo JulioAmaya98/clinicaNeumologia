@@ -20,6 +20,9 @@
                     <li class="nav-item">
                         <a class="nav-link" runat="server" id="navProductos" href="#">Productos</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link " runat="server" id="navProveedores" href="#">Proveedores</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link " runat="server" data-bs-toggle="tab" id="navEmpleados" href="#">Empleados</a>
                     </li>
@@ -54,6 +57,8 @@
 
             const empleados = document.getElementById('navEmpleados');
             empleados.setAttribute('href', 'Empleados.aspx?rol=' + rol);
+            const proveedores = document.getElementById('navProveedores');
+            proveedores.setAttribute('href', 'Proveedores.aspx?rol=' + rol);
             const inventario = document.getElementById('navInventario');
             inventario.setAttribute('href', '../Bodeguero/Inventario.aspx?rol=' + rol);
             const productos = document.getElementById('navProductos');
@@ -65,7 +70,9 @@
             inventario.setAttribute('href', '../Bodeguero/Inventario.aspx?rol=' + rol);
             const inicio = document.getElementById('navInicio');
             inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
-        } else if (rol =="UwBlAGMAcgBlAHQAYQByAGkAYQA=") {
+        } else if (rol == "UwBlAGMAcgBlAHQAYQByAGkAYQA=") {
+            const proveedores = document.getElementById('navProveedores');
+            proveedores.setAttribute('href', 'Proveedores.aspx?rol=' + rol);
             const productos = document.getElementById('navProductos');
             productos.setAttribute('href', 'producto.aspx?rol=' + rol);
             const inicio = document.getElementById('navInicio');

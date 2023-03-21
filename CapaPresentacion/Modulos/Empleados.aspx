@@ -27,6 +27,9 @@
                 <a class="nav-link" id="navProductos" href="#" >Productos</a>
             </li>
             <li class="nav-item">
+                        <a class="nav-link " runat="server" id="navProveedores" href="#">Proveedores</a>
+                    </li>
+            <li class="nav-item">
                 <a class="nav-link  active" data-bs-toggle="tab" id="navEmpleados" href="#">Empleados</a>
                 </li>
               <li class="nav-item">
@@ -117,6 +120,8 @@
         rol = rol.split("=")[1];
         const empleados = document.getElementById('navEmpleados');
         empleados.setAttribute('href', 'Empleados.aspx?rol=' + rol);
+        const proveedores = document.getElementById('navProveedores');
+        proveedores.setAttribute('href', 'Proveedores.aspx?rol=' + rol);
         const inventario = document.getElementById('navInventario');
         inventario.setAttribute('href', '../Bodeguero/Inventario.aspx?rol=' + rol);
         const productos = document.getElementById('navProductos');

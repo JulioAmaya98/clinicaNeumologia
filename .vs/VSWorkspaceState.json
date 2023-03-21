@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CapaPresentacion",
+    "\\CapaPresentacion\\Bodeguero"
   ],
-  "SelectedNode": "\\C:\\Users\\Julio Amaya\\Source\\Repos\\clinicaNeumologia",
+  "SelectedNode": "\\CapaPresentacion\\Bodeguero\\Inventario.aspx",
   "PreviewInSolutionExplorer": false
 }
