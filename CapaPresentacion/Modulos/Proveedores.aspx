@@ -9,6 +9,7 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../css/StyleLProveedores.css" rel="stylesheet" />
+    <script src="../JS/Roles.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
@@ -41,6 +42,8 @@
     <div class="container">
         <div class="row">
                     <div class="ALL">
+            <br />
+
                     <div  id="conten">
                         <div id="encabezado">
                             <nav class="navbar navbar-expand-lg">
@@ -61,7 +64,7 @@
                             <Columns>
                                 <asp:TemplateField  ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                     <ItemTemplate>
-                                        <asp:Button  ID="ButtonEditar" runat="server" Text="Editar" CssClass="btn btn-outline-warning" /> 
+                                        <asp:Button  ID="ButtonEditar" runat="server" Text="Editar" CssClass="btn btn-outline-warning" class="glyphicon glyphicon-edit"/> 
                                         <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -83,32 +86,5 @@
             });
         });
     </script>
-     <script>
-
-         var rol = window.location.search.substring(1);
-         rol = rol.split("rol=")[1];
-
-         if (rol == "TQBlAGQAaQBjAG8A") {
-
-             const empleados = document.getElementById('navEmpleados');
-             empleados.setAttribute('href', 'Empleados.aspx?rol=' + rol);
-             const proveedores = document.getElementById('navProveedores');
-             proveedores.setAttribute('href', 'Proveedores.aspx?rol=' + rol);
-             const inventario = document.getElementById('navInventario');
-             inventario.setAttribute('href', '../Bodeguero/Inventario.aspx?rol=' + rol);
-             const productos = document.getElementById('navProductos');
-             productos.setAttribute('href', 'producto.aspx?rol=' + rol);
-             const inicio = document.getElementById('navInicio');
-             inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
-         } else if (rol == "UwBlAGMAcgBlAHQAYQByAGkAYQA=") {
-             const proveedores = document.getElementById('navProveedores');
-             proveedores.setAttribute('href', 'Proveedores.aspx?rol=' + rol);
-             const productos = document.getElementById('navProductos');
-             productos.setAttribute('href', 'producto.aspx?rol=' + rol);
-             const inicio = document.getElementById('navInicio');
-             inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
-         }
-
-     </script>
 </body>
 </html>

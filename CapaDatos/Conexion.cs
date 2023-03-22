@@ -11,7 +11,7 @@ namespace CapaDatos
 {
     public class Conexion
     {
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-RQ3IGMR\\U20200534;Initial Catalog=clinic;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-I8I42H8\\U20200534;Initial Catalog=clinic;Integrated Security=True");
 
        
         public SqlConnection abrirConexion()

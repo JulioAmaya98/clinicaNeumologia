@@ -67,7 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bodeguero\AgregarProductos.aspx" />
+    <Content Include="Modulos\AgregarProductos.aspx" />
+    <Content Include="JS\Roles.js" />
     <Content Include="Modulos\AgregarUsuarios.aspx" />
     <Content Include="BasePage.aspx" />
     <Content Include="Modulos\EditarUsuario.aspx" />
@@ -75,16 +76,16 @@
     <Content Include="Layout\Login.aspx" />
     <Content Include="Modulos\Inicio.aspx" />
     <Content Include="Modulos\producto.aspx" />
-    <Content Include="Bodeguero\Inventario.aspx" />
+    <Content Include="Modulos\Inventario.aspx" />
     <Content Include="Modulos\Proveedores.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bodeguero\AgregarProductos.aspx.cs">
+    <Compile Include="Modulos\AgregarProductos.aspx.cs">
       <DependentUpon>AgregarProductos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Bodeguero\AgregarProductos.aspx.designer.cs">
+    <Compile Include="Modulos\AgregarProductos.aspx.designer.cs">
       <DependentUpon>AgregarProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulos\AgregarUsuarios.aspx.cs">
@@ -136,11 +137,11 @@
     <Compile Include="Modulos\producto.aspx.designer.cs">
       <DependentUpon>producto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Bodeguero\Inventario.aspx.cs">
+    <Compile Include="Modulos\Inventario.aspx.cs">
       <DependentUpon>Inventario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Bodeguero\Inventario.aspx.designer.cs">
+    <Compile Include="Modulos\Inventario.aspx.designer.cs">
       <DependentUpon>Inventario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Proveedores.aspx.cs">

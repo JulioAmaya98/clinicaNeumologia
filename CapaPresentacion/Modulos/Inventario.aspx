@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../css/StyleLProducto.css" rel="stylesheet" />
+    <script src="../JS/Roles.js"></script>
     <title></title>
 </head>
 <body>
@@ -22,6 +23,9 @@
             <li class="nav-item">
                 <a class="nav-link" runat="server" id="navProductos" href="#" >Productos</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" runat="server" data-bs-toggle="tab" id="navProveedores" href="#">Proveedores</a>
+                </li>
             <li class="nav-item">
                 <a class="nav-link" runat="server" data-bs-toggle="tab" id="navEmpleados" href="#">Empleados</a>
                 </li>
@@ -78,30 +82,6 @@
             });
         });
     </script>
-          
-    <script>
-        var rol = window.location.search.substring(1);
-        rol = rol.split("rol=")[1];
-
-
-        if (rol == "TQBlAGQAaQBjAG8A") {
-
-            const empleados = document.getElementById('navEmpleados');
-            empleados.setAttribute('href', '../Modulos/Empleados.aspx?rol=' + rol);
-            const inventario = document.getElementById('navInventario');
-            inventario.setAttribute('href', 'Inventario.aspx?rol=' + rol);
-            const productos = document.getElementById('navProductos');
-            productos.setAttribute('href', '../Modulos/producto.aspx?rol=' + rol);
-            const inicio = document.getElementById('navInicio');
-            inicio.setAttribute('href', '../Modulos/Inicio.aspx?rol=' + rol);
-        } else if (rol == "QgBvAGQAZQBnAHUAZQByAG8A") {
-            const inventario = document.getElementById('navInventario');
-            inventario.setAttribute('href', 'Inventario.aspx?rol=' + rol);
-            const inicio = document.getElementById('navInicio');
-            inicio.setAttribute('href', '../Modulos/Inicio.aspx?rol=' + rol);
-        }
-
-       
-    </script>
+         
 </body>
 </html>

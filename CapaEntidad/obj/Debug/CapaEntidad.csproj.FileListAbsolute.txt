@@ -46,3 +46,9 @@ C:\Users\Angelito\Source\Repos\clinicaNeumologia\CapaEntidad\obj\Debug\CapaEntid
 C:\Users\Angelito\Source\Repos\clinicaNeumologia\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 C:\Users\Angelito\Source\Repos\clinicaNeumologia\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Users\Angelito\Source\Repos\clinicaNeumologia\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaEntidad\obj\Debug\CapaEntidad.pdb

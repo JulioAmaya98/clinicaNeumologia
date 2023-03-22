@@ -83,3 +83,13 @@ C:\Users\Angelito\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.c
 C:\Users\Angelito\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 C:\Users\Angelito\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Angelito\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Angel Gomez\source\repos\Proveedores\CapaDatos\obj\Debug\CapaDatos.pdb
