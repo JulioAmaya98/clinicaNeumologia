@@ -36,6 +36,8 @@
         const proveedores = document.getElementById('navProveedores');
         proveedores.setAttribute('href', 'Proveedores.aspx?rol=' + rol);
 
+        agregarproveedores.setAttribute('href', 'AgregarProveedores.aspx?rol=' + rol);
+
         const inicio = document.getElementById('navInicio');
         inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
     }

@@ -73,7 +73,7 @@ namespace CapaPresentacion.Modulos
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AgregarProveedor.aspx");
+            Response.Redirect("AgregarProveedor.aspx?rol=" + Request.QueryString["rol"]);
         }
     }
 }

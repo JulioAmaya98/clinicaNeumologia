@@ -15,7 +15,40 @@ namespace CapaPresentacion.Modulos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
 
+                string encrypMedico = Encriptar("Medico");
+
+                string encrypSecretaria = Encriptar("Secretaria");
+
+
+                if (Request.QueryString["rol"] == encrypMedico && Session["username"].ToString() == encrypMedico)
+                {
+                }
+                else if (Request.QueryString["rol"] == encrypSecretaria && Session["username"].ToString() == encrypSecretaria)
+                {
+
+
+                }
+                else
+                {
+                    Response.Redirect("../Layout/Login.aspx");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                Response.Redirect("../Layout/Login.aspx");
+            }
+        }
+        public string Encriptar(string _cadenaAencriptar)
+        {
+            string result = string.Empty;
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(_cadenaAencriptar);
+            result = Convert.ToBase64String(encryted);
+            return result;
         }
         protected void ButtonGuardar_Click(object sender, EventArgs e)
         {
@@ -28,7 +61,7 @@ namespace CapaPresentacion.Modulos
                 provee.telefono = TextBoxTelefono.Text;
                 provee.correo = TextBoxCorreo.Text;
                 proveedores.agregarProveedor(provee);
-            Response.Redirect("proveedores.aspx");
+            Response.Redirect("proveedores.aspx?rol=" + Request.QueryString["rol"]);
         }
         public void limpiarCampos()
         {
