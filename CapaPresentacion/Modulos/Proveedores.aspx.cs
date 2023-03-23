@@ -70,5 +70,10 @@ namespace CapaPresentacion.Modulos
             Session.Clear();
             Response.Redirect("../Layout/Login.aspx");
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AgregarProveedor.aspx");
+        }
     }
 }

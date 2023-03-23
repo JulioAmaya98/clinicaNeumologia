@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CapaPresentacion",
+    "\\CapaPresentacion\\Modulos"
   ],
-  "SelectedNode": "\\C:\\Users\\Angel Gomez\\source\\repos\\Proveedores",
+  "SelectedNode": "\\CapaPresentacion\\Modulos\\AgregarProveedor.aspx.cs",
   "PreviewInSolutionExplorer": false
 }

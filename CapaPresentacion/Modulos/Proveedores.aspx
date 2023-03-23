@@ -49,7 +49,7 @@
                             <nav class="navbar navbar-expand-lg">
                                 <h4>Proveedores</h4>
                                 <div class="container-fluid">
-                                    <asp:Button ID="Button1" runat="server" Text="Agregar" CssClass="btn btn-outline-success botoRedondo " />
+                                    <asp:Button ID="Button1" runat="server" Text="Agregar" CssClass="btn btn-outline-success botoRedondo " OnClick="Button1_Click" />
                                 </div>
                                 <div class="container-fluid">
                                     <form class="d-flex" role="search">

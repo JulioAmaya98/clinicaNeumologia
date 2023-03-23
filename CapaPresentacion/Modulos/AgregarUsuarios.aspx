@@ -121,19 +121,6 @@
             </div>
 
         </div>
-    </form>
-
-   <script>
-       $(document).ready(function () {
-           $("#myInput").on("keyup", function () {
-               var value = $(this).val().toLowerCase();
-               $("#gridProducto tbody tr").filter(function () {
-                   $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-               });
-           });
-       });
-   </script>
-         
-
+    </form>    
 </body>
 </html>

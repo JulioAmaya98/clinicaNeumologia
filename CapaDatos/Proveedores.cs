@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaEntidad;
 
 namespace CapaDatos
 {
@@ -26,6 +27,19 @@ namespace CapaDatos
             tablaDatosProd.Load(leer);
             objConn.cerrarConexion();
             return tablaDatosProd;
+        }
+        public void addProveedor(EUProveedor eUproveedor)
+        {
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_insertar_proveedor";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@nombre", eUproveedor.nombre);
+            comando.Parameters.AddWithValue("@direccion", eUproveedor.direccion);
+            comando.Parameters.AddWithValue("@vendedor", eUproveedor.vendedor);
+            comando.Parameters.AddWithValue("@telefono", eUproveedor.telefono);
+            comando.Parameters.AddWithValue("@correo", eUproveedor.correo );
+            comando.ExecuteNonQuery();
+            objConn.cerrarConexion();
         }
     }
 }

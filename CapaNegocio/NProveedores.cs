@@ -18,5 +18,9 @@ namespace CapaNegocio
             tablaproducto = proveedores.mostraProveedores();
             return tablaproducto;
         }
+        public void agregarProveedor(EUProveedor euproveedor)
+        {
+            proveedores.addProveedor(euproveedor);
+        }
     }
 }

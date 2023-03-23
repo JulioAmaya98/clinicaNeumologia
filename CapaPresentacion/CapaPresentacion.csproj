@@ -69,11 +69,13 @@
   <ItemGroup>
     <Content Include="Modulos\AgregarProductos.aspx" />
     <Content Include="JS\Roles.js" />
+    <Content Include="Modulos\AgregarProveedor.aspx" />
     <Content Include="Modulos\AgregarUsuarios.aspx" />
     <Content Include="BasePage.aspx" />
     <Content Include="Modulos\EditarUsuario.aspx" />
     <Content Include="Modulos\Empleados.aspx" />
     <Content Include="Layout\Login.aspx" />
+    <Content Include="Modulos\HtmlPage1.html" />
     <Content Include="Modulos\Inicio.aspx" />
     <Content Include="Modulos\producto.aspx" />
     <Content Include="Modulos\Inventario.aspx" />
@@ -87,6 +89,13 @@
     </Compile>
     <Compile Include="Modulos\AgregarProductos.aspx.designer.cs">
       <DependentUpon>AgregarProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AgregarProveedor.aspx.cs">
+      <DependentUpon>AgregarProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\AgregarProveedor.aspx.designer.cs">
+      <DependentUpon>AgregarProveedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulos\AgregarUsuarios.aspx.cs">
       <DependentUpon>AgregarUsuarios.aspx</DependentUpon>
