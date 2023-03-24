@@ -1,4 +1,5 @@
-﻿using CapaNegocio;
+﻿using CapaEntidad;
+using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,5 +76,15 @@ namespace CapaPresentacion.Modulos
         {
             Response.Redirect("AgregarProveedor.aspx?rol=" + Request.QueryString["rol"]);
         }
-    }
+
+		protected void ButtonEditar_Click(object sender, EventArgs e)
+		{
+            EUProveedor proveedor = new EUProveedor();
+			Button btn = (Button)sender;
+			GridViewRow selector = (GridViewRow)btn.NamingContainer;
+			proveedor.Id = Convert.ToInt32(selector.Cells[1].Text);
+
+			Response.Redirect("EditarProveedor.aspx?id_proveedor=" + proveedor.Id + "&rol=" + Request.QueryString["rol"]);
+		}
+	}
 }

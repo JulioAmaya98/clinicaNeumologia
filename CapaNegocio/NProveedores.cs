@@ -22,5 +22,17 @@ namespace CapaNegocio
         {
             proveedores.addProveedor(euproveedor);
         }
-    }
+
+		public DataTable modificarByID(EUProveedor proveedor)
+		{
+			DataTable tabla = new DataTable();
+			tabla = proveedores.modificarById(proveedor);
+			return tabla;
+		}
+
+        public void modificar(EUProveedor proveedor)
+        {
+            proveedores.modificar(proveedor);
+        }
+	}
 }

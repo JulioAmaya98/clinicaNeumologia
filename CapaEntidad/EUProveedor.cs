@@ -8,7 +8,7 @@ namespace CapaEntidad
 {
     public class EUProveedor
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string nombre { get; set; }
         public string direccion { get; set;}
         public string vendedor { get; set; }
