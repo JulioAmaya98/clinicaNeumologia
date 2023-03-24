@@ -41,5 +41,43 @@ namespace CapaDatos
             comando.ExecuteNonQuery();
             objConn.cerrarConexion();
         }
-    }
+
+
+		public DataTable modificarById(EUProveedor proveedor)
+		{
+
+			comando.Connection = objConn.abrirConexion();
+			comando.CommandText = "sp_modificar_proveedorById";
+			comando.CommandType = CommandType.StoredProcedure;
+			comando.Parameters.AddWithValue("@id", proveedor.Id);
+			leer = comando.ExecuteReader();
+			tablaDatos.Load(leer);
+			objConn.cerrarConexion();
+			return tablaDatos;
+
+		}
+
+
+		public void modificar(EUProveedor proveedor)
+		{
+			comando.Connection = objConn.abrirConexion();
+			comando.CommandText = "sp_modificar_proveedor";
+			comando.CommandType = CommandType.StoredProcedure;
+			comando.Parameters.AddWithValue("@id", proveedor.Id);
+			comando.Parameters.AddWithValue("@nombre", proveedor.nombre);
+			comando.Parameters.AddWithValue("@direccion", proveedor.direccion);
+			comando.Parameters.AddWithValue("@telefono", proveedor.telefono);
+            comando.Parameters.AddWithValue("@vendedor", proveedor.vendedor);
+			comando.Parameters.AddWithValue("@correo", proveedor.correo);
+			comando.ExecuteNonQuery();
+			objConn.cerrarConexion();
+		}
+
+
+
+
+
+
+
+	}
 }

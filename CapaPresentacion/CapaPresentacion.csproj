@@ -72,6 +72,7 @@
     <Content Include="Modulos\AgregarProveedor.aspx" />
     <Content Include="Modulos\AgregarUsuarios.aspx" />
     <Content Include="BasePage.aspx" />
+    <Content Include="Modulos\EditarProveedor.aspx" />
     <Content Include="Modulos\EditarUsuario.aspx" />
     <Content Include="Modulos\Empleados.aspx" />
     <Content Include="Layout\Login.aspx" />
@@ -109,6 +110,13 @@
     </Compile>
     <Compile Include="BasePage.aspx.designer.cs">
       <DependentUpon>BasePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\EditarProveedor.aspx.cs">
+      <DependentUpon>EditarProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\EditarProveedor.aspx.designer.cs">
+      <DependentUpon>EditarProveedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulos\EditarUsuario.aspx.cs">
       <DependentUpon>EditarUsuario.aspx</DependentUpon>

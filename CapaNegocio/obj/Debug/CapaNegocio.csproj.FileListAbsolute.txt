@@ -77,18 +77,6 @@ C:\Users\china\source\repos\clinicaNeumologiaa\CapaNegocio\obj\Debug\CapaNegocio
 C:\Users\china\source\repos\clinicaNeumologiaa\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\china\source\repos\clinicaNeumologiaa\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\china\source\repos\clinicaNeumologiaa\CapaNegocio\obj\Debug\CapaNegocio.pdb
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaNegocio.dll
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaNegocio.pdb
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaDatos.dll
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaEntidad.dll
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaDatos.pdb
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaDatos.dll.config
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaEntidad.pdb
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.dll
-C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.pdb
 C:\Users\Angelito\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaNegocio.dll
 C:\Users\Angelito\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaNegocio.pdb
 C:\Users\Angelito\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaDatos.dll
@@ -113,3 +101,15 @@ C:\Users\Angel Gomez\source\repos\Proveedores\CapaNegocio\obj\Debug\CapaNegocio.
 C:\Users\Angel Gomez\source\repos\Proveedores\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\Angel Gomez\source\repos\Proveedores\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\Angel Gomez\source\repos\Proveedores\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaEntidad.dll
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaDatos.dll.config
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaEntidad.pdb
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.pdb
