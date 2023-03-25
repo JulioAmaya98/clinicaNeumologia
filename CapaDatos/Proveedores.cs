@@ -73,7 +73,24 @@ namespace CapaDatos
 			objConn.cerrarConexion();
 		}
 
+		public bool delete(EUProveedor eUProveedor)
+		{
+			comando.Connection = objConn.abrirConexion();
+			comando.CommandText = "sp_eliminar_proveedor";
+			comando.CommandType = CommandType.StoredProcedure;
+			comando.Parameters.AddWithValue("@id", eUProveedor.Id);
+			int respuesta = comando.ExecuteNonQuery();
+			objConn.cerrarConexion();
+			if (respuesta > 0)
+			{
+				return true;
+			}
 
+			return false;
+
+
+
+		}
 
 
 

@@ -113,3 +113,4 @@ C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNe
 C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaNegocio\bin\Debug\CapaDatos.dll.config

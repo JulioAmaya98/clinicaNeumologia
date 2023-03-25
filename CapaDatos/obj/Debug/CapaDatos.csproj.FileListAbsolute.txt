@@ -93,3 +93,4 @@ C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDato
 C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaDatos\bin\Debug\CapaDatos.dll.config

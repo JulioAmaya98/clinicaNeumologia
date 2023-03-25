@@ -653,3 +653,4 @@ C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaPresentacion\obj\Debug\C
 C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 C:\Users\Julio Amaya\Source\Repos\clinicaNeumologia\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Irving\Source\Repos\clinicaNeumologia\CapaPresentacion\bin\CapaDatos.dll.config
