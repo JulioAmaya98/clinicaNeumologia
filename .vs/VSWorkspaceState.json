@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CapaPresentacion",
+    "\\CapaPresentacion\\Modulos"
   ],
-  "SelectedNode": "\\C:\\Users\\Irving\\Source\\Repos\\clinicaNeumologia",
+  "SelectedNode": "\\CapaPresentacion\\Modulos\\EditarProveedor.aspx",
   "PreviewInSolutionExplorer": false
 }
