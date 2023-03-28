@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgregarProductos.aspx.cs" Inherits="CapaPresentacion.AgregarProductos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgregarInventario.aspx.cs" Inherits="CapaPresentacion.AgregarProductos" %>
 
 <!DOCTYPE html>
 
@@ -57,7 +57,8 @@
                                         ID="TextBoxPrecio"
                                         runat="server"
                                         CssClass="form-control"
-                                        TextMode="Number"
+                                        type="number"
+                                        step="0.01"
                                         placeholder="Ingresa precio del producto"></asp:TextBox>
                                 </div>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrecio" ControlToValidate="TextBoxPrecio" runat="server" ErrorMessage="Ingrese precio de producto!" CssClass="text-danger"></asp:RequiredFieldValidator>

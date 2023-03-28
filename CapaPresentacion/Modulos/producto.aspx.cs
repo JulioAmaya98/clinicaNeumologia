@@ -11,7 +11,7 @@ namespace CapaPresentacion
 {
     public partial class producto : BasePage
     {
-        NProductos nproductos = new NProductos();
+        NInventario nproductos = new NInventario();
         protected void Page_Load(object sender, EventArgs e)
         {
 

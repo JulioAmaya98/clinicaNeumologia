@@ -11,8 +11,8 @@ namespace CapaPresentacion
 {
     public partial class AgregarProductos : System.Web.UI.Page
     {
-        NProductos objnProductos = new NProductos();
-        EProducto eProducto = new EProducto();
+        NInventario objnProductos = new NInventario();
+        EInventario eProducto = new EInventario();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -20,11 +20,12 @@ namespace CapaPresentacion
 
         protected void ButtonGuardar_Click(object sender, EventArgs e)
         {
-            eProducto.nombre_producto = TextBoxNombreProducto.Text;
-            eProducto.stock = Convert.ToInt32(TextBoxStock.Text);
-            eProducto.fecha_vencimiento = TextBoxFechaVencimiento.Text;
-            eProducto.precio = Convert.ToDouble(TextBoxPrecio.Text);
-            eProducto.descripcion = TextBoxDescripcion.Text;
+            //cambiar
+            eProducto.codigo_producto = TextBoxNombreProducto.Text;
+            eProducto.cantidad = Convert.ToInt32(TextBoxStock.Text);
+            eProducto.ubicacion = TextBoxFechaVencimiento.Text;
+            eProducto.lote = Convert.ToInt32(TextBoxPrecio.Text);
+            eProducto.ubicacion = TextBoxDescripcion.Text;
             objnProductos.agregarProductos(eProducto);
             Response.Redirect("ProductosBodega.aspx");
             limpiarCampos();

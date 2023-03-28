@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class Productos
+    public class Inventario
     {
         Conexion objConn = new Conexion();
         SqlDataReader leer;
@@ -21,25 +21,27 @@ namespace CapaDatos
             DataTable tablaDatosProd = new DataTable();
 
             comando.Connection = objConn.abrirConexion();
-            comando.CommandText = "sp_mostrar_productos";
+            comando.CommandText = "sp_mostrar_productos_inventario";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tablaDatosProd.Load(leer);
             objConn.cerrarConexion();
             return tablaDatosProd;
         }
-        public void addProducto(EProducto eProducto)
+        public void addProducto_Inventario(EInventario eInventario)
         {
             comando.Connection = objConn.abrirConexion();
-            comando.CommandText = "sp_ingresar_productos";
+            comando.CommandText = "sp_ingresar_productos_inventario";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@nombre", eProducto.nombre_producto);
-            comando.Parameters.AddWithValue("@stock", eProducto.stock);
-            comando.Parameters.AddWithValue("@fecha_vencimiento", eProducto.fecha_vencimiento);
-            comando.Parameters.AddWithValue("@precio", eProducto.precio);
-            comando.Parameters.AddWithValue("@descripcion", eProducto.descripcion);
-            comando.ExecuteNonQuery();
+            comando.Parameters.AddWithValue("@codigo_producto", eInventario.codigo_producto);
+            comando.Parameters.AddWithValue("@id_proveedor", eInventario.id_proveedor);
+            comando.Parameters.AddWithValue("@cantidad", eInventario.cantidad);
+            comando.Parameters.AddWithValue("@fecha_vencimiento", eInventario.fecha_vencimiento);
+            comando.Parameters.AddWithValue("@ubicacion", eInventario.ubicacion);
+			comando.Parameters.AddWithValue("@lote", eInventario.lote);
+			comando.ExecuteNonQuery();
             objConn.cerrarConexion();
         }
-    }
+
+	}
 }

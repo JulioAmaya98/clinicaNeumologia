@@ -52,16 +52,34 @@
                                     </div>
                                 </nav>
                             </div>
-                            <asp:GridView OnPageIndexChanging="gridProveedores_PageIndexChanging" OnRowDataBound="gridProveedores_RowDataBound" AllowPaging="false" ID="gridProveedores" runat="server" CssClass="table table-hover  myGridView" HorizontalAlign="Justify" DataKeyNames="IdProveedor" DataSourceID="SqlDataSourceCategorias" OnSelectIndexChanged="gridProveedores_SelectedIndexChanged">
+                            <asp:GridView OnPageIndexChanging="gridProveedores_PageIndexChanging" AutoGenerateColumns="false" AllowPaging="false" ID="gridProveedores" runat="server" CssClass="table table-hover  myGridView" HorizontalAlign="Justify" DataKeyNames="IdProveedor" DataSourceID="SqlDataSourceCategorias" OnSelectIndexChanged="gridProveedores_SelectedIndexChanged">
                                 <PagerSettings Mode="NumericFirstLast" Position="Bottom" />
                                 <Columns>
+                                    <asp:BoundField DataField="IdProveedor" HeaderText="IdProveedor" Visible="false" InsertVisible="False" ReadOnly="True" SortExpression="IdProveedor"/>
+                                    <asp:BoundField DataField="NombreEmpresa" HeaderText="Nombre de la Empresa" SortExpression="NombreEmpresa"/>
+                                    <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion"/>
+                                    <asp:BoundField DataField="Vendedor" HeaderText="Nombre del Vendedor" SortExpression="Vendedor"/>
+                                    <asp:BoundField DataField="Contacto" HeaderText="Telefono" SortExpression="Contacto"/>
+                                    <asp:BoundField DataField="CorreoElectronico" HeaderText="Email" SortExpression="CorreoElectronico"/>
                                     <asp:TemplateField ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                         <ItemTemplate>
+                                           
                                              <button type="button" class="btn btn-outline-warning"  onclick="editarProveedor(<%#Eval("IdProveedor") %>)">
                                                 <span >Editar</span>
                                             </button>
                                                 <button type="button" class="btn btn-outline-danger" onclick="eliminarProveedor(<%#Eval("IdProveedor") %>)">
                                                 <span >Eliminar</span>
+                                            </button>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField ItemStyle-CssClass="ancho" HeaderText="Producto">
+                                        <ItemTemplate>
+                                           
+                                             <button type="button" class="btn btn-outline-warning" onclick="agregarProducto(<%#Eval("IdProveedor") %>)">
+                                                <span >Producto</span>
+                                            </button>
+                                                <button type="button" class="btn btn-outline-danger">
+                                                <span >Ver</span>
                                             </button>
                                         </ItemTemplate>
                                     </asp:TemplateField>
@@ -93,6 +111,10 @@
             window.location.href = 'EditarProveedor.aspx?id_proveedor=' + idProveedor + "&rol=" + rol
         }
 
+        function agregarProducto(idProveedor) {
+            window.location.href = 'AgregarProducto.aspx?id_proveedor=' + idProveedor + "&rol=" + rol
+        }
+
         const eliminarProveedor = (idProveedor) => {
             Swal.fire({
                 title: 'Quieres borrar este Proveedor?',
@@ -116,6 +138,6 @@
                 }
             })
         }
-      </script>
+    </script>
 </body>
 </html>

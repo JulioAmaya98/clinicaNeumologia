@@ -68,8 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="JS\sweetalert2.all.min.js" />
-    <Content Include="Modulos\AgregarProductos.aspx" />
+    <Content Include="Modulos\AgregarInventario.aspx" />
     <Content Include="JS\Roles.js" />
+    <Content Include="Modulos\AgregarProducto.aspx" />
     <Content Include="Modulos\AgregarProveedor.aspx" />
     <Content Include="Modulos\AgregarUsuarios.aspx" />
     <Content Include="BasePage.aspx" />
@@ -84,12 +85,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modulos\AgregarProductos.aspx.cs">
-      <DependentUpon>AgregarProductos.aspx</DependentUpon>
+    <Compile Include="Modulos\AgregarInventario.aspx.cs">
+      <DependentUpon>AgregarInventario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Modulos\AgregarProductos.aspx.designer.cs">
-      <DependentUpon>AgregarProductos.aspx</DependentUpon>
+    <Compile Include="Modulos\AgregarInventario.aspx.designer.cs">
+      <DependentUpon>AgregarInventario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AgregarProducto.aspx.cs">
+      <DependentUpon>AgregarProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\AgregarProducto.aspx.designer.cs">
+      <DependentUpon>AgregarProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulos\AgregarProveedor.aspx.cs">
       <DependentUpon>AgregarProveedor.aspx</DependentUpon>

@@ -10,7 +10,7 @@ namespace CapaPresentacion
 {
     public partial class ProductosBodega : BasePage
     {
-        NProductos nproductos = new NProductos();
+        NInventario nproductos = new NInventario();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -80,7 +80,7 @@ namespace CapaPresentacion
 
         protected void ButtonAgregar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AgregarProductos.aspx");
+            Response.Redirect("AgregarInventario.aspx?rol=" + Request.QueryString["rol"]);
         }
     }
 }

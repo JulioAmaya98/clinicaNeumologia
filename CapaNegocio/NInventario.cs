@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    public class NProductos
+    public class NInventario
     {
-        Productos productos = new Productos();
+        Inventario productos = new Inventario();
 
         public DataTable mostrarProduct()
         {
@@ -20,9 +20,9 @@ namespace CapaNegocio
             return tablaproducto;
         }
 
-        public void agregarProductos(EProducto eProducto)
+        public void agregarProductos(EInventario eProducto)
         {
-            productos.addProducto(eProducto);
+            productos.addProducto_Inventario(eProducto);
         }
     }
 }
