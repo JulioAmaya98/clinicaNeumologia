@@ -23,6 +23,9 @@
                 <a class="nav-link" id="navProductos" href="#" >Productos</a>
             </li>
             <li class="nav-item">
+                        <a class="nav-link " runat="server" id="navProveedores" href="#">Proveedores</a>
+                    </li>
+            <li class="nav-item">
                 <a class="nav-link  active" data-bs-toggle="tab" id="navEmpleados" href="#">Empleados</a>
                 </li>
              <li class="nav-item">
@@ -121,6 +124,6 @@
             </div>
 
         </div>
-    </form>    
+    </form>
 </body>
 </html>
