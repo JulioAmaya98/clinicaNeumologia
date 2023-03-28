@@ -39,7 +39,7 @@ namespace CapaPresentacion
 
 
                     }
-                    mensajeError.Visible = false;
+                   
 
                 }
                 else
