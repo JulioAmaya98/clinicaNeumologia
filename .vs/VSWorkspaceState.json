@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "\\CapaPresentacion"
   ],
   "SelectedNode": "\\CapaPresentacion\\Web.config",
@@ -11,5 +12,11 @@
   ],
   "SelectedNode": "\\CapaPresentacion\\Modulos\\EditarProveedor.aspx",
 >>>>>>> c2b4e2baaa3f9f6b4a10d4b6749a90a723026091
+=======
+    "\\CapaPresentacion",
+    "\\CapaPresentacion\\Modulos"
+  ],
+  "SelectedNode": "\\CapaPresentacion\\Modulos\\EditarProveedor.aspx",
+>>>>>>> a980bdbd75c4309b37c4133b0d06f3c5c72d712b
   "PreviewInSolutionExplorer": false
 }

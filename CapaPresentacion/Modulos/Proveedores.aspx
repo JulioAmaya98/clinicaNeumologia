@@ -19,11 +19,16 @@
         <form id="form1" runat="server">
             <div class="container mt-3">
                 <ul class="nav nav-tabs justify-content-end " role="tablist">
-                    <li class="nav-item"><a class="nav-link " id="navInicio" href="#">Inicio</a>            </li>
-                    <li class="nav-item"><a runat="server" id="navProductos" class="nav-link " data-bs-toggle="tab" href="#">Productos</a>            </li>
-                    <li class="nav-item"><a class="nav-link active " runat="server" id="navProveedores" href="#">Proveedores</a>                    </li>
-                    <li class="nav-item"><a runat="server" id="navEmpleados" class="nav-link  " href="#">Empleados</a>                </li>
-                    <li class="nav-item"><a class="nav-link  " runat="server" id="navInventario" href="#">Inventario</a>            </li>
+                    <li class="nav-item"><a class="nav-link " id="navInicio" href="#">Inicio</a>
+            </li>
+                    <li class="nav-item"><a runat="server" id="navProductos" class="nav-link " data-bs-toggle="tab" href="#">Productos</a>
+            </li>
+                    <li class="nav-item"><a class="nav-link active " runat="server" id="navProveedores" href="#">Proveedores</a>
+                    </li>
+                    <li class="nav-item"><a runat="server" id="navEmpleados" class="nav-link  " href="#">Empleados</a>
+                </li>
+                    <li class="nav-item"><a class="nav-link  " runat="server" id="navInventario" href="#">Inventario</a>
+            </li>
                     <li class="nav-item">
                         <asp:Button ID="Cerrar" runat="server" CssClass="btn btn-danger" Text="Cerrar Session" OnClick="Cerrar_Click" />
                     </li>
@@ -52,8 +57,12 @@
                                 <Columns>
                                     <asp:TemplateField ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                         <ItemTemplate>
-                                             <button type="button" class="btn btn-outline-warning"  onclick="editarProveedor(<%#Eval("IdProveedor") %>)">                                                <span >Editar</span>                                            </button>
-                                                <button type="button" class="btn btn-outline-danger" onclick="eliminarProveedor(<%#Eval("IdProveedor") %>)">                                                <span >Eliminar</span>                                            </button>
+                                             <button type="button" class="btn btn-outline-warning"  onclick="editarProveedor(<%#Eval("IdProveedor") %>)">
+                                                <span >Editar</span>
+                                            </button>
+                                                <button type="button" class="btn btn-outline-danger" onclick="eliminarProveedor(<%#Eval("IdProveedor") %>)">
+                                                <span >Eliminar</span>
+                                            </button>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
@@ -66,7 +75,47 @@
             </div>
         </form>
     </div>
-    <script>        $(document).ready(function () {            $("#myInput").on("keyup", function () {                var value = $(this).val().toLowerCase();                $("#gridProveedores tbody tr").filter(function () {                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)                });            });        });    </script>
-    <script>        var rol = window.location.search.substring(1);        rol = rol.split("rol=")[1];        function editarProveedor(idProveedor) {            window.location.href = 'EditarProveedor.aspx?id_proveedor=' + idProveedor + "&rol=" + rol        }        const eliminarProveedor = (idProveedor) => {            Swal.fire({                title: 'Quieres borrar este Proveedor?',                text: "Una vez borrada no podras recurperarla",                icon: 'warning',                showCancelButton: true,                confirmButtonColor: '#3085d6',                cancelButtonColor: '#d33',                confirmButtonText: 'Si, eliminar!'            }).then((result) => {                if (result.isConfirmed) {                    Swal.fire(                        'Eliminado!',                        'Tu registro fue eleminado correctamente.',                        'success'                    )                    //espera para recargar la pagina                    setTimeout(() => {                        location.href = "Proveedores.aspx?rol=" + rol + "&id=" + idProveedor                    }, 500);                }            })        }      </script>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#gridProveedores tbody tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <script>
+        var rol = window.location.search.substring(1);
+        rol = rol.split("rol=")[1];
+
+        function editarProveedor(idProveedor) {
+            window.location.href = 'EditarProveedor.aspx?id_proveedor=' + idProveedor + "&rol=" + rol
+        }
+
+        const eliminarProveedor = (idProveedor) => {
+            Swal.fire({
+                title: 'Quieres borrar este Proveedor?',
+                text: "Una vez borrada no podras recurperarla",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, eliminar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Eliminado!',
+                        'Tu registro fue eleminado correctamente.',
+                        'success'
+                    )
+                    //espera para recargar la pagina
+                    setTimeout(() => {
+                        location.href = "Proveedores.aspx?rol=" + rol + "&id=" + idProveedor
+                    }, 500);
+                }
+            })
+        }
+      </script>
 </body>
 </html>

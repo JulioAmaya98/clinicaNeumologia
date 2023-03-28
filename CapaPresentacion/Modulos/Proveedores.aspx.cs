@@ -14,8 +14,6 @@ namespace CapaPresentacion.Modulos
 		NProveedores nProveedores = new NProveedores();
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
-
 			EUProveedor proveedo = new EUProveedor();
 			NProveedores nProveedor = new NProveedores();
 

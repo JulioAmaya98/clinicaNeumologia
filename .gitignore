@@ -1,0 +1,10 @@
+.vs/
+packages/
+CapaPresentacion/bin/
+CapaPresentacion/obj/
+CapaDatos/bin/
+CapaDatos/obj/
+CapaEntidad/bin/
+CapaEntidad/obj/
+CapaNegocio/bin/
+CapaNegocio/obj/
