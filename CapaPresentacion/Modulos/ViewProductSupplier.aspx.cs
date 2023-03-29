@@ -72,5 +72,33 @@ namespace CapaPresentacion.Modulos
 				}
 			}
 		}
-	}
+
+        protected void ButtonEliminar_Click(object sender, EventArgs e)
+        {
+			EProducto Producto = new EProducto();
+			NProducto nProducto = new NProducto();
+            Button btn = (Button)sender;
+            GridViewRow selector = (GridViewRow)btn.NamingContainer;
+            Producto.codigo_producto = (selector.Cells[1].Text);
+			Producto.id_proveedor = Convert.ToInt32(Request.QueryString["id_proveedor"].ToString());
+			nProducto.eliminarProductoP(Producto);
+
+            string alertSuccess = "Swal.fire({";
+            alertSuccess += "icon: 'success',";
+            alertSuccess += "title: 'Successful',";
+            alertSuccess += "text: 'El producto se elimino correctamente',";
+            alertSuccess += "confirmButtonText: 'OK'";
+            alertSuccess += "}).then((result) => {";
+            alertSuccess += "if (result.isConfirmed) {";
+            alertSuccess += "window.location.href = 'Proveedores.aspx?rol=" + Request.QueryString["rol"] + "';";
+            alertSuccess += "}";
+            alertSuccess += "});";
+
+            ScriptManager.RegisterStartupScript(
+                this, this.GetType(), "script", alertSuccess, true
+            );
+        }
+
+       
+    }
 }

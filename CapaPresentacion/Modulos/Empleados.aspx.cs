@@ -97,16 +97,13 @@ namespace CapaPresentacion
             Response.Redirect("Empleados.aspx?rol=" + Request.QueryString["rol"]);
         }
 
-        protected void GridViewUsuarios_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         protected void Cerrar_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Redirect("../Layout/Login.aspx");    
         }
-       
+
+        
     }
 }

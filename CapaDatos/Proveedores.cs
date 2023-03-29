@@ -98,7 +98,7 @@ namespace CapaDatos
 			objConn.cerrarConexion();
 			return tabla;
 		}
-
+		
 
 
 	}

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewProductSupplier.aspx.cs" Inherits="CapaPresentacion.Modulos.ViewProductSupplier" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewProductSupplier.aspx.cs" Inherits="CapaPresentacion.Modulos.ViewProductSupplier"  EnableEventValidation="false"%>
 
 <!DOCTYPE html>
 
@@ -55,12 +55,12 @@
                                     </div>
                                 </nav>
                             </div>
-                           <asp:GridView ID="gridViewProductSupplier" runat="server" CssClass="table  table-hover myGridView" OnRowDataBound="gridViewProductSupplier_RowDataBound" HorizontalAlign="Center" >
+                            <asp:GridView ID="gridViewProductSupplier" runat="server" CssClass="table  table-hover myGridView" OnRowDataBound="gridViewProductSupplier_RowDataBound" HorizontalAlign="Center" >
                             <Columns>
                                 <asp:TemplateField  ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                     <ItemTemplate>
                                         <asp:Button ID="ButtonEditar" runat="server" Text="Editar" CssClass="btn btn-outline-warning"  />
-                                        <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger" />
+                                        <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger" OnClick="ButtonEliminar_Click"/>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>

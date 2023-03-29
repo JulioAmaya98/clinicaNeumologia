@@ -45,5 +45,6 @@ namespace CapaNegocio
             tabla=proveedores.viewProductSupp(proveedor);
             return tabla;
         }
+        
     }
 }

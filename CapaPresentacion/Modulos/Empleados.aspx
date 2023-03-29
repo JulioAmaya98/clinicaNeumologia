@@ -85,7 +85,7 @@
 
                         </div>
 
-                        <asp:GridView ID="GridViewUsuarios" runat="server" CssClass="table  table-hover myGridView" OnRowDataBound="GridViewUsuarios_RowDataBound" HorizontalAlign="Center" OnSelectedIndexChanged="GridViewUsuarios_SelectedIndexChanged">
+                        <asp:GridView ID="GridViewUsuarios" runat="server" CssClass="table  table-hover myGridView" OnRowDataBound="GridViewUsuarios_RowDataBound" HorizontalAlign="Center" >
                             <Columns>
                                 <asp:TemplateField  ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                     <ItemTemplate>

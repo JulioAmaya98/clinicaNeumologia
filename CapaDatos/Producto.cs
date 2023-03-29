@@ -55,8 +55,18 @@ namespace CapaDatos
 			objConn.cerrarConexion();
 			return tabla;
 		}
+        public void eliminarProductoP(EProducto Producto)
+        {
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_eliminar_producto";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@codigo_producto", Producto.codigo_producto);
+            comando.Parameters.AddWithValue("@id_proveedor", Producto.id_proveedor);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            objConn.cerrarConexion();
+        }
 
 
-
-	}
+    }
 }

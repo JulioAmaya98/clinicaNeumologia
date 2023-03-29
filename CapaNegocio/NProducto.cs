@@ -30,7 +30,10 @@ namespace CapaNegocio
 			tabla = objproducto.mostrarProductosDrop(producto);
 			return tabla;
 		}
+        public void eliminarProductoP(EProducto Producto)
+        {
+            objproducto.eliminarProductoP(Producto);
+        }
 
-
-	}
+    }
 }
