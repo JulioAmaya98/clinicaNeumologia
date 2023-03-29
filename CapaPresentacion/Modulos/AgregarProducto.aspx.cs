@@ -51,29 +51,51 @@ namespace CapaPresentacion.Modulos
 
 		protected void ButtonAgregar_Click(object sender, EventArgs e)
 		{
-			EProducto eProducto = new EProducto();
-			NProducto nProducto = new NProducto();
+			try
+			{
+				EProducto eProducto = new EProducto();
+				NProducto nProducto = new NProducto();
 
-			int idProveedor = Convert.ToInt32(Request.QueryString["id_proveedor"].ToString());
+				int idProveedor = Convert.ToInt32(Request.QueryString["id_proveedor"].ToString());
 
-			eProducto.codigo_producto = codigoProducto.Text;
-			eProducto.nombre = NombreProducto.Text;
-			eProducto.id_proveedor = idProveedor;
-			eProducto.precio = Convert.ToDouble(precioProducto.Text);
-			eProducto.descripcion = TextBoxDescripcion.Text;
+				eProducto.codigo_producto = codigoProducto.Text;
+				eProducto.nombre = NombreProducto.Text;
+				eProducto.id_proveedor = idProveedor;
+				eProducto.precio = Convert.ToDouble(precioProducto.Text);
+				eProducto.descripcion = TextBoxDescripcion.Text;
 
-			nProducto.agregarProducto(eProducto);
-			limpiarCampos();
+				nProducto.agregarProducto(eProducto);
+				limpiarCampos();
 
-			string alertError = "Swal.fire({";
-			alertError += "icon: 'success',";
-			alertError += "title: 'successful',";
-			alertError += "text: 'El registro se pudo agregar correctamente',";
-			alertError += "})";
+				string alertError = "Swal.fire({";
+				alertError += "icon: 'success',";
+				alertError += "title: 'successful',";
+				alertError += "text: 'El registro se pudo agregar correctamente',";
+				alertError += "})";
 
-			ScriptManager.RegisterClientScriptBlock(
-				this, this.GetType(), "script", alertError, true
-			);
+				ScriptManager.RegisterClientScriptBlock(
+					this, this.GetType(), "script", alertError, true
+				);
+			}
+			catch (Exception)
+			{
+
+				string alertError = "Swal.fire({";
+				alertError += "icon: 'error',";
+				alertError += "title: 'Oops...',";
+				alertError += "text: 'El producto no pudo ser agregado',";
+				alertError += "confirmButtonColor: '#3085d6',";
+				alertError += "confirmButtonText: 'OK'";
+				alertError += "}).then((result) => {";
+				alertError += "if (result.isConfirmed) {";
+				alertError += "window.location.href = 'Proveedores.aspx?rol=" + Request.QueryString["rol"] + "';";
+				alertError += "}";
+				alertError += "});";
+
+				ScriptManager.RegisterStartupScript(
+					this, this.GetType(), "script", alertError, true
+				);
+			}
 		}
 
 		public void limpiarCampos()
