@@ -56,8 +56,6 @@ namespace CapaDatos
 			return tablaDatos;
 
 		}
-
-
 		public void modificar(EUProveedor proveedor)
 		{
 			comando.Connection = objConn.abrirConexion();
@@ -72,7 +70,6 @@ namespace CapaDatos
 			comando.ExecuteNonQuery();
 			objConn.cerrarConexion();
 		}
-
 		public bool delete(EUProveedor eUProveedor)
 		{
 			comando.Connection = objConn.abrirConexion();
@@ -87,12 +84,20 @@ namespace CapaDatos
 			}
 
 			return false;
-
-
-
 		}
 
-
+		public DataTable viewProductSupp(EUProveedor proveedor)
+		{
+			DataTable tabla = new DataTable();
+			comando.Connection = objConn.abrirConexion();
+			comando.CommandText = "sp_mostrar_producto_proveedor";
+			comando.CommandType = CommandType.StoredProcedure;
+			comando.Parameters.AddWithValue("@id_proveedor", proveedor.Id);
+			leer = comando.ExecuteReader();
+			tabla.Load(leer);
+			objConn.cerrarConexion();
+			return tabla;
+		}
 
 
 

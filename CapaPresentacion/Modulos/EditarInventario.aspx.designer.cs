@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CapaPresentacion
+namespace CapaPresentacion.Modulos
 {
 
 
-	public partial class AgregarProductos
+	public partial class EditarInventario
 	{
 
 		/// <summary>
@@ -58,6 +58,24 @@ namespace CapaPresentacion
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorStock;
+
+		/// <summary>
+		/// Control txtFechaEntrada.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtFechaEntrada;
+
+		/// <summary>
+		/// Control RequiredFieldValidator1.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
 		/// <summary>
 		/// Control TextBoxFechaVencimiento.
@@ -121,14 +139,5 @@ namespace CapaPresentacion
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Button ButtonGuardar;
-
-		/// <summary>
-		/// Control ButtonRegresar.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button ButtonRegresar;
 	}
 }

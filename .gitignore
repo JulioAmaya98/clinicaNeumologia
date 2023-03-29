@@ -8,3 +8,5 @@ CapaEntidad/bin/
 CapaEntidad/obj/
 CapaNegocio/bin/
 CapaNegocio/obj/
+CapaDatos/Conexion.cs
+CapaPresentacion/Web.config

@@ -1,4 +1,5 @@
-﻿using CapaNegocio;
+﻿using CapaEntidad;
+using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,47 +16,84 @@ namespace CapaPresentacion
         {
 
 
-            try
-            {
+			EInventario inventario = new EInventario();
+			NInventario nInventario = new NInventario();
+			string encrypMedico = Encriptar("Medico");
+			string encryBodeguero = Encriptar("Bodeguero");
 
-                string encrypMedico = Encriptar("Medico");
-                string encryBodeguero = Encriptar("Bodeguero");
+			if (Request.QueryString["rol"] == encrypMedico && Session["username"].ToString() == encrypMedico)
+			{
+				if (Request["id"] != null)
+				{
 
-                if (Request.QueryString["rol"]==encrypMedico &&  Session["username"].ToString() == encrypMedico)
-                {
-                    gridProducto.PageSize = 5;
-                    gridProducto.DataSource = nproductos.mostrarProduct();
-                    gridProducto.DataBind();
-                }
-                else if (Request.QueryString["rol"]==encryBodeguero &&  Session["username"].ToString() == encryBodeguero)
-                {
-                    gridProducto.PageSize = 5;
-                    gridProducto.DataSource = nproductos.mostrarProduct();
-                    gridProducto.DataBind();
-                    navEmpleados.Visible = false;
-                    navProductos.Visible=false;
-
-                }
-                else
-                {
-                    Response.Redirect("../Layout/Login.aspx");
-                }
+					int id = int.Parse(Request["id"]);
+					inventario.id_inventario = id;
 
 
+					if (nInventario.eliminarInventario(inventario))
+					{
+						string alertSuccess = "Swal.fire({";
+						alertSuccess += "icon: 'success',";
+						alertSuccess += "title: 'Successful',";
+						alertSuccess += "text: 'El producto se elimino correctamente',";
+						alertSuccess += "confirmButtonText: 'OK'";
+						alertSuccess += "}).then((result) => {";
+						alertSuccess += "if (result.isConfirmed) {";
+						alertSuccess += "window.location.href = 'Inventario.aspx?rol=" + Request.QueryString["rol"] + "';";
+						alertSuccess += "}";
+						alertSuccess += "});";
+
+						ScriptManager.RegisterStartupScript(
+							this, this.GetType(), "script", alertSuccess, true
+						);
 
 
-            }
-            catch (Exception)
-            {
+						//Response.Redirect("Proveedores.aspx?rol=" + Request.QueryString["rol"]);
 
-                throw;
-            }
+					}
+					else
+					{
+						string alertError = "Swal.fire({";
+						alertError += "icon: 'error',";
+						alertError += "title: 'Oops...',";
+						alertError += "text: 'El producto no pudo ser eliminado. Tienes una cantidad mayor a 0',";
+						alertError += "confirmButtonColor: '#3085d6',";
+						alertError += "confirmButtonText: 'OK'";
+						alertError += "}).then((result) => {";
+						alertError += "if (result.isConfirmed) {";
+						alertError += "window.location.href = 'Inventario.aspx?rol=" + Request.QueryString["rol"] + "';";
+						alertError += "}";
+						alertError += "});";
+
+						ScriptManager.RegisterStartupScript(
+							this, this.GetType(), "script", alertError, true
+						);
+					}
+
+				}
+			}
+			else if (Request.QueryString["rol"] == encryBodeguero && Session["username"].ToString() == encryBodeguero)
+			{
+
+				navEmpleados.Visible = false;
+				navProductos.Visible = false;
+
+			}
+			else
+			{
+				Response.Redirect("../Layout/Login.aspx");
+			}
 
 
 
-        }
 
-        protected void gridProducto_PageIndexChanging(object sender, GridViewPageEventArgs e)
+
+
+
+
+		}
+
+		protected void gridProducto_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gridProducto.PageIndex = e.NewPageIndex;
 
@@ -78,9 +116,29 @@ namespace CapaPresentacion
             Response.Redirect("../Layout/Login.aspx");
         }
 
-        protected void ButtonAgregar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AgregarInventario.aspx?rol=" + Request.QueryString["rol"]);
-        }
-    }
+        
+
+		protected void btnAgregar_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("AgregarInventario.aspx?rol=" + Request.QueryString["rol"]);
+
+		}
+
+		protected void gridProducto_RowDataBound(object sender, GridViewRowEventArgs e)
+		{
+			if (e.Row.RowType == DataControlRowType.Header)
+			{
+				e.Row.Cells[1].Visible = false;
+
+			}
+			{
+				if (e.Row.RowType == DataControlRowType.DataRow)
+				{
+					e.Row.Cells[1].Visible = false;
+				}
+			}
+		}
+
+		
+	}
 }

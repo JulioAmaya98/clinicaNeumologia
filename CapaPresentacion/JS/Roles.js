@@ -30,15 +30,15 @@
 
     } else if (rol == "UwBlAGMAcgBlAHQAYQByAGkAYQA=") {
 
+        const inicio = document.getElementById('navInicio');
+        inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
+
         const productos = document.getElementById('navProductos');
         productos.setAttribute('href', 'producto.aspx?rol=' + rol);
 
         const proveedores = document.getElementById('navProveedores');
         proveedores.setAttribute('href', 'Proveedores.aspx?rol=' + rol);
 
-        agregarproveedores.setAttribute('href', 'AgregarProveedores.aspx?rol=' + rol);
-
-        const inicio = document.getElementById('navInicio');
-        inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
+       
     }
 });

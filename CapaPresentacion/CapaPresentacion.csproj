@@ -74,6 +74,7 @@
     <Content Include="Modulos\AgregarProveedor.aspx" />
     <Content Include="Modulos\AgregarUsuarios.aspx" />
     <Content Include="BasePage.aspx" />
+    <Content Include="Modulos\EditarInventario.aspx" />
     <Content Include="Modulos\EditarProveedor.aspx" />
     <Content Include="Modulos\EditarUsuario.aspx" />
     <Content Include="Modulos\Empleados.aspx" />
@@ -82,6 +83,7 @@
     <Content Include="Modulos\producto.aspx" />
     <Content Include="Modulos\Inventario.aspx" />
     <Content Include="Modulos\Proveedores.aspx" />
+    <Content Include="Modulos\ViewProductSupplier.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +121,13 @@
     </Compile>
     <Compile Include="BasePage.aspx.designer.cs">
       <DependentUpon>BasePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\EditarInventario.aspx.cs">
+      <DependentUpon>EditarInventario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\EditarInventario.aspx.designer.cs">
+      <DependentUpon>EditarInventario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulos\EditarProveedor.aspx.cs">
       <DependentUpon>EditarProveedor.aspx</DependentUpon>
@@ -175,6 +184,13 @@
     </Compile>
     <Compile Include="Modulos\Proveedores.aspx.designer.cs">
       <DependentUpon>Proveedores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ViewProductSupplier.aspx.cs">
+      <DependentUpon>ViewProductSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ViewProductSupplier.aspx.designer.cs">
+      <DependentUpon>ViewProductSupplier.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

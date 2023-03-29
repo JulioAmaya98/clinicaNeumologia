@@ -24,5 +24,22 @@ namespace CapaNegocio
         {
             productos.addProducto_Inventario(eProducto);
         }
-    }
+
+        public DataTable editarInventarioByID(EInventario inventario)
+        {
+            DataTable tabla = new DataTable();
+            tabla = productos.editarInventarioByID(inventario);
+            return tabla;
+        }
+
+        public void editarInventario(EInventario inventario)
+        {
+            productos.editarInventario(inventario);
+        }
+
+        public bool eliminarInventario(EInventario inventario)
+        {
+            return productos.eliminar(inventario);
+        }
+	}
 }

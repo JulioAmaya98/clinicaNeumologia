@@ -11,7 +11,7 @@ namespace CapaPresentacion.Modulos
 {
 
 
-	public partial class Proveedores
+	public partial class ViewProductSupplier
 	{
 
 		/// <summary>
@@ -69,30 +69,21 @@ namespace CapaPresentacion.Modulos
 		protected global::System.Web.UI.WebControls.Button Cerrar;
 
 		/// <summary>
-		/// Control Button1.
+		/// Control nombre.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button Button1;
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombre;
 
 		/// <summary>
-		/// Control gridProveedores.
+		/// Control gridViewProductSupplier.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.GridView gridProveedores;
-
-		/// <summary>
-		/// Control SqlDataSourceCategorias.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceCategorias;
+		protected global::System.Web.UI.WebControls.GridView gridViewProductSupplier;
 	}
 }

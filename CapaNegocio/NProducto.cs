@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,5 +16,21 @@ namespace CapaNegocio
 		{
 			objproducto.addProducto(eProducto);
 		}
+
+		public DataTable mostrarProductoProveedor()
+		{
+			DataTable tabla=new DataTable();
+			tabla = objproducto.mostrarProductoProveedor();
+			return tabla;
+		}
+
+		public DataTable mostrarProductosDrop(EProducto producto)
+		{
+			DataTable tabla=new DataTable();
+			tabla = objproducto.mostrarProductosDrop(producto);
+			return tabla;
+		}
+
+
 	}
 }

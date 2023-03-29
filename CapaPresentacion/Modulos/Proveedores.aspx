@@ -78,7 +78,7 @@
                                              <button type="button" class="btn btn-outline-warning" onclick="agregarProducto(<%#Eval("IdProveedor") %>)">
                                                 <span >Producto</span>
                                             </button>
-                                                <button type="button" class="btn btn-outline-danger">
+                                                <button type="button" class="btn btn-outline-danger" onclick="verProducto(<%#Eval("IdProveedor") %>)">
                                                 <span >Ver</span>
                                             </button>
                                         </ItemTemplate>
@@ -106,6 +106,7 @@
     <script>
         var rol = window.location.search.substring(1);
         rol = rol.split("rol=")[1];
+        var nombreBoundField = document.getElementById("<%= gridProveedores.ClientID %>__ctl2_Vendedor").getAttribute("data-fieldname");
 
         function editarProveedor(idProveedor) {
             window.location.href = 'EditarProveedor.aspx?id_proveedor=' + idProveedor + "&rol=" + rol
@@ -113,6 +114,10 @@
 
         function agregarProducto(idProveedor) {
             window.location.href = 'AgregarProducto.aspx?id_proveedor=' + idProveedor + "&rol=" + rol
+        }
+
+        function verProducto(idProveedor) {
+            window.location.href = 'ViewProductSupplier.aspx?id_proveedor=' + idProveedor + "&rol=" + rol
         }
 
         const eliminarProveedor = (idProveedor) => {
@@ -131,7 +136,7 @@
                         'Tu registro fue eleminado correctamente.',
                         'success'
                     )
-                    //espera para recargar la pagina
+                    
                     setTimeout(() => {
                         location.href = "Proveedores.aspx?rol=" + rol + "&id=" + idProveedor
                     }, 500);

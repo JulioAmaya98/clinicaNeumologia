@@ -39,5 +39,11 @@ namespace CapaNegocio
         {
             return proveedores.delete(eUProveedor);
         }
+        public DataTable viewProductSupp(EUProveedor proveedor)
+        {
+            DataTable tabla = new DataTable();
+            tabla=proveedores.viewProductSupp(proveedor);
+            return tabla;
+        }
     }
 }

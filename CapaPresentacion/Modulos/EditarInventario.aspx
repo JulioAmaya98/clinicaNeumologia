@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgregarInventario.aspx.cs" Inherits="CapaPresentacion.AgregarProductos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarInventario.aspx.cs" Inherits="CapaPresentacion.Modulos.EditarInventario" %>
 
 <!DOCTYPE html>
 
@@ -18,18 +18,18 @@
                     <div id="AgregarConten">
                         <div class="card shadow-lg border-primary">
                             <div class="card-header bg-primary text-white">
-                                Ingresar Producto
+                                Editar Inventario
                             </div>
                             <div class="card-body">
-                                 <div>
+                                <div>
                                     <label class="form-label">Proveedor</label>
-                                    <asp:DropDownList  ID="dropProveedor"
+                                    <asp:DropDownList ID="dropProveedor"
                                         runat="server" class="form-control" OnSelectedIndexChanged="dropProveedor_SelectedIndexChanged" AutoPostBack="true">
                                     </asp:DropDownList>
                                 </div>
-                                  <div>
+                                <div>
                                     <label class="form-label">Codigo del Producto</label>
-                                    <asp:DropDownList  ID="dropCodigoProducto"
+                                    <asp:DropDownList ID="dropCodigoProducto"
                                         runat="server" class="form-control">
                                     </asp:DropDownList>
                                 </div>
@@ -43,7 +43,16 @@
                                         placeholder="Ingresa la cantidad del producto"></asp:TextBox>
                                 </div>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorStock" ControlToValidate="TextBoxStock" runat="server" ErrorMessage="Ingrese la cantidad!" CssClass="text-danger"></asp:RequiredFieldValidator>
-                                
+                                <div>
+                                    <label class="form-label">Fecha de entrada</label>
+                                    <asp:TextBox
+                                        ID="txtFechaEntrada"
+                                        runat="server"
+                                        CssClass="form-control"
+                                        TextMode="Date"
+                                        placeholder="Ingresa la fecha de entrada"></asp:TextBox>
+                                </div>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtFechaEntrada" runat="server" ErrorMessage="Ingrese la fecha de entrada!" CssClass="text-danger"></asp:RequiredFieldValidator>
 
                                 <div>
                                     <label class="form-label">Fecha vencimiento</label>
@@ -65,7 +74,7 @@
                                         placeholder="Ingresa el lote del producto"></asp:TextBox>
                                 </div>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrecio" ControlToValidate="txtLote" runat="server" ErrorMessage="Ingrese el lote del producto!" CssClass="text-danger"></asp:RequiredFieldValidator>
-                                
+
                                 <div>
                                     <label class="form-label">Ubicacion</label>
                                     <asp:TextBox
@@ -77,8 +86,7 @@
                                 </div>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" ControlToValidate="txtUbicacion" runat="server" ErrorMessage="Ingrese una ubicacion!" CssClass="text-danger"></asp:RequiredFieldValidator>
                                 <div class="card-footer">
-                                    <asp:Button ID="ButtonGuardar" runat="server" Text="Ingresar Producto" CssClass="btn btn-primary" OnClick="ButtonGuardar_Click" />
-                                    <asp:Button ID="ButtonRegresar" runat="server" Text="Regresar" CssClass="btn btn-warning"/>
+                                    <asp:Button ID="ButtonGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="ButtonGuardar_Click" />
                                 </div>
                             </div>
                         </div>
