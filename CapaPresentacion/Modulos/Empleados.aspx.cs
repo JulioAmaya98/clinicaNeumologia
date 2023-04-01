@@ -18,8 +18,7 @@ namespace CapaPresentacion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
+          
                 
                 string encryp = Encriptar("Medico");
                 if (Request.QueryString["rol"] ==encryp && Session["username"].ToString()==encryp)
@@ -27,27 +26,12 @@ namespace CapaPresentacion
                     GridViewUsuarios.DataSource = objusuario.mostrarUsuarios();
                     GridViewUsuarios.DataBind();
                    
-                    foreach (GridViewRow row in GridViewUsuarios.Rows)
-                    {
-                        if (row.Cells[4].Text == "JL")
-                        {
-                            row.Visible = false;
-                        }
-                    }
-                }
-                else
-                {
-                    Response.Redirect("../Layout/Login.aspx");
-
+                   
                 }
 
-            }
-            catch (Exception)
-            {
+			
 
-                Response.Redirect("../Layout/Login.aspx");
-            }
-        }
+		}
 
         protected void ButtonAgregar_Click(object sender, EventArgs e)
         {
