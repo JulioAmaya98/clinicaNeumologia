@@ -30,6 +30,16 @@ namespace CapaNegocio
 			tabla = objproducto.mostrarProductosDrop(producto);
 			return tabla;
 		}
+        public bool eliminarProductoP(EProducto Producto)
+        {
+           return objproducto.eliminarProductoP(Producto);
+        }
+		public DataTable mostrarAll()
+		{
+			DataTable tabla = new DataTable();
+			tabla = objproducto.mostrarAll();
+			return tabla;
+		}
 
 
 	}

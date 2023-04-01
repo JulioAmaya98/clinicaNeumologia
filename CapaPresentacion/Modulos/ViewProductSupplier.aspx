@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewProductSupplier.aspx.cs" Inherits="CapaPresentacion.Modulos.ViewProductSupplier" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewProductSupplier.aspx.cs" Inherits="CapaPresentacion.Modulos.ViewProductSupplier"  EnableEventValidation="false"%>
 
 <!DOCTYPE html>
 
@@ -11,6 +11,7 @@
     <script src="../JS/Roles.js"></script>
     <script src="../JS/sweetalert2.all.min.js"></script>
     <link href="../css/StyleLProducto.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title></title>
 </head>
 <body>
@@ -55,17 +56,27 @@
                                     </div>
                                 </nav>
                             </div>
-                           <asp:GridView ID="gridViewProductSupplier" runat="server" CssClass="table  table-hover myGridView" OnRowDataBound="gridViewProductSupplier_RowDataBound" HorizontalAlign="Center" >
+                            <asp:GridView ID="gridViewProductSupplier" runat="server"  AutoGenerateColumns="false" CssClass="table  table-hover myGridView" HorizontalAlign="Center" >
                             <Columns>
-                                <asp:TemplateField  ItemStyle-CssClass="ancho" HeaderText="Opciones">
+                                
+                                    <asp:BoundField DataField="codigo_producto" HeaderText="Codigo del producto"   SortExpression="codigo_producto" />
+                                    <asp:BoundField DataField="nombre" HeaderText="Nombre" SortExpression="nombre" />
+                                    <asp:BoundField DataField="precio" HeaderText="Precio" SortExpression="precio" />
+                                    <asp:BoundField DataField="descripcion" HeaderText="Descripcion" SortExpression="descripcion" />
+                                   <asp:TemplateField  ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                     <ItemTemplate>
-                                        <asp:Button ID="ButtonEditar" runat="server" Text="Editar" CssClass="btn btn-outline-warning"  />
-                                        <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger" />
+                                        <button type="button" class="btn btn-icon" style="background-color: #FFA500; color: white;" onclick="editarProveedor">
+                                                <span><i class="bi bi-pencil-square"></i></span>
+                                            </button>
+                                            <button type="button" class="btn  btn-danger btn-icon" style="background-color: #8B0000" onclick="eliminarProducto(this)">
+                                                <span><i class="bi bi-trash3"></i></i></span>
+                                            </button>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
 
+                            
                         </div>
                     </div>
                 </div>
@@ -82,4 +93,35 @@
              });
          });
      </script>
+    <script>
+        var rol = window.location.search.substring(1);
+        rol = rol.split("rol=")[1];
+
+        var pro = window.location.search.substring(1);
+        pro = pro.split("id_proveedor=")[1];
+
+        const eliminarProducto = (btn) => {
+            var row = btn.parentNode.parentNode;
+            var celda = row.cells[0];
+            var codProucto = celda.textContent;
+            Swal.fire({
+                title: 'Quieres borrar este Producto?',
+                text: "Una vez borrado no podras recurperarl",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, eliminar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                   
+
+                    setTimeout(() => {
+                        location.href = "ViewProductSupplier.aspx?codigo=" + codProucto + "&id_proveedor=" + pro;
+                    }, 500);
+                }
+            })
+        }
+
+    </script>
 </html>

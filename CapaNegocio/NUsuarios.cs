@@ -66,9 +66,9 @@ namespace CapaNegocio
             return tabla;
         }
 
-        public void eliminarUsuarios(EUsuarios user )
+        public bool eliminarUsuarios(EUsuarios user )
         {
-            usuarios.eliminarUsuario(user);
+           return usuarios.eliminarUsuario(user);
         }
     }
 }

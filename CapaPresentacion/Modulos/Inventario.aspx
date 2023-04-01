@@ -10,6 +10,7 @@
     <link href="../css/StyleLProducto.css" rel="stylesheet" />
     <script src="../JS/Roles.js"></script>
     <script src="../JS/sweetalert2.all.min.js"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title></title>
 </head>
 <body>
@@ -73,11 +74,11 @@
 
                                     <asp:TemplateField ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                         <ItemTemplate>
-                                            <button type="button" class="btn btn-outline-warning" onclick="editarInventario(<%#Eval("id_inventario") %>)">
-                                                <span>Editar</span>
+                                            <button  type="button" class="btn btn-icon" style="background-color:#FFA500;color:white;" onclick="editarInventario(<%#Eval("id_inventario") %>)">
+                                                <span><i class="bi bi-pencil-square"></i></span>
                                             </button>
-                                            <button type="button" class="btn btn-outline-danger" onclick="eliminarInventario(<%#Eval("id_inventario") %>)">
-                                                <span>Eliminar</span>
+                                            <button type="button" class="btn  btn-danger btn-icon" style="background-color:#8B0000" onclick="eliminarInventario(<%#Eval("id_inventario") %>)">
+                                                <span><i class="bi bi-trash3"></i></span>
                                             </button>
                                         </ItemTemplate>
                                     </asp:TemplateField>

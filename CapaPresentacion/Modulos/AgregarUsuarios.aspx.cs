@@ -20,8 +20,11 @@ namespace CapaPresentacion
         {
             try
             {
-                mensajeError.Visible = false ;
-				string emcrypMedico = Encriptar("Medico");
+
+                mensajeError.Visible=false;
+
+                string emcrypMedico = Encriptar("Medico");
+
 
                 if (Request.QueryString["rol"] == emcrypMedico && Session["username"].ToString() == emcrypMedico)
                 {

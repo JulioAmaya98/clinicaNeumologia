@@ -135,15 +135,22 @@ namespace CapaDatos
 
         }
 
-        public void eliminarUsuario(EUsuarios user)
+        public bool eliminarUsuario(EUsuarios user)
         {
             comando.Connection = objConn.abrirConexion();
             comando.CommandText = "sp_eliminar_usuario";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@id_usuario", user.id_usuario);
-            comando.ExecuteNonQuery();
+            int resp=comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             objConn.cerrarConexion();
+
+            if (resp  > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

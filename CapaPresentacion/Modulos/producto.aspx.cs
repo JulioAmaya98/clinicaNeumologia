@@ -11,7 +11,7 @@ namespace CapaPresentacion
 {
     public partial class producto : BasePage
     {
-        NInventario nproductos = new NInventario();
+        NProducto nProducto = new NProducto();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -26,13 +26,13 @@ namespace CapaPresentacion
                 if (Request.QueryString["rol"] == encrypMedico && Session["username"].ToString() == encrypMedico)
                 {
                     gridProducto.PageSize = 5;
-                    gridProducto.DataSource = nproductos.mostrarProduct();
+                    gridProducto.DataSource = nProducto.mostrarAll();
                     gridProducto.DataBind();
                 }
                 else if (Request.QueryString["rol"] == encrypSecretaria && Session["username"].ToString() == encrypSecretaria)
                 {
                     gridProducto.PageSize = 5;
-                    gridProducto.DataSource = nproductos.mostrarProduct();
+                    gridProducto.DataSource = nProducto.mostrarAll();
                     gridProducto.DataBind();
                     navEmpleados.Visible = false;
                     navInventario.Visible = false;

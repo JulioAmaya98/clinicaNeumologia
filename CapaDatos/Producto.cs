@@ -17,6 +17,20 @@ namespace CapaDatos
 		DataTable tablaDatos = new DataTable();
 		SqlCommand comando = new SqlCommand();
 
+		public DataTable mostrarAll()
+		{
+			
+			DataTable tabla = new DataTable();
+
+			comando.Connection = objConn.abrirConexion();
+			comando.CommandText = "sp_mostrar_all";
+			comando.CommandType = CommandType.StoredProcedure;
+			leer = comando.ExecuteReader();
+			tabla.Load(leer);
+			objConn.cerrarConexion();
+			return tabla;
+		}
+
 		public void addProducto(EProducto eProducto)
 		{
 			comando.Connection = objConn.abrirConexion();
@@ -55,8 +69,25 @@ namespace CapaDatos
 			objConn.cerrarConexion();
 			return tabla;
 		}
+        public bool eliminarProductoP(EProducto Producto)
+        {
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_eliminar_producto";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@codigo_producto", Producto.codigo_producto);
+            comando.Parameters.AddWithValue("@id_proveedor", Producto.id_proveedor);
+            int rep=comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            objConn.cerrarConexion();
+
+			if (rep > 0)
+			{
+				return true;
+			}
+
+			return false;
+        }
 
 
-
-	}
+    }
 }
