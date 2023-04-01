@@ -10,7 +10,9 @@
     <link href="../css/StyleLProveedores.css" rel="stylesheet" />
     <script src="../JS/Roles.js"></script>
     <script src="../JS/sweetalert2.all.min.js"></script>
+
     <link href="../css/StyleLProducto.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
@@ -64,22 +66,22 @@
                                     <asp:TemplateField ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                         <ItemTemplate>
                                            
-                                             <button type="button" class="btn btn-outline-warning"  onclick="editarProveedor(<%#Eval("IdProveedor") %>)">
-                                                <span >Editar</span>
+                                             <button type="button" class="btn btn-icon" style="background-color:#FFA500;color:white;" onclick="editarProveedor(<%#Eval("IdProveedor") %>)">
+                                                <span ><i class="bi bi-pencil-square"></i></span>
                                             </button>
-                                                <button type="button" class="btn btn-outline-danger" onclick="eliminarProveedor(<%#Eval("IdProveedor") %>)">
-                                                <span >Eliminar</span>
+                                                <button type="button" class="btn  btn-danger btn-icon" style="background-color:#8B0000" onclick="eliminarProveedor(<%#Eval("IdProveedor") %>)">
+                                                <span ><i class="bi bi-trash3"></i></span>
                                             </button>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-CssClass="ancho" HeaderText="Producto">
                                         <ItemTemplate>
                                            
-                                             <button type="button" class="btn btn-outline-warning" onclick="agregarProducto(<%#Eval("IdProveedor") %>)">
-                                                <span >Producto</span>
+                                             <button type="button" class="btn btn-icon"  style="background-color:#FFA500;color:white;" onclick="agregarProducto(<%#Eval("IdProveedor") %>)">
+                                                <span ><i class="bi bi-plus-square-fill"></i></span>
                                             </button>
-                                                <button type="button" class="btn btn-outline-danger" onclick="verProducto(<%#Eval("IdProveedor") %>)">
-                                                <span >Ver</span>
+                                                <button type="button" class="btn btn-danger btn-icon" style="background-color:#8B0000" onclick="verProducto(<%#Eval("IdProveedor") %>)">
+                                                <span ><i class="bi bi-eye-fill"></i></span>
                                             </button>
                                         </ItemTemplate>
                                     </asp:TemplateField>
@@ -106,7 +108,6 @@
     <script>
         var rol = window.location.search.substring(1);
         rol = rol.split("rol=")[1];
-        var nombreBoundField = document.getElementById("<%= gridProveedores.ClientID %>__ctl2_Vendedor").getAttribute("data-fieldname");
 
         function editarProveedor(idProveedor) {
             window.location.href = 'EditarProveedor.aspx?id_proveedor=' + idProveedor + "&rol=" + rol

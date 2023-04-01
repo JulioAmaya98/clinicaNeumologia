@@ -20,6 +20,7 @@ namespace CapaPresentacion
         {
             try
             {
+                mensajeError.Visible=false;
 
                 string emcrypMedico = Encriptar("Medico");
 

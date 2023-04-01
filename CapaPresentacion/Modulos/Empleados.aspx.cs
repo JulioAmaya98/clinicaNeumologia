@@ -18,18 +18,54 @@ namespace CapaPresentacion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                
+            
                 string encryp = Encriptar("Medico");
                 if (Request.QueryString["rol"] ==encryp && Session["username"].ToString()==encryp)
                 {
-                    GridViewUsuarios.DataSource = objusuario.mostrarUsuarios();
-                    GridViewUsuarios.DataBind();
                    
-                    foreach (GridViewRow row in GridViewUsuarios.Rows)
+					if (Request["id"] != null)
+					{
+
+						int id = int.Parse(Request["id"]);
+						EUsuarios.id_usuario = id;
+
+
+						if (objusuario.eliminarUsuarios(EUsuarios))
+						{
+						string alertSuccess = "Swal.fire({";
+						alertSuccess += "icon: 'success',";
+						alertSuccess += "title: 'Successful',";
+						alertSuccess += "text: 'El empleado se elimino correctamente',";
+						alertSuccess += "confirmButtonText: 'OK'";
+						alertSuccess += "}).then((result) => {";
+						alertSuccess += "if (result.isConfirmed) {";
+						alertSuccess += "window.location.href = 'Empleados.aspx?rol=" + Request.QueryString["rol"] + "';";
+						alertSuccess += "}";
+						alertSuccess += "});";
+
+						ScriptManager.RegisterStartupScript(
+							this, this.GetType(), "script", alertSuccess, true
+						);
+
+					}
+						else
+						{
+							string alertError = "Swal.fire({";
+							alertError += "icon: 'error',";
+							alertError += "title: 'Oops...',";
+							alertError += "text: 'El empleado no pudo ser eliminado',";
+							alertError += "footer: '<a>Ingresa aqui para obtener más información?</a>'";
+							alertError += "})";
+
+							ScriptManager.RegisterClientScriptBlock(
+								this, this.GetType(), "script", alertError, true
+							);
+						}
+
+					}
+					foreach (GridViewRow row in GridViewUsuarios.Rows)
                     {
-                        if (row.Cells[4].Text == "JL")
+                        if (row.Cells[3].Text == "JL")
                         {
                             row.Visible = false;
                         }
@@ -41,12 +77,7 @@ namespace CapaPresentacion
 
                 }
 
-            }
-            catch (Exception)
-            {
-
-                Response.Redirect("../Layout/Login.aspx");
-            }
+           
         }
 
         protected void ButtonAgregar_Click(object sender, EventArgs e)
@@ -61,41 +92,10 @@ namespace CapaPresentacion
             return result;
         }
 
-        protected void GridViewUsuarios_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.Header)
-            {
-                e.Row.Cells[1].Visible = false;
-                
-            }
-            {
-                if (e.Row.RowType == DataControlRowType.DataRow)
-                {
-                    e.Row.Cells[1].Visible = false;
-                }
-            }
-        }
+     
 
-        protected void ButtonEditar_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            GridViewRow selector = (GridViewRow)btn.NamingContainer;
-            EUsuarios.id_usuario = Convert.ToInt32(selector.Cells[1].Text);
 
-            Response.Redirect("EditarUsuario.aspx?id_usuario=" + EUsuarios.id_usuario + "&rol=" + Request.QueryString["rol"]);
-
-        }
-
-        protected void ButtonEliminar_Click(object sender, EventArgs e)
-        {
-            NUsuarios obEliminar= new NUsuarios();
-            EUsuarios obUsuario= new EUsuarios();
-            Button btn = (Button)sender;
-            GridViewRow selector = (GridViewRow)btn.NamingContainer;
-            obUsuario.id_usuario = Convert.ToInt32(selector.Cells[1].Text);
-            obEliminar.eliminarUsuarios(obUsuario);
-            Response.Redirect("Empleados.aspx?rol=" + Request.QueryString["rol"]);
-        }
+     
 
 
         protected void Cerrar_Click(object sender, EventArgs e)

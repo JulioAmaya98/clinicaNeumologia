@@ -84,7 +84,8 @@
                                 <div>
                                     <label class="form-label">Rol</label>
                                     <asp:DropDownList ID="DropDownListRol"
-                                        runat="server">
+                                        runat="server"
+                                        CssClass="form-control">
                                     </asp:DropDownList>
                                 </div>
                         <div class="card-footer">

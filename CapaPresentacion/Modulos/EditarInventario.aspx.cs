@@ -55,6 +55,30 @@ namespace CapaPresentacion.Modulos
 				}
 				else if (Request.QueryString["rol"] == encryBodeguero && Session["username"].ToString() == encryBodeguero)
 				{
+					int idInventario = Convert.ToInt32(Request.QueryString["id_inventario"].ToString());
+					inventario.id_inventario = idInventario;
+					tabla = nInventario.editarInventarioByID(inventario);
+
+					dropCodigoProducto.SelectedValue = tabla.Rows[0]["codigo_producto"].ToString();
+					dropProveedor.SelectedValue = tabla.Rows[0]["IdProveedor"].ToString();
+					TextBoxStock.Text = tabla.Rows[0]["cantidad"].ToString();
+					TextBoxFechaVencimiento.Text = tabla.Rows[0]["fecha_vencimiento"].ToString();
+
+					txtLote.Text = tabla.Rows[0]["lote"].ToString();
+					txtUbicacion.Text = tabla.Rows[0]["ubicacion"].ToString();
+
+
+					dropProveedor.DataSource = producto.mostrarProductoProveedor();
+					dropProveedor.DataTextField = "Vendedor";
+					dropProveedor.DataValueField = "IdProveedor";
+					dropProveedor.DataBind();
+					dropProveedor.SelectedIndexChanged += new EventHandler(dropProveedor_SelectedIndexChanged);
+
+					eProducto.id_proveedor = Convert.ToInt32(dropProveedor.SelectedValue.ToString());
+					dropCodigoProducto.DataSource = producto.mostrarProductosDrop(eProducto);
+					dropCodigoProducto.DataTextField = "codigo_producto";
+					dropCodigoProducto.DataValueField = "codigo_producto";
+					dropCodigoProducto.DataBind();
 
 
 				}

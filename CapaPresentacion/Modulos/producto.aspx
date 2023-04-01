@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../css/StyleLProducto.css" rel="stylesheet" />
     <script src="../JS/Roles.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title></title>
 </head>
 <body>
@@ -42,9 +43,7 @@
                         <div id="encabezado">
                             <nav class="navbar navbar-expand-lg">
                                 <h4>Productos</h4>
-                                <div class="container-fluid">
-                                    <asp:Button ID="Button1" runat="server" Text="Agregar" CssClass="btn btn-outline-success botoRedondo " />
-                                </div>
+                               
                                 <div class="container-fluid">
                                     <form class="d-flex" role="search">
 
@@ -55,14 +54,7 @@
                         </div>
                         <asp:GridView OnPageIndexChanging="gridProducto_PageIndexChanging" AllowPaging="false" ID="gridProducto" runat="server" CssClass="table table-hover  myGridView" HorizontalAlign="Justify" OnSelectedIndexChanged="gridProducto_SelectedIndexChanged">
                             <PagerSettings Mode="NumericFirstLast" Position="Bottom" /> 
-                            <Columns>
-                                <asp:TemplateField  ItemStyle-CssClass="ancho" HeaderText="Opciones">
-                                    <ItemTemplate>
-                                        <asp:Button ID="ButtonEditar" runat="server" Text="Editar" CssClass="btn btn-outline-warning"  />
-                                        <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger" />
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                            </Columns>
+                           
                         </asp:GridView>     
                     </div>
                 </div>
