@@ -46,6 +46,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>clinicDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Compra.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="Producto.cs" />

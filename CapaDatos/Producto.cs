@@ -88,6 +88,29 @@ namespace CapaDatos
 			return false;
         }
 
+        public List<EProducto> ObtenerProductos(int idProveedor)
+        {
+            List<EProducto> listaProductos = new List<EProducto>();
+            string consulta = "SELECT * FROM Productos WHERE id_roveedor = @idProveedor";
+            SqlCommand comando = new SqlCommand(consulta, objConn.abrirConexion());
+            comando.Parameters.AddWithValue("@idProveedor", idProveedor);
+
+            SqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {
+                EProducto producto = new EProducto();
+                producto.codigo_producto = reader["codigo_producto"].ToString();
+                producto.nombre = reader["nombre"].ToString();
+                producto.precio = Convert.ToDouble(reader["precio"]);
+				producto.descripcion = reader["descripcion"].ToString();
+                
+
+                listaProductos.Add(producto);
+            }
+
+            return listaProductos;
+        }
 
     }
 }

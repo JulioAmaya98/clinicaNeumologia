@@ -99,6 +99,18 @@ namespace CapaDatos
 			return tabla;
 		}
 		
+		public DataTable dataProveedores(EUProveedor proveedor)
+		{
+			DataTable tabla = new DataTable();
+			comando.Connection = objConn.abrirConexion();
+			comando.CommandText = "sp_data_proveedores";
+			comando.CommandType = CommandType.StoredProcedure;
+			comando.Parameters.AddWithValue("@id_proveedor", proveedor.Id);
+			leer = comando.ExecuteReader();
+			tabla.Load(leer);
+			objConn.cerrarConexion();
+			return tabla;
+		}
 
 
 	}

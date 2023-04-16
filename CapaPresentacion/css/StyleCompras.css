@@ -1,0 +1,22 @@
+﻿.myGridView th {
+    color: #009933;
+}
+.myGridView {
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+    margin:2px;
+}
+
+.botonagg {
+    margin: 5px;
+    margin-top:175px;
+    position: absolute;
+    display: inline;
+    margin-left:1200px;
+    
+}
+
+.fact{
+    justify-content: flex-start space-between;
+}

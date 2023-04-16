@@ -20,6 +20,9 @@
         const inicio = document.getElementById('navInicio');
         inicio.setAttribute('href', 'Inicio.aspx?rol=' + rol);
 
+        const HistoryCompras = document.getElementById('navCompras');
+        HistoryCompras.setAttribute('href', 'Historialcompras.aspx?rol=' + rol);
+
     } else if (rol == "QgBvAGQAZQBnAHUAZQByAG8A") {
 
         const inventario = document.getElementById('navInventario');
@@ -38,6 +41,9 @@
 
         const proveedores = document.getElementById('navProveedores');
         proveedores.setAttribute('href', 'Proveedores.aspx?rol=' + rol);
+
+        const HistoryCompras = document.getElementById('navCompras');
+        HistoryCompras.setAttribute('href', 'Historialcompras.aspx?rol=' + rol);
 
        
     }

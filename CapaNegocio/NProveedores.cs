@@ -45,6 +45,11 @@ namespace CapaNegocio
             tabla=proveedores.viewProductSupp(proveedor);
             return tabla;
         }
-        
+        public DataTable DataProveedores(EUProveedor proveedor)
+        {
+			DataTable tabla = new DataTable();
+			tabla = proveedores.dataProveedores(proveedor);
+			return tabla;
+		}
     }
 }

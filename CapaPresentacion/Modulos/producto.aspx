@@ -43,6 +43,7 @@
                         <div id="encabezado">
                             <nav class="navbar navbar-expand-lg">
                                 <h4>Productos</h4>
+
                                
                                 <div class="container-fluid">
                                     <form class="d-flex" role="search">

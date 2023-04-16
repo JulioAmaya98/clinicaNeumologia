@@ -40,6 +40,7 @@
                                         runat="server"
                                         CssClass="form-control"
                                         TextMode="Number"
+                                        min="0"
                                         placeholder="Ingresa la cantidad del producto"></asp:TextBox>
                                 </div>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorStock" ControlToValidate="TextBoxStock" runat="server" ErrorMessage="Ingrese la cantidad!" CssClass="text-danger"></asp:RequiredFieldValidator>

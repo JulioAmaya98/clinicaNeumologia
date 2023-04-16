@@ -41,6 +41,9 @@ namespace CapaNegocio
 			return tabla;
 		}
 
+       
 
-	}
+
+
+    }
 }
