@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CompraN.aspx.cs" Inherits="CapaPresentacion.Modulos.CompraN" %>
+﻿<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="CompraN.aspx.cs" Inherits="CapaPresentacion.Modulos.CompraN" %>
 
 <!DOCTYPE html>
 
@@ -8,6 +8,7 @@
     <!-- Option 1: Include in HTML -->
     <link href="../css/StyleCompras.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="../JS/sweetalert2.all.min.js"></script>
     <title></title>
@@ -23,11 +24,11 @@
     <div style="padding: 40px">
         <button style="right: 35px; color: #009933; border-color: #009933;" class="btn btn botonagg" data-toggle="modal" data-target="#modalData">+ Agregar</button>
 
-        <form style="bottom:0" id="form1" runat="server">
+        <form style="bottom: 0" id="form1" runat="server">
 
-            <asp:Button ID="Regresar" runat="server" Text="Regresar" style="float: right; border-color: gray; color: gray;" class="btn btn" OnClick="Regresar_Click"/>
+            <asp:Button ID="Regresar" runat="server" Text="Regresar" Style="float: right; border-color: gray; color: gray;" class="btn btn" OnClick="Regresar_Click" />
 
-            
+
             <h2>Factura
                 <asp:Label runat="server" ID="numeroFactura" ForeColor="#009933"></asp:Label></h2>
             <label>
@@ -143,15 +144,22 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4>Productos</h4>
+                            <div class="container-fluid">
+                                <form class="d-flex" role="search">
+
+                                    <input id="myInput" style="margin-right: 1%" class="form-control " placeholder="Search" aria-label="Search">
+                                </form>
+                            </div>
                             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
                         <div class="modal-body">
+
                             <asp:Table ID="Table1" runat="server"></asp:Table>
 
                             <asp:GridView
-                                AllowPaging="false" ID="gridProducto" runat="server" CssClass="table table-striped myGridView" HorizontalAlign="Justify">
+                                ID="gridProducto" runat="server" CssClass="table table-striped myGridView" HorizontalAlign="Justify">
                                 <PagerSettings Mode="NumericFirstLast" Position="Bottom" />
                                 <Columns>
                                     <asp:TemplateField>
@@ -212,6 +220,20 @@
             updateLabel(labelValue);
         }
     }
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#gridProducto tbody tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
+
 
 </script>
 </html>
