@@ -11,52 +11,52 @@ namespace CapaPresentacion
 {
 
 
-	public partial class Inicio
-	{
+    public partial class Empleados
+    {
 
-		/// <summary>
-		/// Control navProveedores.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlAnchor navProveedores;
+        /// <summary>
+        /// Control navProveedores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navProveedores;
 
-		/// <summary>
-		/// Control Cerrar.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button Cerrar;
+        /// <summary>
+        /// Control Cerrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cerrar;
 
-		/// <summary>
-		/// Control Button1.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button Button1;
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
 
-		/// <summary>
-		/// Control GridViewUsuarios.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.GridView GridViewUsuarios;
+        /// <summary>
+        /// Control GridViewUsuarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewUsuarios;
 
-		/// <summary>
-		/// Control SqlDataSourceEmpleados.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceEmpleados;
-	}
+        /// <summary>
+        /// Control SqlDataSourceEmpleados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceEmpleados;
+    }
 }

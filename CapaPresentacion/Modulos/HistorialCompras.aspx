@@ -1,5 +1,5 @@
 ﻿
-<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="HistorialCompras.aspx.cs" Inherits="CapaPresentacion.Modulos.WebForm1" %>
+<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="HistorialCompras.aspx.cs" Inherits="CapaPresentacion.Modulos.HistorialCompras" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

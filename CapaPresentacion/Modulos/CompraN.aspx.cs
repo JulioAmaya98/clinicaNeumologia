@@ -29,8 +29,48 @@ namespace CapaPresentacion.Modulos
 
 				if (Request.QueryString["rol"] == encrypMedico && Session["username"].ToString() == encrypMedico)
 				{
+					if (Request.QueryString["nFactura"] != null)
+					{
+						TextBox3.Text = Request.QueryString["nFactura"];
+						TextBox3.ReadOnly = true;
+						DropDownList2.Enabled = false;
+					}
 
-					DropDownList2.DataSource = NProductos.mostrarProductoProveedor();
+					if (Request["id"] != null)
+					{
+						NCompra eliminarCompra = new NCompra();
+						int id = int.Parse(Request["id"]);
+
+						if (eliminarCompra.eliminarDetalleCompra(id))
+						{
+							Response.Redirect("CompraN.aspx?rol=" + Request.QueryString["rol"] + "&nFactura=" + Request["nFactura"].ToString());
+						}
+						else
+						{
+							string alertError = "Swal.fire({";
+							alertError += "icon: 'error',";
+							alertError += "title: 'Oops...',";
+							alertError += "text: 'El producto no pudo ser eliminado',";
+							alertError += "footer: '<a>Ingresa aqui para obtener más información?</a>'";
+							alertError += "})";
+
+							ScriptManager.RegisterClientScriptBlock(
+								this, this.GetType(), "script", alertError, true
+							);
+						}
+
+							
+
+
+
+					}
+
+
+
+
+
+
+						DropDownList2.DataSource = NProductos.mostrarProductoProveedor();
 					DropDownList2.DataTextField = "Vendedor";
 					DropDownList2.DataValueField = "IdProveedor";
 					DropDownList2.DataBind();
@@ -120,9 +160,9 @@ namespace CapaPresentacion.Modulos
 
 			}
 
-			
 
-			
+
+
 
 
 
@@ -346,5 +386,10 @@ namespace CapaPresentacion.Modulos
 		{
 			Response.Redirect("HistorialCompras.aspx?rol=" + Request.QueryString["rol"]);
 		}
-	}
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

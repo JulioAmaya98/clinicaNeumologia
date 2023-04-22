@@ -53,5 +53,10 @@ namespace CapaNegocio
 			tabla = compra.mostrarHistoryCompras();
 			return tabla;
 		}
+
+        public bool eliminarDetalleCompra(int id)
+        {
+            return compra.eliminarDetalleVenta(id);
+        }
 	}
 }

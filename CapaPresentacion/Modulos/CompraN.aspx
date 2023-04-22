@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
     <script src="../JS/sweetalert2.all.min.js"></script>
     <title></title>
     <style>
@@ -99,8 +101,18 @@
                     <AlternatingRowStyle BackColor="#E3EAEB" />
                     <PagerSettings Mode="NumericFirstLast" Position="Bottom" />
                     <Columns>
-
-
+                         <asp:TemplateField ItemStyle-CssClass="ancho" HeaderText="Opciones">
+                                        <ItemTemplate>
+                                           
+                                             <button type="button" class="btn btn-icon" style="background-color:#FFA500;color:white;" onclick="editarProducto(<%#Eval("id_detalle_compra") %>)">
+                                                <span ><i class="bi bi-pencil-square"></i></span>
+                                            </button>
+                                                <button type="button" class="btn  btn-danger btn-icon" style="background-color:#8B0000" onclick="eliminarProducto(<%#Eval("id_detalle_compra") %>)">
+                                                <span ><i class="bi bi-trash3"></i></span>
+                                            </button>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                         <asp:BoundField DataField="id_detalle_compra" HeaderText="id_detalle_compra" Visible="false" InsertVisible="False" ReadOnly="True" SortExpression="id_detalle_compra"/>
                         <asp:BoundField DataField="Codigo del producto" HeaderText="CODIGO DEL PRODUCTO" SortExpression="Codigo del producto" />
                         <asp:BoundField DataField="nombre" HeaderText="NOMBRE" SortExpression="nombre" />
 
@@ -219,6 +231,52 @@
         if (labelValue != "") {
             updateLabel(labelValue);
         }
+    }
+    var rol = window.location.search.substring(1);
+    rol = rol.split("rol=")[1];
+    
+
+    const eliminarProducto = (id_detalle_compra) => {
+        Swal.fire({
+            title: 'Quieres borrar este producto?',
+            text: "Una vez borrado no podras recurperarlo",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, eliminar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Eliminado!',
+                    'Tu producto fue eleminado correctamente.',
+                    'success'
+                )
+
+                setTimeout(() => {
+                    let nFactura = document.getElementById("<%= TextBox3.ClientID %>").value;
+                    nFactura = nFactura.replace(/,/g, ' ');
+                    let url = window.location.href;
+
+                    
+                    if (url.indexOf("nFactura") !== -1) {
+                        
+                        let currentNFactura = url.split("nFactura=")[1].split("&")[0];
+
+                        if (currentNFactura == nFactura) {
+                            
+                            location.href = window.location.href+"&id="+id_detalle_compra;
+                            console.log(currentNFactura)
+                            return;
+                        }
+                    }
+
+         
+                    location.href = `CompraN.aspx?rol=${rol}&id=${id_detalle_compra}&nFactura=${encodeURIComponent(nFactura)}`;
+
+                }, 2500);
+            }
+        })
     }
 
 </script>

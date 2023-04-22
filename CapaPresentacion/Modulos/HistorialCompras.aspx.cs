@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace CapaPresentacion.Modulos
 {
-	public partial class WebForm1 : System.Web.UI.Page
+	public partial class HistorialCompras : System.Web.UI.Page
 	{
 		NCompra objHistoryCompras = new NCompra();
 		protected void Page_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace CapaPresentacion.Modulos
 				}
 				else
 				{
-					Response.Redirect("../Layout/Login.aspx");
+					Response.Redirect("/Historial.aspx");
 				}
 
 			}

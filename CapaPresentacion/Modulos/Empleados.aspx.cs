@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace CapaPresentacion
 {
-	public partial class Inicio : BasePage
+	public partial class Empleados : BasePage
 	{
 		NUsuarios objusuario = new NUsuarios();
 		EUsuarios EUsuarios = new EUsuarios();

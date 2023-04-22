@@ -61,7 +61,23 @@ namespace CapaPresentacion.Modulos
                 provee.telefono = TextBoxTelefono.Text;
                 provee.correo = TextBoxCorreo.Text;
                 proveedores.agregarProveedor(provee);
-            Response.Redirect("proveedores.aspx?rol=" + Request.QueryString["rol"]);
+
+                string alertError = "Swal.fire({";
+                alertError += "icon: 'success',";
+                alertError += "title: 'Guardado',";
+                alertError += "text: 'El proveedor se ha agregado exitosamente',";
+                alertError += "confirmButtonColor: '#3085d6',";
+                alertError += "confirmButtonText: 'OK'";
+                alertError += "}).then((result) => {";
+                alertError += "if (result.isConfirmed) {";
+                alertError += "window.location.href = 'Proveedores.aspx?rol=" + Request.QueryString["rol"] + "';";
+                alertError += "}";
+                alertError += "});";
+
+                ScriptManager.RegisterStartupScript(
+                    this, this.GetType(), "script", alertError, true
+                );
+
         }
         public void limpiarCampos()
         {

@@ -106,7 +106,6 @@ namespace CapaDatos
 			comando.CommandType = CommandType.StoredProcedure;
 			comando.Parameters.AddWithValue("@comprobante", compras.comprobante_compra);
 			comando.Parameters.AddWithValue("@total", compras.total);
-		
 			comando.ExecuteNonQuery();
 			objConn.cerrarConexion();
 		}
@@ -122,6 +121,21 @@ namespace CapaDatos
 			tablaDatos.Load(leer);
 			objConn.cerrarConexion();
 			return tablaDatos;
+		}
+
+		public bool eliminarDetalleVenta(int id)
+		{
+			comando.Connection = objConn.abrirConexion();
+			comando.CommandText = "sp_eliminar_detalleVenta";
+			comando.CommandType = CommandType.StoredProcedure;
+			comando.Parameters.AddWithValue("@id_detalle", id);
+			int res=comando.ExecuteNonQuery();
+			objConn.cerrarConexion();
+			if (res > 0)
+			{
+				return true;
+			}
+			return false;
 		}
 
 	}

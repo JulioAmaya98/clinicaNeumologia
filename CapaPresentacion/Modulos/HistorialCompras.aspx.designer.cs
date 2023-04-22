@@ -11,88 +11,88 @@ namespace CapaPresentacion.Modulos
 {
 
 
-	public partial class WebForm1
-	{
+    public partial class HistorialCompras
+    {
 
-		/// <summary>
-		/// Control form1.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        /// <summary>
+        /// Control form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
-		/// <summary>
-		/// Control navProductos.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlAnchor navProductos;
+        /// <summary>
+        /// Control navProductos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navProductos;
 
-		/// <summary>
-		/// Control navProveedores.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlAnchor navProveedores;
+        /// <summary>
+        /// Control navProveedores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navProveedores;
 
-		/// <summary>
-		/// Control navEmpleados.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlAnchor navEmpleados;
+        /// <summary>
+        /// Control navEmpleados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navEmpleados;
 
-		/// <summary>
-		/// Control navInventario.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlAnchor navInventario;
+        /// <summary>
+        /// Control navInventario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navInventario;
 
-		/// <summary>
-		/// Control A1.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        /// <summary>
+        /// Control A1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
 
-		/// <summary>
-		/// Control Cerrar.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button Cerrar;
+        /// <summary>
+        /// Control Cerrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cerrar;
 
-		/// <summary>
-		/// Control add.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button add;
+        /// <summary>
+        /// Control add.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button add;
 
-		/// <summary>
-		/// Control GridViewHistory.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.GridView GridViewHistory;
-	}
+        /// <summary>
+        /// Control GridViewHistory.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewHistory;
+    }
 }
