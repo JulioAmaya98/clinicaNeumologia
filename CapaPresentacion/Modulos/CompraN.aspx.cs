@@ -16,40 +16,77 @@ namespace CapaPresentacion.Modulos
 		NProducto NProductos = new NProducto();
 		protected void Page_Load(object sender, EventArgs e)
 		{
+            DateTime currentDate = DateTime.Now;
+            string formattedDate = currentDate.ToString("dd/MM/yyyy");
+            lblFechaActual.Text =   formattedDate;
+            Label1.Text=  formattedDate;
 
-
-			if (!IsPostBack)
+            if (!IsPostBack)
 			{
+               
 
-
-				string encrypMedico = Encriptar("Medico");
+                string encrypMedico = Encriptar("Medico");
 
 				string encrypSecretaria = Encriptar("Secretaria");
 
 
-				if (Request.QueryString["rol"] == encrypMedico && Session["username"].ToString() == encrypMedico)
+				if (Request.QueryString["rol"] == encrypMedico && Session["username"].ToString() == encrypMedico || Request.QueryString["rol"] == encrypSecretaria && Session["username"].ToString() == encrypSecretaria)
 				{
 					if (Request.QueryString["nFactura"] != null)
 					{
 						TextBox3.Text = Request.QueryString["nFactura"];
 						TextBox3.ReadOnly = true;
 						DropDownList2.Enabled = false;
-						DataTable tableSubTotal = new DataTable();
-						NCompra compra2 = new NCompra();
-						ECompra comprita = new ECompra();
-						comprita.comprobante_compra = TextBox3.Text;
-						tableSubTotal = compra2.Subtotal(comprita);
-						subtotal.InnerText = tableSubTotal.Rows[0]["subtotal"].ToString();
-						double aux = Convert.ToDouble(subtotal.InnerText);
-						subtotal.InnerText = aux.ToString("N2");
-						double subtotalReal = Convert.ToDouble(subtotal.InnerText);
-						double auxImpuestoReal = subtotalReal * 0.13;
-						impuesto.InnerText = auxImpuestoReal.ToString("N2");
+						
 
-						double impuestoReal = Convert.ToDouble(impuesto.InnerText);
-						double auxTotal = aux + auxImpuestoReal;
+						DataTable tableSubTotal2 = new DataTable();
+						NCompra compra22 = new NCompra();
+						ECompra comprita2 = new ECompra();
+						comprita2.comprobante_compra = TextBox3.Text;
+						tableSubTotal2 = compra22.Subtotal(comprita2);
+						subtotal.InnerText = tableSubTotal2.Rows[0]["subtotal"].ToString();
 
-						Label4.Text = auxTotal.ToString("N2");
+						if (subtotal.InnerText!="0.00")
+						{
+							try
+							{
+                                DataTable tableSubTotal = new DataTable();
+                                NCompra compra2 = new NCompra();
+                                ECompra comprita = new ECompra();
+                                comprita.comprobante_compra = TextBox3.Text;
+                                tableSubTotal = compra2.Subtotal(comprita);
+                                subtotal.InnerText = tableSubTotal.Rows[0]["subtotal"].ToString();
+
+                                double aux = Convert.ToDouble(subtotal.InnerText);
+                                subtotal.InnerText = aux.ToString("N2");
+                                double subtotalReal = Convert.ToDouble(subtotal.InnerText);
+                                double auxImpuestoReal = subtotalReal * 0.13;
+                                impuesto.InnerText = auxImpuestoReal.ToString("N2");
+
+                                double impuestoReal = Convert.ToDouble(impuesto.InnerText);
+                                double auxTotal = aux + auxImpuestoReal;
+
+                                Label4.Text = auxTotal.ToString("N2");
+                            }
+							catch (Exception)
+							{
+
+                                subtotal.InnerHtml = "0.00";
+                                impuesto.InnerHtml = "0.00";
+                                Label4.Text = "0.00";
+                            }
+							
+
+						}
+						else
+						{
+							subtotal.InnerHtml = "0.00";
+							impuesto.InnerHtml = "0.00";
+							Label4.Text = "0.00";
+
+
+
+						}
 					}
 
 					if (Request["id"] != null)
@@ -118,47 +155,6 @@ namespace CapaPresentacion.Modulos
 					GridView1.DataBind();
 
 
-
-				}
-				else if (Request.QueryString["rol"] == encrypSecretaria && Session["username"].ToString() == encrypSecretaria)
-				{
-
-
-					DropDownList2.DataSource = NProductos.mostrarProductoProveedor();
-					DropDownList2.DataTextField = "Vendedor";
-					DropDownList2.DataValueField = "IdProveedor";
-					DropDownList2.DataBind();
-
-					EProducto producto = new EProducto();
-					producto.id_proveedor = Convert.ToInt32(DropDownList2.SelectedValue);
-
-					gridProducto.DataSource = NProductos.mostrarProductosDrop(producto);
-					gridProducto.DataBind();
-
-					DataTable tabla = new DataTable();
-					NProveedores nProveedores = new NProveedores();
-					EUProveedor proveedor = new EUProveedor();
-					proveedor.Id = Convert.ToInt32(DropDownList2.SelectedValue);
-					tabla = nProveedores.DataProveedores(proveedor);
-					proveedorName.InnerText = tabla.Rows[0]["Vendedor"].ToString();
-					proveedorDireccion.InnerText = tabla.Rows[0]["Direccion"].ToString();
-					proveedorTelefono.InnerText = tabla.Rows[0]["Contacto"].ToString();
-
-
-					DataTable tableSubTotal = new DataTable();
-					NCompra compra = new NCompra();
-					ECompra compras = new ECompra();
-					compras.comprobante_compra = TextBox3.Text;
-					tableSubTotal = compra.Subtotal(compras);
-					subtotal.InnerText = tableSubTotal.Rows[0]["subtotal"].ToString();
-
-
-					DataTable mostrarDetalleCompra = new DataTable();
-					ECompra detalleCompra = new ECompra();
-					NCompra nDetalleCompra = new NCompra();
-					detalleCompra.comprobante_compra = TextBox3.Text;
-					GridView1.DataSource = nDetalleCompra.MostrarDetalleCompra(detalleCompra);
-					GridView1.DataBind();
 
 				}
 				else
