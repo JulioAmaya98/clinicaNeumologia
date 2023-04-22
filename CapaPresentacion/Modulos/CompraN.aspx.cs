@@ -34,6 +34,22 @@ namespace CapaPresentacion.Modulos
 						TextBox3.Text = Request.QueryString["nFactura"];
 						TextBox3.ReadOnly = true;
 						DropDownList2.Enabled = false;
+						DataTable tableSubTotal = new DataTable();
+						NCompra compra2 = new NCompra();
+						ECompra comprita = new ECompra();
+						comprita.comprobante_compra = TextBox3.Text;
+						tableSubTotal = compra2.Subtotal(comprita);
+						subtotal.InnerText = tableSubTotal.Rows[0]["subtotal"].ToString();
+						double aux = Convert.ToDouble(subtotal.InnerText);
+						subtotal.InnerText = aux.ToString("N2");
+						double subtotalReal = Convert.ToDouble(subtotal.InnerText);
+						double auxImpuestoReal = subtotalReal * 0.13;
+						impuesto.InnerText = auxImpuestoReal.ToString("N2");
+
+						double impuestoReal = Convert.ToDouble(impuesto.InnerText);
+						double auxTotal = aux + auxImpuestoReal;
+
+						Label4.Text = auxTotal.ToString("N2");
 					}
 
 					if (Request["id"] != null)
@@ -91,12 +107,7 @@ namespace CapaPresentacion.Modulos
 					proveedorTelefono.InnerText = tabla.Rows[0]["Contacto"].ToString();
 
 
-					DataTable tableSubTotal = new DataTable();
-					NCompra compra = new NCompra();
-					ECompra compras = new ECompra();
-					compras.comprobante_compra = TextBox3.Text;
-					tableSubTotal = compra.Subtotal(compras);
-					subtotal.InnerText = tableSubTotal.Rows[0]["subtotal"].ToString();
+		
 
 
 					DataTable mostrarDetalleCompra = new DataTable();
