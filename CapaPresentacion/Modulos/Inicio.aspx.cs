@@ -38,6 +38,7 @@ namespace CapaPresentacion.Modulos
                     navProductos.Visible= false;
                     navEmpleados.Visible = false;
                     navProveedores.Visible= false;
+                    navCompras.Visible= false;
                     
 
                 }

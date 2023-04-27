@@ -11,160 +11,178 @@ namespace CapaPresentacion.Modulos
 {
 
 
-	public partial class EditarProveedor
-	{
+    public partial class EditarProveedor
+    {
 
-		/// <summary>
-		/// Control form1.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        /// <summary>
+        /// Control form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
-		/// <summary>
-		/// Control navProductos.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlAnchor navProductos;
+        /// <summary>
+        /// Control navProductos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navProductos;
 
-		/// <summary>
-		/// Control navProveedores.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlAnchor navProveedores;
+        /// <summary>
+        /// Control navProveedores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navProveedores;
 
-		/// <summary>
-		/// Control navEmpleados.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlAnchor navEmpleados;
+        /// <summary>
+        /// Control navEmpleados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navEmpleados;
 
-		/// <summary>
-		/// Control Cerrar.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button Cerrar;
+        /// <summary>
+        /// Control navInventario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navInventario;
 
-		/// <summary>
-		/// Control Label1.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label Label1;
+        /// <summary>
+        /// Control navCompras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navCompras;
 
-		/// <summary>
-		/// Control txtNombre.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        /// <summary>
+        /// Control Cerrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cerrar;
 
-		/// <summary>
-		/// Control RequiredFieldValidatorNombre.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorNombre;
+        /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
 
-		/// <summary>
-		/// Control txtDireccion.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtDireccion;
+        /// <summary>
+        /// Control txtNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
-		/// <summary>
-		/// Control RequiredFieldValidatorApellido.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorApellido;
+        /// <summary>
+        /// Control RequiredFieldValidatorNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorNombre;
 
-		/// <summary>
-		/// Control txtVendedor.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtVendedor;
+        /// <summary>
+        /// Control txtDireccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDireccion;
 
-		/// <summary>
-		/// Control RequiredFieldValidatoruserName.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatoruserName;
+        /// <summary>
+        /// Control RequiredFieldValidatorApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorApellido;
 
-		/// <summary>
-		/// Control TextBoxTelefono.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TextBoxTelefono;
+        /// <summary>
+        /// Control txtVendedor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVendedor;
 
-		/// <summary>
-		/// Control RequiredFieldValidatorTelefono.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorTelefono;
+        /// <summary>
+        /// Control RequiredFieldValidatoruserName.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatoruserName;
 
-		/// <summary>
-		/// Control txtCorreo.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtCorreo;
+        /// <summary>
+        /// Control TextBoxTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxTelefono;
 
-		/// <summary>
-		/// Control RequiredFieldValidator1.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        /// <summary>
+        /// Control RequiredFieldValidatorTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorTelefono;
 
-		/// <summary>
-		/// Control ButtonGuardar.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button ButtonGuardar;
-	}
+        /// <summary>
+        /// Control txtCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
+
+        /// <summary>
+        /// Control RequiredFieldValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
+        /// Control ButtonGuardar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonGuardar;
+    }
 }

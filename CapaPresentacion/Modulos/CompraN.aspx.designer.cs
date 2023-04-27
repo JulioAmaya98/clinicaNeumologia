@@ -42,13 +42,21 @@ namespace CapaPresentacion.Modulos
         protected global::System.Web.UI.WebControls.Label numeroFactura;
 
         /// <summary>
+<<<<<<< HEAD
         /// Control Label1.
+=======
+        /// Control lblFechaActual.
+>>>>>>> 6a468d77457e58772dbd0dfeab865ad07b6b7079
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Label Label1;
+=======
+        protected global::System.Web.UI.WebControls.Label lblFechaActual;
+>>>>>>> 6a468d77457e58772dbd0dfeab865ad07b6b7079
 
         /// <summary>
         /// Control TextBox3.
@@ -105,13 +113,21 @@ namespace CapaPresentacion.Modulos
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
+<<<<<<< HEAD
         /// Control Label3.
+=======
+        /// Control Label1.
+>>>>>>> 6a468d77457e58772dbd0dfeab865ad07b6b7079
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Label Label3;
+=======
+        protected global::System.Web.UI.WebControls.Label Label1;
+>>>>>>> 6a468d77457e58772dbd0dfeab865ad07b6b7079
 
         /// <summary>
         /// Control GridView1.

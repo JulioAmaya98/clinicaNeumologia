@@ -20,11 +20,20 @@
             right: 35px;
         }
     </style>
+    <style>
+		body{
+			width: 100%;
+			margin: 0 auto;
+            
+		}
+
+       
+	</style>
 </head>
 
 <body onload="onPageLoad()">
     <div style="padding: 40px">
-        <button style="right: 35px; color: #009933; border-color: #009933;" class="btn btn botonagg" data-toggle="modal" data-target="#modalData">+ Agregar</button>
+        <button style="right: 35px;  color: #009933; border-color: #009933; width:85px; height:35px" class="btn btn botonagg" data-toggle="modal" data-target="#modalData">Agregar</button>
 
         <form style="bottom: 0" id="form1" runat="server">
 
@@ -35,10 +44,10 @@
                 <asp:Label runat="server" ID="numeroFactura" ForeColor="#009933"></asp:Label></h2>
             <label>
                 Creada el:
-                <asp:Label ID="Label1" runat="server" Text="05 Diciembre 2023 8:30 am"></asp:Label>
+               <asp:Label ID="lblFechaActual" runat="server" Text="<%=currentDate.ToString()%>"></asp:Label>
             </label>
 
-            <div class="text-lef" style="width: 1200px;">
+            <div class="text-lef" style="width: 100%;">
                 <div class="row">
                     <div class="col">
                         <label>Factura: </label>
@@ -48,7 +57,7 @@
                     </div>
 
                 </div>
-                <div class="text-lef" style="width: 1200px;">
+                <div class="text-lef" style="width: 100%;">
                     <div class="row">
                         <div class="col">
                             <asp:TextBox CssClass="form-control" ID="TextBox3" size="1" runat="server" oninput="updateLabel(this.value)"></asp:TextBox>
@@ -83,7 +92,9 @@
                         <asp:Label ID="Label2" runat="server"></asp:Label></label><br />
                         <label>
                             Fecha :
-                        <asp:Label ID="Label3" runat="server"></asp:Label></label>
+                        <asp:Label ID="Label1" runat="server" Text=" <%=currentDate.ToString()%>"></asp:Label>
+
+                        </label>
 
                     </div>
                 </div>
@@ -93,7 +104,7 @@
             <br />
             <br />
             <br />
-            <div style="width: 1340px;">
+            <div style="width: 100%;">
 
                 <asp:GridView AutoGenerateColumns="false" AllowPaging="false" ID="GridView1" runat="server" CssClass="table  table-hover  myGridView" HorizontalAlign="Justify" OnRowUpdating="ActualizarFila">
                     <HeaderStyle BackColor="transparent" ForeColor="#009933" />
@@ -140,7 +151,7 @@
 
                 </div>
                 <div style="padding: 0px; float: right; width: 5%; text-align: justify;">
-                    <label runat="server" id="subtotal">0.00 </label>
+                    <label runat="server" id="subtotal">0.00</label>
                     <br />
                     <label runat="server" id="impuesto">0.00</label><br />
                     <asp:Label ID="Label4" runat="server" Text="0.00"></asp:Label>
@@ -157,10 +168,10 @@
                         <div class="modal-header">
                             <h4>Productos</h4>
                             <div class="container-fluid">
-                                <form class="d-flex" role="search">
+                                <div class="d-flex" role="search">
 
                                     <input id="myInput" style="margin-right: 1%" class="form-control " placeholder="Search" aria-label="Search">
-                                </form>
+                                </div>
                             </div>
                             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
@@ -187,7 +198,7 @@
                             <a href="#" onclick="incrementTextBoxValue(-1)"><i class="bi bi-dash"></i></a>
                             <asp:TextBox ID="TextBox1" runat="server" Size="3" placeholder="Cantidad"></asp:TextBox>
                             <a href="#" onclick="incrementTextBoxValue(1)"><i class="bi bi-plus"></i></a>
-                            <asp:Button ID="Button2" class="btn btn-primary btn-sm" runat="server" Text="Agregar" OnClick="Button2_Click" />
+                            <asp:Button ID="Button2" class="btn btn-primary agregar " runat="server" Text="Agregar" OnClick="Button2_Click" />
                             <asp:HiddenField ID="Button2Clicked" runat="server" Value="0" />
                             <button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Cancel</button>
                         </div>
