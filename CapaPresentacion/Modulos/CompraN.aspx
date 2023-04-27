@@ -104,7 +104,7 @@
                          <asp:TemplateField ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                         <ItemTemplate>
                                            
-                                             <button type="button" class="btn btn-icon" style="background-color:#FFA500;color:white;" onclick="editarProducto(<%#Eval("id_detalle_compra") %>)">
+                                             <button type="button" class="btn btn-icon" style="background-color:#FFA500;color:white;" data-toggle="modal" data-target="#modalDataEdit">
                                                 <span ><i class="bi bi-pencil-square"></i></span>
                                             </button>
                                                 <button type="button" class="btn  btn-danger btn-icon" style="background-color:#8B0000" onclick="eliminarProducto(<%#Eval("id_detalle_compra") %>)">
@@ -194,7 +194,35 @@
                     </div>
                 </div>
             </div>
+
+            <!--Inicio  Modal para editar cantidad-->
+            <div class="modal fade" id="modalDataEdit" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>Editar Cantidad</h4>
+                            
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <a href="#" onclick="incrementTextBoxValue(-1)"><i class="bi bi-dash"></i></a>
+                            <asp:TextBox ID="TextBox2" runat="server" Size="3" placeholder="Cantidad"></asp:TextBox>
+                            <a href="#" onclick="incrementTextBoxValue(1)"><i class="bi bi-plus"></i></a>
+                        </div>
+                        <div class="modal-footer">
+                            
+                            <asp:Button ID="btnGuardarModificacion" class="btn btn-primary btn-sm" runat="server" Text="Guardar" OnClick="btnGuardarModificacion_Click" />
+                            <asp:HiddenField ID="HiddenField1" runat="server" Value="0" />
+                            <button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Fin  Modal para editar cantidad-->
             <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-success btnG" OnClick="btnGuardar_Click" />
+            
         </form>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 

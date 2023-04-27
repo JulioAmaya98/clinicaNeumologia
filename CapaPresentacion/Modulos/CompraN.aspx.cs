@@ -402,5 +402,10 @@ namespace CapaPresentacion.Modulos
         {
 
         }
+
+        protected void btnGuardarModificacion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
