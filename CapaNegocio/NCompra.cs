@@ -58,5 +58,10 @@ namespace CapaNegocio
         {
             return compra.eliminarDetalleVenta(id);
         }
+
+        public bool editarCantidad(ECompra eCompra)
+        {
+            return compra.editStock_detalleCompra(eCompra);
+        }
 	}
 }

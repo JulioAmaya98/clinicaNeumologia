@@ -106,7 +106,7 @@
             <br />
             <div style="width: 100%;">
 
-                <asp:GridView AutoGenerateColumns="false" AllowPaging="false" ID="GridView1" runat="server" CssClass="table  table-hover  myGridView" HorizontalAlign="Justify" OnRowUpdating="ActualizarFila">
+                <asp:GridView AutoGenerateColumns="false" AllowPaging="false" ID="GridView1" runat="server" CssClass="table  table-hover  myGridView" HorizontalAlign="Justify" OnRowUpdating="ActualizarFila" OnRowDataBound="GridView1_RowDataBound">
                     <HeaderStyle BackColor="transparent" ForeColor="#009933" />
                     <RowStyle BackColor="white" />
                     <AlternatingRowStyle BackColor="#E3EAEB" />
@@ -123,7 +123,7 @@
                                             </button>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                         <asp:BoundField DataField="id_detalle_compra" HeaderText="id_detalle_compra" Visible="false" InsertVisible="False" ReadOnly="True" SortExpression="id_detalle_compra"/>
+                         <asp:BoundField DataField="id_detalle_compra" HeaderText="id_detalle_compra" Visible="true" InsertVisible="False" ReadOnly="True" SortExpression="id_detalle_compra"/>
                         <asp:BoundField DataField="Codigo del producto" HeaderText="CODIGO DEL PRODUCTO" SortExpression="Codigo del producto" />
                         <asp:BoundField DataField="nombre" HeaderText="NOMBRE" SortExpression="nombre" />
 
@@ -208,19 +208,19 @@
 
             <!--Inicio  Modal para editar cantidad-->
             <div class="modal fade" id="modalDataEdit" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="text-align:center">
                         <div class="modal-header">
-                            <h4>Editar Cantidad</h4>
+                            <h4>Modificar Cantidad</h4>
                             
                             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <a href="#" onclick="incrementTextBoxValue(-1)"><i class="bi bi-dash"></i></a>
-                            <asp:TextBox ID="TextBox2" runat="server" Size="3" placeholder="Cantidad"></asp:TextBox>
-                            <a href="#" onclick="incrementTextBoxValue(1)"><i class="bi bi-plus"></i></a>
+                        <div class="modal-body" >
+                            
+                            <asp:TextBox class="form-control" TextMode="Number" min="0" ID="txtCantidad" runat="server" Size="3" placeholder="Ingrese Nueva Cantidad"></asp:TextBox>
+                            
                         </div>
                         <div class="modal-footer">
                             

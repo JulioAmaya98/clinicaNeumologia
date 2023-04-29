@@ -20,6 +20,8 @@ namespace CapaPresentacion.Modulos
             string formattedDate = currentDate.ToString("dd/MM/yyyy");
             lblFechaActual.Text =   formattedDate;
             Label1.Text=  formattedDate;
+			
+
 
             if (!IsPostBack)
 			{
@@ -394,14 +396,67 @@ namespace CapaPresentacion.Modulos
 			Response.Redirect("HistorialCompras.aspx?rol=" + Request.QueryString["rol"]);
 		}
 
-        protected void Button1_Click1(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnGuardarModificacion_Click(object sender, EventArgs e)
         {
+			NCompra editarCompra = new NCompra();
+			ECompra eCompra = new ECompra();
 
+			string id;
+            foreach (GridViewRow row in GridView1.Rows)
+			{
+				id = row.Cells[1].Text;
+				if (id != null)
+				{
+                    eCompra.id_detalle_compra = Convert.ToInt32(id);
+                    eCompra.cantidad = Convert.ToInt32(txtCantidad.Text);
+
+                    if (editarCompra.editarCantidad(eCompra))
+                    {
+                        string alertError = "Swal.fire({";
+                        alertError += "icon: 'success',";
+                        alertError += "title: 'Guardado',";
+                        alertError += "text: 'Cantidad editada exitosamente',";
+                        alertError += "confirmButtonColor: '#3085d6',";
+                        alertError += "confirmButtonText: 'OK'";
+                        alertError += "}).then((result) => {";
+                        alertError += "if (result.isConfirmed) {";
+                        alertError += "window.location.href = 'CompraN.aspx?rol=" + Request.QueryString["rol"] + "&nFactura=" + TextBox3.Text + "';";
+                        alertError += "}";
+                        alertError += "});";
+
+                        ScriptManager.RegisterStartupScript(
+                            this, this.GetType(), "script", alertError, true
+                        );
+                    }
+                    else
+                    {
+                        string alertError = "Swal.fire({";
+                        alertError += "icon: 'error',";
+                        alertError += "title: 'Error',";
+                        alertError += "text: 'Por favor ingrese cantidad',";
+                        alertError += "})";
+
+                        ScriptManager.RegisterClientScriptBlock(
+                            this, this.GetType(), "script", alertError, true
+                        );
+                    }
+                }
+			}
+
+
+			
+        }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[1].Visible = false;
+            }
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[1].Visible = false;
+            }
         }
     }
 }

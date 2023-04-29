@@ -138,5 +138,21 @@ namespace CapaDatos
 			return false;
 		}
 
+		public bool editStock_detalleCompra(ECompra eCompra) 
+		{
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_editCantidad_detalle_compra";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id", eCompra.id_detalle_compra);
+            comando.Parameters.AddWithValue("@cantidad", eCompra.cantidad);
+            int res = comando.ExecuteNonQuery();
+            objConn.cerrarConexion();
+            if (res > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
 	}
 }
