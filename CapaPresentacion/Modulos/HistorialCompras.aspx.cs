@@ -23,16 +23,119 @@ namespace CapaPresentacion.Modulos
 
 				if (Request.QueryString["rol"] == encrypMedico && Session["username"].ToString() == encrypMedico)
 				{
+					if (Request.QueryString["id"]!=null)
+					{
+						int id = Convert.ToInt32(Session["idUser"].ToString());
+                        Label1.Text = Session["idUser"].ToString();
+						int idCompra = Convert.ToInt32(Request.QueryString["id"].ToString());
+						string comprobante = Request.QueryString["comprobante"].ToString();
 
-					GridViewHistory.DataSource = objHistoryCompras.mostrarHistorialCompras();
-					GridViewHistory.DataBind();
+						NCompra eliminarCompra = new NCompra();
+
+						if (eliminarCompra.EliminarCompra(id,comprobante))
+						{
+
+                            string alertError = "Swal.fire({";
+                            alertError += "icon: 'success',";
+                            alertError += "title: 'Eliminado',";
+                            alertError += "text: 'Compra eliminada exitosamente',";
+                            alertError += "confirmButtonColor: '#3085d6',";
+                            alertError += "confirmButtonText: 'OK'";
+                            alertError += "}).then((result) => {";
+                            alertError += "if (result.isConfirmed) {";
+                            alertError += "window.location.href = 'HistorialCompras.aspx?rol=" + Request.QueryString["rol"] + "';";
+                            alertError += "}";
+                            alertError += "});";
+
+                            ScriptManager.RegisterStartupScript(
+                                this, this.GetType(), "script", alertError, true
+                            );
+
+						}
+						else
+						{
+                            string alertError = "Swal.fire({";
+                            alertError += "icon: 'error',";
+                            alertError += "title: 'Error',";
+                            alertError += "text: 'No tienes los permisos necesarios para eliminar esta compra',";
+                            alertError += "confirmButtonColor: '#3085d6',";
+                            alertError += "confirmButtonText: 'OK'";
+                            alertError += "}).then((result) => {";
+                            alertError += "if (result.isConfirmed) {";
+                            alertError += "window.location.href = 'HistorialCompras.aspx?rol=" + Request.QueryString["rol"] + "';";
+                            alertError += "}";
+                            alertError += "});";
+
+                            ScriptManager.RegisterStartupScript(
+                                this, this.GetType(), "script", alertError, true
+                            );
+                        }
+
+
+
+
+
+
+					}
+					
 				}
 				else if (Request.QueryString["rol"] == encrypSecretaria && Session["username"].ToString() == encrypSecretaria)
 				{
+                    if (Request.QueryString["id"] != null)
+                    {
+                        int id = Convert.ToInt32(Session["idUser"]);
+                        int idCompra = Convert.ToInt32(Request.QueryString["id"].ToString());
+                        string comprobante = Request.QueryString["comprobante"].ToString();
 
-					GridViewHistory.DataSource = objHistoryCompras.mostrarHistorialCompras();
-					GridViewHistory.DataBind();
-					navEmpleados.Visible = false;
+                        NCompra eliminarCompra = new NCompra();
+
+                        if (eliminarCompra.EliminarCompra(id, comprobante))
+                        {
+
+                            string alertError = "Swal.fire({";
+                            alertError += "icon: 'success',";
+                            alertError += "title: 'Eliminado',";
+                            alertError += "text: 'Compra eliminada exitosamente',";
+                            alertError += "confirmButtonColor: '#3085d6',";
+                            alertError += "confirmButtonText: 'OK'";
+                            alertError += "}).then((result) => {";
+                            alertError += "if (result.isConfirmed) {";
+                            alertError += "window.location.href = 'HistorialCompras.aspx?rol=" + Request.QueryString["rol"] + "';";
+                            alertError += "}";
+                            alertError += "});";
+
+                            ScriptManager.RegisterStartupScript(
+                                this, this.GetType(), "script", alertError, true
+                            );
+
+                        }
+                        else
+                        {
+                            string alertError = "Swal.fire({";
+                            alertError += "icon: 'error',";
+                            alertError += "title: 'Error',";
+                            alertError += "text: 'No tienes los permisos necesarios para eliminar esta compra',";
+                            alertError += "confirmButtonColor: '#3085d6',";
+                            alertError += "confirmButtonText: 'OK'";
+                            alertError += "}).then((result) => {";
+                            alertError += "if (result.isConfirmed) {";
+                            alertError += "window.location.href = 'HistorialCompras.aspx?rol=" + Request.QueryString["rol"] + "';";
+                            alertError += "}";
+                            alertError += "});";
+
+                            ScriptManager.RegisterStartupScript(
+                                this, this.GetType(), "script", alertError, true
+                            );
+                        }
+
+
+
+
+
+
+                    }
+
+                    navEmpleados.Visible = false;
 					navInventario.Visible = false;
 
 				}

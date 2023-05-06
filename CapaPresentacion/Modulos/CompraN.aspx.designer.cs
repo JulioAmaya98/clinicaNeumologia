@@ -204,13 +204,13 @@ namespace CapaPresentacion.Modulos
         protected global::System.Web.UI.WebControls.TextBox txtCantidad;
 
         /// <summary>
-        /// Control btnGuardarModificacion.
+        /// Control prueba.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarModificacion;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prueba;
 
         /// <summary>
         /// Control HiddenField1.

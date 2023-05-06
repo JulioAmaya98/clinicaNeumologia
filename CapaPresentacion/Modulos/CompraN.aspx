@@ -29,6 +29,7 @@
 
        
 	</style>
+    
 </head>
 
 <body onload="onPageLoad()">
@@ -115,7 +116,7 @@
                          <asp:TemplateField ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                         <ItemTemplate>
                                            
-                                             <button type="button" class="btn btn-icon" style="background-color:#FFA500;color:white;" data-toggle="modal" data-target="#modalDataEdit">
+                                             <button  type="button" class="btn btn-icon" style="background-color:#FFA500;color:white;"  onclick = "editarProducto(<%#Eval("id_detalle_compra") %>)">
                                                 <span ><i class="bi bi-pencil-square"></i></span>
                                             </button>
                                                 <button type="button" class="btn  btn-danger btn-icon" style="background-color:#8B0000" onclick="eliminarProducto(<%#Eval("id_detalle_compra") %>)">
@@ -219,12 +220,12 @@
                         </div>
                         <div class="modal-body" >
                             
-                            <asp:TextBox class="form-control" TextMode="Number" min="0" ID="txtCantidad" runat="server" Size="3" placeholder="Ingrese Nueva Cantidad"></asp:TextBox>
-                            
+                            <asp:TextBox class="form-control" TextMode="Number" min="1" ID="txtCantidad" runat="server" Size="3" placeholder="Ingrese Nueva Cantidad"></asp:TextBox>
+                            <span runat="server" id="prueba" ></span>
                         </div>
                         <div class="modal-footer">
+                            <button id="btnGuardar2" type="button"  class="btn btn-primary btn-sm">Guardar</button>
                             
-                            <asp:Button ID="btnGuardarModificacion" class="btn btn-primary btn-sm" runat="server" Text="Guardar" OnClick="btnGuardarModificacion_Click" />
                             <asp:HiddenField ID="HiddenField1" runat="server" Value="0" />
                             <button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Cancel</button>
                         </div>
@@ -243,6 +244,61 @@
     </div>
 </body>
 <script>
+   
+    var rol = window.location.search.substring(1);
+    rol = rol.split("rol=")[1];
+
+    var nFactura=document.getElementById("TextBox3").value
+
+
+    const editarProducto = (id_detalle_compra) => {
+
+                 
+        $('#modalDataEdit').modal('show');
+
+        document.getElementById("btnGuardar2").addEventListener("click", function () {
+            var textCantidad = document.getElementById("txtCantidad").value;
+
+            if (textCantidad != "Ingrese Nueva Cantidad" || textCantidad != "" || textCantidad != null) {
+
+                 let nFactura = document.getElementById("<%= TextBox3.ClientID %>").value;
+                    nFactura = nFactura.replace(/,/g, ' ');
+                    let url = window.location.href;
+
+                    
+                if (url.indexOf("nFactura") !== -1) {
+
+                    let currentNFactura = url.split("nFactura=")[1].split("&")[0];
+
+                    if (currentNFactura == nFactura) {
+
+                        location.href = window.location.href + "&cantidad=" + textCantidad + "&idDetalle=" + id_detalle_compra;
+                        console.log(currentNFactura)
+                        return;
+                    }
+                } else {
+                    location.href = `CompraN.aspx?rol=${rol}&idDetalle=${id_detalle_compra}&nFactura=${encodeURIComponent(nFactura)}&cantidad=${textCantidad}`;
+                }
+
+            } else {
+                Swal.fire({
+                    title:" + rol + ",
+                    text: "Por favor ingrese una cantidad",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'ok'
+                })
+            }
+
+            
+        });
+
+     }
+
+
+
     function incrementTextBoxValue(increment) {
         var textBox = document.getElementById("TextBox1");
         var currentValue = parseInt(textBox.value) || 0;

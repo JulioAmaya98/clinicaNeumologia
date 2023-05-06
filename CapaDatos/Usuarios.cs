@@ -152,5 +152,19 @@ namespace CapaDatos
 
             return false;
         }
+
+        public DataTable ObtenerIdUSer(EUsuarios usuario)
+        {
+            
+            DataTable tabla = new DataTable();
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_obtenerIdUser";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@nombre", usuario.username);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            objConn.cerrarConexion();
+            return tabla;
+        }
     }
 }

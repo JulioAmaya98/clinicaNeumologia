@@ -70,5 +70,12 @@ namespace CapaNegocio
         {
            return usuarios.eliminarUsuario(user);
         }
+        public DataTable ObtenerIdUser(EUsuarios usuario)
+        {
+            DataTable tabla = new DataTable();
+            tabla = usuarios.ObtenerIdUSer(usuario);
+            return tabla;
+        }
+
     }
 }

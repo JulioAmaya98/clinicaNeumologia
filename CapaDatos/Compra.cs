@@ -154,5 +154,21 @@ namespace CapaDatos
             return false;
         }
 
+		public bool EliminarCompra(int id,string comprobante)
+		{
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_eliminar_compra";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id",id);
+            comando.Parameters.AddWithValue("@comprobante", comprobante);
+            int res = comando.ExecuteNonQuery();
+            objConn.cerrarConexion();
+            if (res > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
 	}
 }

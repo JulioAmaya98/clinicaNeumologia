@@ -63,5 +63,11 @@ namespace CapaNegocio
         {
             return compra.editStock_detalleCompra(eCompra);
         }
+
+        public bool EliminarCompra(int id, string comprobante)
+        {
+            return compra.EliminarCompra(id,comprobante);
+        }
+
 	}
 }

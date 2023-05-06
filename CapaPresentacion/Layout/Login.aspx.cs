@@ -46,10 +46,26 @@ namespace CapaPresentacion
             tabla = objsesion.loginUsuario(user);
 
 
+
+           
+            
+
             if (tabla.Rows.Count > 0)
             {
+                DataTable tablaIdUser = new DataTable();
+                NUsuarios nIdUser = new NUsuarios();
+                EUsuarios usuario2 = new EUsuarios();
+                
                 objNUsuario.registroSesion(objUsersesion);
                 Session["username"]=txtNombre.Value;
+
+
+                usuario2.username = txtNombre.Value;
+                tablaIdUser = nIdUser.ObtenerIdUser(usuario2);
+                string id =tablaIdUser.Rows[0]["id_usuario"].ToString();
+
+                Session["idUser"] = id;
+
 
                 DataTable tablaRol = new DataTable();
                 tablaRol = objRoles.MostarRolPorUsuarios(user);
