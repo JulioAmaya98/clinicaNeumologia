@@ -47,6 +47,7 @@
     <Compile Include="NProveedores.cs" />
     <Compile Include="NRoles.cs" />
     <Compile Include="NUsuarios.cs" />
+    <Compile Include="NVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

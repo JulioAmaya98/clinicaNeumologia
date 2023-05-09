@@ -188,7 +188,7 @@ namespace CapaPresentacion.Modulos
 
 
 
-						DropDownList2.DataSource = NProductos.mostrarProductoProveedor();
+					DropDownList2.DataSource = NProductos.mostrarProductoProveedor();
 					DropDownList2.DataTextField = "Vendedor";
 					DropDownList2.DataValueField = "IdProveedor";
 					DropDownList2.DataBind();

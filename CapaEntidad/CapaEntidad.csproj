@@ -46,6 +46,7 @@
     <Compile Include="EProducto.cs" />
     <Compile Include="EUProveedor.cs" />
     <Compile Include="EUsuarios.cs" />
+    <Compile Include="EVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

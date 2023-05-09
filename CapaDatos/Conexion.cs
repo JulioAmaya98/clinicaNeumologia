@@ -12,7 +12,7 @@ namespace CapaDatos
     public class Conexion
     {
 
-        SqlConnection conn = new SqlConnection("Data Source=JULIO\\SQLEXPRESS;Initial Catalog=clinic;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=RUTY\\U20201501;Initial Catalog=clinic;Integrated Security=True");
 
 
        
