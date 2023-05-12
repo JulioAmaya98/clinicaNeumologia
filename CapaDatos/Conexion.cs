@@ -12,7 +12,9 @@ namespace CapaDatos
     public class Conexion
     {
 
+
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-EHTBUQ2;Initial Catalog=clinic;Integrated Security=True");
+
 
 
        
