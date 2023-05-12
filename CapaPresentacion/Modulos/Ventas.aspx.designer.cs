@@ -42,15 +42,6 @@ namespace CapaPresentacion.Modulos
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// GridViewCargarProducto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewCargarProducto;
-
-        /// <summary>
         /// txtCantidad control.
         /// </summary>
         /// <remarks>
@@ -58,6 +49,15 @@ namespace CapaPresentacion.Modulos
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCantidad;
+
+        /// <summary>
+        /// GridViewCargarProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewCargarProducto;
 
         /// <summary>
         /// gridviewDetalleVenta control.

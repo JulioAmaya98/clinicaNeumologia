@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  AutoEventWireup="true" EnableEventValidation="false" CodeBehind="Ventas.aspx.cs" Inherits="CapaPresentacion.Modulos.Ventas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="Ventas.aspx.cs" Inherits="CapaPresentacion.Modulos.Ventas" %>
 
 
 <style>
@@ -26,6 +26,18 @@
         grid-template-rows: auto auto;
         grid-gap: 5px;
     }
+
+    .in {
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.2s ease-in-out;
+    }
+
+        .in:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 4px #00bfff;
+        }
 </style>
 
 <!DOCTYPE html>
@@ -62,10 +74,10 @@
                         <div class="float-start w-100 d-flex ">
 
                             <div class="dropdown mx-0">
-                              
 
 
-                                <asp:DropDownList  class="btn btn-secondary dropdown-toggle" aria-labelledby="dropdownMenu2" ID="DropDownList1" AutoPostBack="true" data-bs-toggle="dropdown" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server">
+
+                                <asp:DropDownList class="btn btn-secondary dropdown-toggle" aria-labelledby="dropdownMenu2" ID="DropDownList1" AutoPostBack="true" data-bs-toggle="dropdown" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server">
                                 </asp:DropDownList>
 
                             </div>
@@ -118,8 +130,10 @@
 
                     <span class="input-group-text">Buscar</span>
                     <input id="txtBuscarProducto" type="text" aria-label="First name" class="form-control">
-                </div>
 
+                    <span style="margin-left: 10px" class="input-group-text">Cantidad</span>
+                    <asp:TextBox ID="txtCantidad" runat="server" class="form-group in" onkeypress="return isNumberKey(event)" onchange="validateNumberInput(this)" placeholder="Ingrese la cantidad" />
+                </div>
                 <div id="divGridView" style="display: none;">
                     <asp:GridView ShowHeader="True" AutoGenerateColumns="false" CssClass="table table-striped " ID="GridViewCargarProducto" runat="server">
 
@@ -127,20 +141,20 @@
                             <asp:TemplateField HeaderText="Select">
                                 <ItemTemplate>
 
-                                  <button  type="button" class="btn btn-icon" style="background-color:#FFA500;color:white;"  onclick = "agregarProducto(<%#Eval("id_producto") %>)">
-                                                <span >Agregar</span>
-                                    </button> 
-                                   
+                                    <button type="button" class="btn btn-icon" style="background-color: #FFA500; color: white;" onclick="agregarProducto(<%#Eval("id_producto") %>)">
+                                        <span>Agregar</span>
+                                    </button>
+
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="id_producto" HeaderText="id" />
                             <asp:BoundField DataField="nombre" HeaderText="Producto" />
                             <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
                             <asp:BoundField DataField="precio" HeaderText="Precio" />
-                            
+
                             <asp:TemplateField HeaderText="Cantidad">
                                 <ItemTemplate>
-                                 <asp:TextBox ID="txtCantidad2" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event)" onchange="validateNumberInput(this)" placeholder="Ingrese la cantidad" />
+                                    <asp:TextBox ID="txtCantidad2" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event)" onchange="validateNumberInput(this)" placeholder="Ingrese la cantidad" />
 
 
                                 </ItemTemplate>
@@ -149,7 +163,7 @@
                         </Columns>
 
                     </asp:GridView>
-                    <asp:TextBox ID="txtCantidad" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event)" onchange="validateNumberInput(this)" placeholder="Ingrese la cantidad" />
+
                 </div>
 
                 <div id="divNoResults" style="display: none;">No se encontraron resultados</div>
@@ -157,22 +171,22 @@
 
                 <asp:GridView ID="gridviewDetalleVenta" CssClass="table table-striped " runat="server" AutoGenerateColumns="false">
 
-                     <Columns>
-                            <asp:TemplateField HeaderText="Select">
-                                <ItemTemplate>
+                    <Columns>
+                        <asp:TemplateField HeaderText="Select">
+                            <ItemTemplate>
 
-                                  <button  type="button" class="btn btn-icon" style="background-color:#FFA500;color:white;"  onclick = "editarProducto(<%#Eval("id_ventas") %>)">
-                                                <span >Editar</span>
-                                    </button> 
-                                   
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:BoundField DataField="id_ventas" HeaderText="id" />
-                            <asp:BoundField DataField="codigo_producto" HeaderText="Producto" />
-                            <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
-                            <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />                          
-                           <asp:BoundField DataField="subtotal" HeaderText="Subtotal" />  
-                        </Columns>
+                                <button type="button" class="btn btn-icon" style="background-color: #FFA500; color: white;" onclick="editarProducto(<%#Eval("id_ventas") %>)">
+                                    <span>Editar</span>
+                                </button>
+
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="id_ventas" HeaderText="id" />
+                        <asp:BoundField DataField="codigo_producto" HeaderText="Producto" />
+                        <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
+                        <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
+                        <asp:BoundField DataField="subtotal" HeaderText="Subtotal" DataFormatString="{0:N2}" />
+                    </Columns>
 
                 </asp:GridView>
 
@@ -224,12 +238,12 @@
                             </div>
 
                             <asp:Button Style="margin-top: 15px;" type="button" class="btn btn-success btn-lg" ID="Button1" runat="server" Text="Hecho" />
-                            <asp:Button Style="margin-top: 15px;" type="button" class="btn btn-warning btn-lg" ID="ButtonCancelar" runat="server" Text="Cancelar" OnClick="ButtonCancelar_Click"/>
+                            <asp:Button Style="margin-top: 15px;" type="button" class="btn btn-warning btn-lg" ID="ButtonCancelar" runat="server" Text="Cancelar" OnClick="ButtonCancelar_Click" />
 
                         </div>
                     </div>
                 </div>
-               
+
 
             </form>
 
@@ -261,11 +275,11 @@
 
                 var cells = rows[i].querySelectorAll("td");
                 var rowText = "";
-                
+
 
                 for (var j = 0; j < cells.length; j++) {
-                    
-                     rowText += cells[j].textContent.toLowerCase() + " ";
+
+                    rowText += cells[j].textContent.toLowerCase() + " ";
                 }
                 if (rowText.indexOf(searchTerm) > -1) {
                     rows[i].style.display = "";
@@ -291,11 +305,11 @@
         });
 
         const agregarProducto = (id_producto) => {
-            
+
             var cantidad = document.getElementById("<%= txtCantidad.ClientID %>").value;
-            
-                location.href = `Ventas.aspx?idProducto=${id_producto}&cantidad=${cantidad}`;
-            
+
+            location.href = `Ventas.aspx?idProducto=${id_producto}&cantidad=${cantidad}`;
+
         }
 
 
