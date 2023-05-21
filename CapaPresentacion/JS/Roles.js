@@ -23,6 +23,9 @@
         const HistoryCompras = document.getElementById('navCompras');
         HistoryCompras.setAttribute('href', 'Historialcompras.aspx?rol=' + rol);
 
+        const ventas = document.getElementById('Ventasnav');
+        ventas.setAttribute('href', 'Ventas.aspx?rol=' + rol);
+
     } else if (rol == "QgBvAGQAZQBnAHUAZQByAG8A") {
 
         const inventario = document.getElementById('navInventario');

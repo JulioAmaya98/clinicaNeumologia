@@ -38,7 +38,7 @@
                         <a class="nav-link " runat="server" data-bs-toggle="tab" id="navCompras" href="#">Compras</a>
                     </li>
                     <li class="nav-item">
-                        <asp:Button ID="Cerrar" runat="server" CssClass="btn btn-danger" Text="Cerrar Session" OnClick="Cerrar_Click" />
+                        <asp:Button ID="Cerrar" runat="server" CssClass="btn btn-danger" Text="Cerrar Session"  />
                     </li>
                 </ul>
 

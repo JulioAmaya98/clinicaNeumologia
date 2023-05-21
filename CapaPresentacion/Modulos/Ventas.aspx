@@ -147,7 +147,7 @@
 
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:BoundField DataField="id_producto" HeaderText="id" />
+                            <asp:BoundField  DataField="id_producto" HeaderText="id"/>
                             <asp:BoundField DataField="nombre" HeaderText="Producto" />
                             <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
                             <asp:BoundField DataField="precio" HeaderText="Precio" />

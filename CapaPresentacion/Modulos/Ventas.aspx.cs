@@ -148,7 +148,7 @@ namespace CapaPresentacion.Modulos
 
         protected void ButtonCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Inicio.aspx");
+            Response.Redirect("Inicio.aspx?rol=" + Request["rol"]);
         }
     }
 }
