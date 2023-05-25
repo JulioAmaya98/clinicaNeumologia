@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.9\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -86,6 +89,7 @@
     <Content Include="Modulos\Inventario.aspx" />
     <Content Include="Modulos\Proveedores.aspx" />
     <Content Include="Modulos\Ventas.aspx" />
+    <Content Include="Modulos\VerCompra.aspx" />
     <Content Include="Modulos\ViewProductSupplier.aspx" />
     <Content Include="Modulos\HistorialCompras.aspx" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
@@ -1895,6 +1899,13 @@
     </Compile>
     <Compile Include="Modulos\Ventas.aspx.designer.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\VerCompra.aspx.cs">
+      <DependentUpon>VerCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\VerCompra.aspx.designer.cs">
+      <DependentUpon>VerCompra.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulos\ViewProductSupplier.aspx.cs">
       <DependentUpon>ViewProductSupplier.aspx</DependentUpon>

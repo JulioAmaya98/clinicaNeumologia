@@ -107,17 +107,17 @@
                     <div style="margin-top: 50px; padding-left: 10%; padding-right: 10%" class="collapse" id="clienteFormulario">
 
                         <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del cliente" />
+                            <label for="dui" class="form-label">DUI</label>
+                            <input type="text" runat="server" class="form-control" id="Dui" placeholder="Ingrese su DUI" />
                         </div>
                         <div class="mb-3">
-                            <label for="apellido" class="form-label">Apellido</label>
-                            <input type="text" class="form-control" id="apellido" placeholder="Ingrese el apellido del cliente" />
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" runat="server" class="form-control" id="nombre" placeholder="Ingrese su nombre" />
                         </div>
 
                         <div class="mb-3">
                             <label for="direccion" class="form-label">Dirección</label>
-                            <textarea class="form-control" id="direccion" rows="3" placeholder="Ingrese la dirección del cliente"></textarea>
+                            <textarea class="form-control" runat="server" id="direccion" rows="3" placeholder="Ingrese la dirección del cliente"></textarea>
                         </div>
 
 
@@ -147,19 +147,11 @@
 
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:BoundField  DataField="id_producto" HeaderText="id"/>
+                            <asp:BoundField DataField="id_producto" HeaderText="id" />
                             <asp:BoundField DataField="nombre" HeaderText="Producto" />
                             <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
-                            <asp:BoundField DataField="precio" HeaderText="Precio" />
-
-                            <asp:TemplateField HeaderText="Cantidad">
-                                <ItemTemplate>
-                                    <asp:TextBox ID="txtCantidad2" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event)" onchange="validateNumberInput(this)" placeholder="Ingrese la cantidad" />
-
-
-                                </ItemTemplate>
-                            </asp:TemplateField>
-
+                            <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}"/>
+                            <asp:BoundField DataField="existencia" HeaderText="Existencia" /> 
                         </Columns>
 
                     </asp:GridView>
@@ -169,7 +161,7 @@
                 <div id="divNoResults" style="display: none;">No se encontraron resultados</div>
 
 
-                <asp:GridView ID="gridviewDetalleVenta" CssClass="table table-striped " runat="server" AutoGenerateColumns="false">
+                <asp:GridView ID="gridviewDetalleVenta" CssClass="table table-striped " runat="server" AutoGenerateColumns="false" OnRowDataBound="GridViewCargarProducto_RowDataBound">
 
                     <Columns>
                         <asp:TemplateField HeaderText="Select">
@@ -182,9 +174,11 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="id_ventas" HeaderText="id" />
-                        <asp:BoundField DataField="codigo_producto" HeaderText="Producto" />
+                        <asp:BoundField DataField="codigo_producto" HeaderText="Codigo" />
+                        <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                         <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
                         <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
+                        <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}"/>
                         <asp:BoundField DataField="subtotal" HeaderText="Subtotal" DataFormatString="{0:N2}" />
                     </Columns>
 
@@ -199,45 +193,63 @@
 
 
                     <div class="float-end w-100" style="display: flex;">
-
+                        <!--Campos de parte Izquierda-->
                         <div class="" style="margin-right: auto; width: 400px">
-                            <div class="form-group">
-                                <label for="total-apagar">Total a pagar</label>
+
+                            <div class="form-group" id="divSubtotal">
+                                <label for="subtotal" id="lbSubtotal" runat="server">Subtotal</label>
                                 <div class="input-group" style="width: 100%;">
                                     <span class="input-group-text">$</span>
 
-                                    <label type="text" class="form-control form-control-lg" id="total-apagar" aria-label="Dollar amount (with dot and two decimal places)"></label>
+                                    <label type="text" runat="server" class="form-control form-control-lg" id="subtotal" aria-label="Dollar amount (with dot and two decimal places)" />
+                                </div>
+                            </div>
+                            <div class="form-group" id="divIva" runat="server" style="width: 100%;">
+                                <label for="iva" >IVA</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+
+                                    <label type="text" id="txtIva" runat="server" class="form-control form-control-lg" aria-label="Dollar amount (with dot and two decimal places)" ></label>
+                                </div>
+                            </div>
+                            <div class="form-group" id="divPagar" runat="server" style="width: 100%;">
+                                <label for="totalPagar" id="lbTotalPagar" runat="server" >Total a pagar</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+
+                                    <label type="text" runat="server" class="form-control form-control-lg" id="txtTotalPagar" aria-label="Dollar amount (with dot and two decimal places)" DataFormatString="{0:F2}"></label>
                                 </div>
                             </div>
                         </div>
+                        <!--Campos de parte Derecha-->
                         <div class="" style="margin-left: auto; width: 400px">
 
                             <div class="form-group">
-                                <label for="total-pagado">Total pagado</label>
+                                <label for="txtTotalPagado">Total pagado</label>
                                 <div class="input-group" style="width: 100%;">
                                     <span class="input-group-text">$</span>
 
-                                    <input type="text" class="form-control form-control-lg" id="total-pagado" aria-label="Dollar amount (with dot and two decimal places)" />
+                                    <input type="text" runat="server" class="form-control form-control-lg" id="txtTotalPagado" aria-label="Dollar amount (with dot and two decimal places)" />
                                 </div>
                             </div>
                             <div class="form-group" style="width: 100%;">
-                                <label for="saldo-pendiente">Saldo Pendiente</label>
+                                <label for="saldo-pendiente" >Saldo Pendiente</label>
                                 <div class="input-group">
                                     <span class="input-group-text">$</span>
 
-                                    <label type="text" class="form-control form-control-lg" id="saldo-pendiente" aria-label="Dollar amount (with dot and two decimal places)"></label>
+                                    <label type="text" runat="server"  class="form-control form-control-lg" id="txtSaldoPendiente" aria-label="Dollar amount (with dot and two decimal places)" ></label>
                                 </div>
                             </div>
                             <div class="form-group" style="width: 100%;">
-                                <label for="su-cambio">Su cambio</label>
+                                <label for="su-cambio" >Su cambio</label>
                                 <div class="input-group">
                                     <span class="input-group-text">$</span>
 
-                                    <label type="text" class="form-control form-control-lg" id="su-cambio" aria-label="Dollar amount (with dot and two decimal places)"></label>
+                                    <label type="text" runat="server"  class="form-control form-control-lg" id="txtSuCambio" aria-label="Dollar amount (with dot and two decimal places)" ></label>
                                 </div>
                             </div>
 
-                            <asp:Button Style="margin-top: 15px;" type="button" class="btn btn-success btn-lg" ID="Button1" runat="server" Text="Hecho" />
+                            <asp:Button Style="margin-top: 15px;" type="button" class="btn btn-success btn-lg" ID="btnTerminarVenta" runat="server" Text="Terminar venta" OnClick="btnTerminarVenta_Click"/>
                             <asp:Button Style="margin-top: 15px;" type="button" class="btn btn-warning btn-lg" ID="ButtonCancelar" runat="server" Text="Cancelar" OnClick="ButtonCancelar_Click" />
 
                         </div>
@@ -258,6 +270,34 @@
         var txtBuscarProducto = document.getElementById("txtBuscarProducto");
         var divGridView = document.getElementById("divGridView");
         var divNoResults = document.getElementById("divNoResults");
+
+
+        var saldoPendinete = document.getElementById("txtSaldoPendiente");
+        var iva = document.getElementById("txtIva");
+        var totalPagar = document.getElementById("txtTotalPagar");
+        var subtotal = document.getElementById("subtotal");
+       
+        var cambio = document.getElementById("txtSuCambio");
+
+        subtotal.innerHTML = parseFloat(subtotal.innerHTML).toFixed(2);
+        totalPagar.innerHTML = parseFloat(totalPagar.innerHTML).toFixed(2); 
+        iva.innerHTML = parseFloat(iva.innerHTML).toFixed(2);
+
+        if (isNaN(saldoPendinete.innerText)) {
+            saldoPendinete.innerHTML=""
+        } else {
+            saldoPendinete.innerHTML = parseFloat(saldoPendinete.innerHTML).toFixed(2)
+        }
+        if (isNaN(cambio.innerText)) {
+            cambio.innerHTML = ""
+        } else {
+            cambio.innerHTML = parseFloat(cambio.innerHTML).toFixed(2);
+        }
+       
+        
+        
+        
+        
 
         txtBuscarProducto.addEventListener("input", function () {
 
@@ -311,6 +351,62 @@
             location.href = `Ventas.aspx?idProducto=${id_producto}&cantidad=${cantidad}`;
 
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const totalPagado = document.getElementById("txtTotalPagado");
+            const total = document.getElementById("txtTotalPagar");
+            const txtPendiente = document.getElementById("txtSaldoPendiente");
+            const txtCambio = document.getElementById("txtSuCambio");
+            
+            totalPagado.addEventListener('input', actualizarData);
+            
+
+            function actualizarData() {
+
+                
+                const pagado = parseFloat(totalPagado.value);
+                const total2 = parseFloat(total.innerText);
+
+                
+
+                if (isNaN(pagado)) {
+                    txtPendiente.textContent = "";
+                    txtCambio.textContent = "";
+                    return false;
+                }
+
+               
+
+                const resta = pagado - total2;
+
+                if (pagado < total2) {
+                    console.log(pagado);
+                    if (isNaN(pagado)) {
+                        txtPendiente.textContent = "";
+                        txtCambio.textContent = "";
+
+                    }
+
+                    txtCambio.textContent = 0;
+                    txtPendiente.textContent = resta;
+                } else {
+                    console.log(pagado);
+                    if (isNaN(pagado)) {
+                        txtPendiente.textContent = "";
+                        txtCambio.textContent = "";
+
+                    }
+                    txtPendiente.textContent = 0;
+                    txtCambio.textContent = resta;
+                }
+                
+
+            } 
+
+        })
+
+         
+       
 
 
 

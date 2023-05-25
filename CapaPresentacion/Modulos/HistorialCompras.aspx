@@ -100,7 +100,7 @@
                                             <button type="button" class="btn  btn-danger btn-icon" style="background-color: #8B0000" onclick="eliminarEmpleado(<%#Eval("id_compra") %>, this.parentNode.parentNode.cells[0].innerHTML)">
                                                 <span><i class="bi bi-trash3"></i></i></span>
                                             </button>
-
+                                            <button type="button" class="btn  btn-icon" style="background-color: #808080ff" onclick="verCompra(<%#Eval("id_compra") %>, this.parentNode.parentNode.cells[0].innerHTML)"  >                                                <span><i class="bi bi-eye-fill"></i></span>                                            </button>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
@@ -138,7 +138,7 @@
               })
           }
 
-
+          const verCompra = (id, comprobante) => {              Swal.fire({                  title: 'Quieres ver esta Compra?',                  icon: 'warning',                  showCancelButton: true,                  confirmButtonColor: '#3085d6',                  cancelButtonColor: '#d33',                  confirmButtonText: 'Si, ver!'              }).then((result) => {                  if (result.isConfirmed) {                      setTimeout(() => {                          location.href = "verCompra.aspx?rol=" + rol + "&nFactura=" + comprobante;                      }, 500);                  }              })          }
       </script>
 
     

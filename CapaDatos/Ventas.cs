@@ -106,7 +106,39 @@ namespace CapaDatos
             return tabla;
         }
 
+        public DataTable MostrarSumaSubTotal(EVentas ventas)
+        {
+            DataTable tabla = new DataTable();
 
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_mostrar_subtotal_venta";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@comprobante", ventas.comrprobante_venta);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            objConn.cerrarConexion();
+            return tabla;
+        }
+
+        public bool InsertVenta(EVenta venta)
+        {
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_agregar_venta";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@comprobante", venta.comprobante);
+            comando.Parameters.AddWithValue("@total", venta.total);
+            comando.Parameters.AddWithValue("@documento", venta.documnto);
+            comando.Parameters.AddWithValue("@nombre", venta.nombre);
+            comando.Parameters.AddWithValue("@tipo", venta.tipo);
+            comando.Parameters.AddWithValue("@direccion", venta.direccion);
+            int res = comando.ExecuteNonQuery();
+            objConn.cerrarConexion();
+            if (res > 0)
+            {
+                return true;
+            }
+            return false;
+        }
 
     }
 }

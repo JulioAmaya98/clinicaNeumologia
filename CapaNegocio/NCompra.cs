@@ -69,5 +69,11 @@ namespace CapaNegocio
             return compra.EliminarCompra(id,comprobante);
         }
 
-	}
+        public DataTable VerDetalleCompra(ECompra compras)
+        {
+            DataTable table = new DataTable();
+            table = compra.VerDetalleCompra(compras);
+            return table;
+        }
+    }
 }

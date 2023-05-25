@@ -55,5 +55,15 @@ namespace CapaNegocio
             return tabla;
         }
 
+        public DataTable MostrarSumaSubTotal(EVentas ventas)
+        {
+            DataTable tabla = new DataTable();
+            tabla = ObjVentas.MostrarSumaSubTotal(ventas);
+            return tabla;
+        }
+        public bool InsertVenta(EVenta venta)
+        {
+            return ObjVentas.InsertVenta(venta);
+        }
     }
 }

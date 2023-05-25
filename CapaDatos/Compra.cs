@@ -170,5 +170,20 @@ namespace CapaDatos
             return false;
         }
 
-	}
+        public DataTable VerDetalleCompra(ECompra compras)
+        {
+
+            DataTable tabla = new DataTable();
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_ver_detalle_compra";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@comprobante", compras.comprobante_compra);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            objConn.cerrarConexion();
+            return tabla;
+
+        }
+
+    }
 }
