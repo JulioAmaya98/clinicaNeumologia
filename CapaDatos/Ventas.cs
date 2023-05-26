@@ -18,6 +18,21 @@ namespace CapaDatos
         SqlCommand comando = new SqlCommand();
 
 
+        public DataTable mostrarHistorialVenta()
+        {
+
+            DataTable tabla = new DataTable();
+
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_mostrar_historial_venta";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            objConn.cerrarConexion();
+            return tabla;
+        }
+
+
         public DataTable mostrarProductosBuscados()
         {
 
@@ -139,6 +154,54 @@ namespace CapaDatos
             }
             return false;
         }
+
+
+        public bool EliminarVenta(int id, string comprobante)
+        {
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_eliminar_venta";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id", id);
+            comando.Parameters.AddWithValue("@comprobante", comprobante);
+            int res = comando.ExecuteNonQuery();
+            objConn.cerrarConexion();
+            if (res > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public DataTable VerDetalleVenta(EVenta venta)
+        {
+
+            DataTable tabla = new DataTable();
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_ver_detalle_venta";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@comprobante", venta.comprobante);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            objConn.cerrarConexion();
+            return tabla;
+
+        }
+        public DataTable VerClienteData(EVenta venta)
+        {
+
+            DataTable tabla = new DataTable();
+            comando.Connection = objConn.abrirConexion();
+            comando.CommandText = "sp_data_cliente";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@comprobante", venta.comprobante);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            objConn.cerrarConexion();
+            return tabla;
+
+        }
+
+
 
     }
 }

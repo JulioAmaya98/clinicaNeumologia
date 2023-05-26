@@ -13,7 +13,7 @@ namespace CapaDatos
     {
 
 
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-EHTBUQ2;Initial Catalog=clinic;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=RUTY\\U20201501;Initial Catalog=clinic;Integrated Security=True");
 
 
 

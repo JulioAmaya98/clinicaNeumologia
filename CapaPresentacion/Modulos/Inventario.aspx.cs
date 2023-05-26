@@ -78,6 +78,8 @@ namespace CapaPresentacion
 				navProductos.Visible = false;
 				navProveedores.Visible= false;
 				navCompras.Visible = false;
+				Ventasnav.Visible = false;
+
 				if (Request["id"] != null)
 				{
 

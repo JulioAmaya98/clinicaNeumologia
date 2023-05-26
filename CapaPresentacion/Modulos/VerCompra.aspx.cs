@@ -112,89 +112,11 @@ namespace CapaPresentacion.Modulos
 
                     }
 
-                    if (Request["idDetalle"] != null && Request["cantidad"] != null && Request["nFactura"] != null)
-                    {
-
-                        NCompra editarCompra = new NCompra();
-                        ECompra eCompra = new ECompra();
+                   
 
 
 
-                        try
-                        {
-                            eCompra.id_detalle_compra = Convert.ToInt32(Request["idDetalle"].ToString());
-                            eCompra.cantidad = Convert.ToInt32(Request["cantidad"].ToString());
-                            if (editarCompra.editarCantidad(eCompra))
-                            {
-                                string alertError = "Swal.fire({";
-                                alertError += "icon: 'success',";
-                                alertError += "title: 'Guardado',";
-                                alertError += "text: 'Cantidad editada exitosamente',";
-                                alertError += "confirmButtonColor: '#3085d6',";
-                                alertError += "confirmButtonText: 'OK'";
-                                alertError += "}).then((result) => {";
-                                alertError += "if (result.isConfirmed) {";
-                                alertError += "window.location.href = 'CompraN.aspx?rol=" + Request.QueryString["rol"] + "&nFactura=" + TextBox3.Text + "';";
-                                alertError += "}";
-                                alertError += "});";
-
-                                ScriptManager.RegisterStartupScript(
-                                    this, this.GetType(), "script", alertError, true
-                                );
-                            }
-                        }
-                        catch (Exception)
-                        {
-
-                            string alertError = "Swal.fire({";
-                            alertError += "icon: 'error',";
-                            alertError += "title: 'Error',";
-                            alertError += "text: 'Por favor ingrese cantidad',";
-                            alertError += "})";
-
-                            string redirectScript = "setTimeout(function() {";
-                            redirectScript += "window.location.href = 'CompraN.aspx?rol=" + Request.QueryString["rol"] + "&nFactura=" + TextBox3.Text + "';";
-                            redirectScript += "}, 3000);";
-                            redirectScript += alertError;
-
-                            ScriptManager.RegisterStartupScript(
-                                this, this.GetType(), "script", redirectScript, true
-                            );
-
-                        }
-
-                    }
-
-
-
-                    if (Request["id"] != null)
-                    {
-                        NCompra eliminarCompra = new NCompra();
-                        int id = int.Parse(Request["id"]);
-
-                        if (eliminarCompra.eliminarDetalleCompra(id))
-                        {
-                            Response.Redirect("CompraN.aspx?rol=" + Request.QueryString["rol"] + "&nFactura=" + Request["nFactura"].ToString());
-                        }
-                        else
-                        {
-                            string alertError = "Swal.fire({";
-                            alertError += "icon: 'error',";
-                            alertError += "title: 'Oops...',";
-                            alertError += "text: 'El producto no pudo ser eliminado',";
-                            alertError += "footer: '<a>Ingresa aqui para obtener más información?</a>'";
-                            alertError += "})";
-
-                            ScriptManager.RegisterClientScriptBlock(
-                                this, this.GetType(), "script", alertError, true
-                            );
-                        }
-
-
-
-
-
-                    }
+                   
 
 
 

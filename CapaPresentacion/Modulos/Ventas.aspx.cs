@@ -108,23 +108,13 @@ namespace CapaPresentacion.Modulos
                 GridViewCargarProducto.DataSource = NProducto.mostrarAll();
                 GridViewCargarProducto.DataBind();
 
-                string tipo = DropDownList1.SelectedValue;
-                int corre = Convert.ToInt32(tipo);
-                DataTable tabla = new DataTable();
-                tabla = ObjVentas.mostrarCorrelativo(corre);
-                int numeroCorrelativo = Convert.ToInt32(tabla.Rows[0]["numero_correlativo"].ToString());
-                int cantidad = Convert.ToInt32(tabla.Rows[0]["cantidad_numero"].ToString());
-                string ceros = string.Concat(Enumerable.Repeat("0", cantidad));
-                string numeroVenta = ceros + numeroCorrelativo;
-                numeroVenta = numeroVenta.Substring(numeroVenta.Length - cantidad, cantidad);
-                Label1.Text = "#" + numeroVenta;
+                
+               
 
-                NVentas verDetalleVenta = new NVentas();
-                EVentas EMostrarDV = new EVentas();
-                EMostrarDV.comrprobante_venta = numeroVenta;
+               
 
-                gridviewDetalleVenta.DataSource = verDetalleVenta.MostrarDetalleVenta(EMostrarDV);
-                gridviewDetalleVenta.DataBind();
+               
+
 
                 if (Request.QueryString["idProducto"] != null && Request.QueryString["cantidad"] != null)
                 {
@@ -137,16 +127,33 @@ namespace CapaPresentacion.Modulos
                     int id = Convert.ToInt32(Request.QueryString["idProducto"].ToString());
                     venta.id_producto = id;
 
+                   
+
+
                     try
                     {
+                        string tipo = Session["tipoVenta"].ToString();
+                        int corre = Convert.ToInt32(tipo);
+                        DataTable tabla = new DataTable();
+                        tabla = ObjVentas.mostrarCorrelativo(corre);
+                        int numeroCorrelativo = Convert.ToInt32(tabla.Rows[0]["numero_correlativo"].ToString());
+                        int cantidad = Convert.ToInt32(tabla.Rows[0]["cantidad_numero"].ToString());
+                        string ceros = string.Concat(Enumerable.Repeat("0", cantidad));
+                        string numeroVenta = ceros + numeroCorrelativo;
+                        numeroVenta = numeroVenta.Substring(numeroVenta.Length - cantidad, cantidad);
 
                         tablita = proveedorVenta.verProveedor(venta);
                         detalleVenta.codigo_producto = tablita.Rows[0]["codigo_producto"].ToString();
                         detalleVenta.id_proveedor = Convert.ToInt32(tablita.Rows[0]["id_proveedor"].ToString());
                         detalleVenta.cantidad = Convert.ToInt32(Request.QueryString["cantidad"].ToString());
                         detalleVenta.comrprobante_venta = numeroVenta;
+
+                        int tipoID = Convert.ToInt32(DropDownList1.SelectedValue);
+
+                        
                         if (insertVentas.InsertDetalleVenta(detalleVenta))
                         {
+                           
                             string alertError = "Swal.fire({";
                             alertError += "icon: 'success',";
                             alertError += "title: 'Agregado',";
@@ -193,8 +200,20 @@ namespace CapaPresentacion.Modulos
                 }
 
             }
-            int valorDelDDL = Convert.ToInt32(DropDownList1.SelectedValue);
-            if (valorDelDDL == 1)
+
+           
+
+            GridViewCargarProducto.DataSource = NProducto.mostrarAll();
+            GridViewCargarProducto.DataBind();
+
+
+
+        }
+
+        protected void Page_PreRender(object sender,EventArgs e)
+        {
+            int valorDelDDL = Convert.ToInt32(Session["tipoVenta"]);
+            if (valorDelDDL == 1 || valorDelDDL==0)
             {
                 lbSubtotal.InnerText = "SubTotal";
                 divIva.Visible = true;
@@ -224,9 +243,34 @@ namespace CapaPresentacion.Modulos
                     double Total = subTotal + iva;
                     txtTotalPagar.InnerHtml = Total.ToString();
 
+
+                    Label1.Text = "#" + numeroVenta2;
+
+                    NVentas verDetalleVenta = new NVentas();
+                    EVentas EMostrarDV = new EVentas();
+                    EMostrarDV.comrprobante_venta = numeroVenta2;
+
+                    gridviewDetalleVenta.DataSource = verDetalleVenta.MostrarDetalleVenta(EMostrarDV);
+                    gridviewDetalleVenta.DataBind();
+
                 }
                 catch (Exception)
                 {
+                    NVentas objventaSubTotal = new NVentas();
+                    EVentas entsubTotal = new EVentas();
+                    DataTable dt = new DataTable();
+                    NVentas correlativoSubtotal = new NVentas();
+
+                    DataTable tabla2 = new DataTable();
+                    tabla2 = correlativoSubtotal.mostrarCorrelativo(1);
+                    int numeroCorrelativo2 = Convert.ToInt32(tabla2.Rows[0]["numero_correlativo"].ToString());
+                    int cantidad2 = Convert.ToInt32(tabla2.Rows[0]["cantidad_numero"].ToString());
+                    string ceros2 = string.Concat(Enumerable.Repeat("0", cantidad2));
+                    string numeroVenta2 = ceros2 + numeroCorrelativo2;
+                    numeroVenta2 = numeroVenta2.Substring(numeroVenta2.Length - cantidad2, cantidad2);
+
+                    Label1.Text = "#" + numeroVenta2;
+
 
                     subtotal.InnerText = "";
                     txtIva.InnerText = "";
@@ -234,10 +278,11 @@ namespace CapaPresentacion.Modulos
                 }
 
             }
-            else
+            else if(valorDelDDL==2)
             {
                 if (subtotal.InnerText == "")
                 {
+                    DropDownList1.SelectedValue = valorDelDDL.ToString();
                     NVentas objventaSubTotal = new NVentas();
                     EVentas entsubTotal = new EVentas();
                     DataTable dt = new DataTable();
@@ -256,10 +301,21 @@ namespace CapaPresentacion.Modulos
                     subtotal.InnerHtml = dt.Rows[0]["subtotal"].ToString();
                     divIva.Visible = false;
                     divPagar.Visible = false;
+
+
+                    Label1.Text = "#" + numeroVenta2;
+
+                    NVentas verDetalleVenta = new NVentas();
+                    EVentas EMostrarDV = new EVentas();
+                    EMostrarDV.comrprobante_venta = numeroVenta2;
+
+                    gridviewDetalleVenta.DataSource = verDetalleVenta.MostrarDetalleVenta(EMostrarDV);
+                    gridviewDetalleVenta.DataBind();
 
                 }
                 else
                 {
+                    DropDownList1.SelectedValue = valorDelDDL.ToString();
                     NVentas objventaSubTotal = new NVentas();
                     EVentas entsubTotal = new EVentas();
                     DataTable dt = new DataTable();
@@ -278,19 +334,26 @@ namespace CapaPresentacion.Modulos
                     subtotal.InnerHtml = dt.Rows[0]["subtotal"].ToString();
                     divIva.Visible = false;
                     divPagar.Visible = false;
+
+                    Label1.Text = "#" + numeroVenta2;
+
+                    NVentas verDetalleVenta = new NVentas();
+                    EVentas EMostrarDV = new EVentas();
+                    EMostrarDV.comrprobante_venta = numeroVenta2;
+
+                    gridviewDetalleVenta.DataSource = verDetalleVenta.MostrarDetalleVenta(EMostrarDV);
+                    gridviewDetalleVenta.DataBind();
                 }
 
             }
-
-
-
         }
+
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
 
             int tipo = Convert.ToInt32(DropDownList1.SelectedValue);
-
+            Session["tipoVenta"] = tipo;
             DataTable tabla = new DataTable();
             tabla = ObjVentas.mostrarCorrelativo(tipo);
             int numeroCorrelativo = Convert.ToInt32(tabla.Rows[0]["numero_correlativo"].ToString());
@@ -386,25 +449,26 @@ namespace CapaPresentacion.Modulos
                 );
                 return;
             }
-            double num1 = Convert.ToDouble(txtTotalPagar.InnerText);
-            double num2 = Convert.ToDouble(txtTotalPagado.Value);
-
-            if (num1 > num2)
-            {
-                string alertError = "Swal.fire({";
-                alertError += "icon: 'error',";
-                alertError += "title: 'Error',";
-                alertError += "text: 'Tiene saldo pendiente',";
-                alertError += "})";
-
-                ScriptManager.RegisterClientScriptBlock(
-                    this, this.GetType(), "script", alertError, true
-                );
-                return;
-            }
+            
 
             if (Convert.ToInt32(DropDownList1.SelectedValue) == 1)
             {
+                double num1 = Convert.ToDouble(txtTotalPagar.InnerText);
+                double num2 = Convert.ToDouble(txtTotalPagado.Value);
+
+                if (num1 > num2)
+                {
+                    string alertError = "Swal.fire({";
+                    alertError += "icon: 'error',";
+                    alertError += "title: 'Error',";
+                    alertError += "text: 'Tiene saldo pendiente',";
+                    alertError += "})";
+
+                    ScriptManager.RegisterClientScriptBlock(
+                        this, this.GetType(), "script", alertError, true
+                    );
+                    return;
+                }
 
                 DataTable tabla = new DataTable();
                 tabla = ObjVentas.mostrarCorrelativo(1);
@@ -457,6 +521,22 @@ namespace CapaPresentacion.Modulos
             }
             else if(Convert.ToInt32(DropDownList1.SelectedValue) == 2)
             {
+                double num1 = Convert.ToDouble(subtotal.InnerText);
+                double num2 = Convert.ToDouble(txtTotalPagado.Value);
+
+                if (num1 > num2)
+                {
+                    string alertError = "Swal.fire({";
+                    alertError += "icon: 'error',";
+                    alertError += "title: 'Error',";
+                    alertError += "text: 'Tiene saldo pendiente',";
+                    alertError += "})";
+
+                    ScriptManager.RegisterClientScriptBlock(
+                        this, this.GetType(), "script", alertError, true
+                    );
+                    return;
+                }
                 DataTable tabla = new DataTable();
                 tabla = ObjVentas.mostrarCorrelativo(2);
                 int numeroCorrelativo = Convert.ToInt32(tabla.Rows[0]["numero_correlativo"].ToString());
@@ -466,7 +546,7 @@ namespace CapaPresentacion.Modulos
                 numeroVenta = numeroVenta.Substring(numeroVenta.Length - cantidad, cantidad);
 
                 agregar.comprobante = numeroVenta;
-                agregar.total = Convert.ToDouble(txtTotalPagar.InnerText);
+                agregar.total = Convert.ToDouble(subtotal.InnerText);
                 agregar.documnto = Dui.Value;
                 agregar.nombre = nombre.Value;
                 agregar.direccion = direccion.Value;

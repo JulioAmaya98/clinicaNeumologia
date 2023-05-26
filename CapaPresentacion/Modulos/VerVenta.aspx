@@ -1,7 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="Ventas.aspx.cs" Inherits="CapaPresentacion.Modulos.Ventas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerVenta.aspx.cs" Inherits="CapaPresentacion.Modulos.VerVenta" %>
 
 
 <style>
+    .mm {
+        width: 80px;
+        background-color: gray;
+        border-radius: 2px 2px 2px 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      
+    }
+
+    
+
     .container-principal {
         padding-top: 40px;
         margin-bottom: 20px;
@@ -73,11 +86,11 @@
                     <div class="col-6 mx-0">
                         <div class="float-start w-100 d-flex ">
 
-                            <div class="dropdown mx-0">
+                            <div class="mm">
 
 
 
-                                <asp:DropDownList class="btn btn-secondary dropdown-toggle" aria-labelledby="dropdownMenu2" ID="DropDownList1" AutoPostBack="true" data-bs-toggle="dropdown" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server">
+                                <asp:DropDownList aria-labelledby="dropdownMenu2" ID="DropDownList1" data-bs-toggle="dropdown" runat="server">
                                 </asp:DropDownList>
 
                             </div>
@@ -99,7 +112,7 @@
 
 
                                 <asp:Label Style="font-size: 30px; color: blue; font-weight: bold;" ID="Label1" runat="server" Text="Label" CssClass="text-end w-100 d-block">#0000005</asp:Label>
-                                <asp:Label ID="Label2" runat="server" Text="Label" CssClass="text-end w-100 d-block">Fecha</asp:Label>
+                                <asp:Label ID="txtFecha" runat="server" Text="Label" CssClass="text-end w-100 d-block">Fecha</asp:Label>
                             </div>
                         </div>
                     </div>
@@ -108,16 +121,16 @@
 
                         <div class="mb-3">
                             <label for="dui" class="form-label">DUI</label>
-                            <input type="text" runat="server" class="form-control" id="Dui" placeholder="Ingrese su DUI" />
+                            <label type="text" runat="server" class="form-control" id="Dui"></label>
                         </div>
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" runat="server" class="form-control" id="nombre" placeholder="Ingrese su nombre" />
+                            <label type="text" runat="server" class="form-control" id="txtNombre" />
                         </div>
 
                         <div class="mb-3">
                             <label for="direccion" class="form-label">Dirección</label>
-                            <textarea class="form-control" runat="server" id="direccion" rows="3" placeholder="Ingrese la dirección del cliente"></textarea>
+                            <label class="form-control" runat="server" id="direccion" rows="3"></label>
                         </div>
 
 
@@ -126,63 +139,22 @@
 
                 <hr style="margin-top: 20px; margin-bottom: 20px; border: none; border-top: 3px solid #808080;" />
 
-                <div class="input-group mb-3">
 
-                    <span class="input-group-text">Buscar</span>
-                    <input id="txtBuscarProducto" type="text" aria-label="First name" class="form-control">
-
-                    <span style="margin-left: 10px" class="input-group-text">Cantidad</span>
-                    <asp:TextBox ID="txtCantidad" runat="server" class="form-group in" onkeypress="return isNumberKey(event)" onchange="validateNumberInput(this)" placeholder="Ingrese la cantidad" />
-                </div>
-                <div id="divGridView" style="display: none;">
-                    <asp:GridView ShowHeader="True" AutoGenerateColumns="false" CssClass="table table-striped " ID="GridViewCargarProducto" runat="server">
-
-                        <Columns>
-                            <asp:TemplateField HeaderText="Select">
-                                <ItemTemplate>
-
-                                    <button type="button" class="btn btn-icon" style="background-color: #FFA500; color: white;" onclick="agregarProducto(<%#Eval("id_producto") %>)">
-                                        <span>Agregar</span>
-                                    </button>
-
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:BoundField DataField="id_producto" HeaderText="id" />
-                            <asp:BoundField DataField="nombre" HeaderText="Producto" />
-                            <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
-                            <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}"/>
-                            <asp:BoundField DataField="existencia" HeaderText="Existencia" /> 
-                        </Columns>
-
-                    </asp:GridView>
-
-                </div>
-
-                <div id="divNoResults" style="display: none;">No se encontraron resultados</div>
-
-
-                <asp:GridView ID="gridviewDetalleVenta" CssClass="table table-striped " runat="server" AutoGenerateColumns="false" OnRowDataBound="GridViewCargarProducto_RowDataBound">
+                <asp:GridView ID="gridviewDetalleVenta" CssClass="table table-striped " runat="server" AutoGenerateColumns="false">
 
                     <Columns>
-                        <asp:TemplateField HeaderText="Select">
-                            <ItemTemplate>
 
-                                <button type="button" class="btn btn-icon" style="background-color: #FFA500; color: white;" onclick="editarProducto(<%#Eval("id_ventas") %>)">
-                                    <span>Editar</span>
-                                </button>
-
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:BoundField DataField="id_ventas" HeaderText="id" />
-                        <asp:BoundField DataField="codigo_producto" HeaderText="Codigo" />
+                        <asp:BoundField DataField="Codigo del producto" HeaderText="codigo" SortExpression="Codigo del producto" />
                         <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                         <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
                         <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
-                        <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}"/>
+                        <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}" />
                         <asp:BoundField DataField="subtotal" HeaderText="Subtotal" DataFormatString="{0:N2}" />
                     </Columns>
 
                 </asp:GridView>
+
+
 
                 <hr style="margin-top: 20px; margin-bottom: 20px; border: none; border-top: 3px solid #808080;" />
 
@@ -192,9 +164,11 @@
 
 
 
-                    <div class="float-end w-100" style="display: flex;">
+                    <div class="contenedor float-end" style="display: flex;">
                         <!--Campos de parte Izquierda-->
-                        <div class="" style="margin-right: auto; width: 400px">
+
+                        <!--Campos de parte Derecha-->
+                        <div class="" style="margin-right: 0; width: 400px">
 
                             <div class="form-group" id="divSubtotal">
                                 <label for="subtotal" id="lbSubtotal" runat="server">Subtotal</label>
@@ -205,62 +179,38 @@
                                 </div>
                             </div>
                             <div class="form-group" id="divIva" runat="server" style="width: 100%;">
-                                <label for="iva" >IVA</label>
+                                <label for="iva">IVA</label>
                                 <div class="input-group">
                                     <span class="input-group-text">$</span>
 
-                                    <label type="text" id="txtIva" runat="server" class="form-control form-control-lg" aria-label="Dollar amount (with dot and two decimal places)" ></label>
+                                    <label type="text" id="txtIva" runat="server" class="form-control form-control-lg" aria-label="Dollar amount (with dot and two decimal places)"></label>
                                 </div>
                             </div>
                             <div class="form-group" id="divPagar" runat="server" style="width: 100%;">
-                                <label for="totalPagar" id="lbTotalPagar" runat="server" >Total a pagar</label>
+                                <label for="totalPagar" id="lbTotalPagar" runat="server">Total a pagar</label>
                                 <div class="input-group">
                                     <span class="input-group-text">$</span>
 
-                                    <label type="text" runat="server" class="form-control form-control-lg" id="txtTotalPagar" aria-label="Dollar amount (with dot and two decimal places)" DataFormatString="{0:F2}"></label>
+                                    <label type="text" runat="server" class="form-control form-control-lg" id="txtTotalPagar" aria-label="Dollar amount (with dot and two decimal places)" dataformatstring="{0:F2}"></label>
                                 </div>
+                            </div>
+                            <div>
+                                <asp:Button Style="margin-top: 15px;" type="button" class="btn btn-success btn-lg" ID="btnImprimirVenta" runat="server" Text="Imprimir" OnClick="btnImprimirVenta_Click" />
+                                <asp:Button Style="margin-top: 15px;" type="button" class="btn btn-warning btn-lg" ID="ButtonCancelar" runat="server" Text="Regresar" OnClick="ButtonCancelar_Click" />
                             </div>
                         </div>
-                        <!--Campos de parte Derecha-->
-                        <div class="" style="margin-left: auto; width: 400px">
 
-                            <div class="form-group">
-                                <label for="txtTotalPagado">Total pagado</label>
-                                <div class="input-group" style="width: 100%;">
-                                    <span class="input-group-text">$</span>
-
-                                    <input type="text" runat="server" class="form-control form-control-lg" id="txtTotalPagado" aria-label="Dollar amount (with dot and two decimal places)" />
-                                </div>
-                            </div>
-                            <div class="form-group" style="width: 100%;">
-                                <label for="saldo-pendiente" >Saldo Pendiente</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">$</span>
-
-                                    <label type="text" runat="server"  class="form-control form-control-lg" id="txtSaldoPendiente" aria-label="Dollar amount (with dot and two decimal places)" ></label>
-                                </div>
-                            </div>
-                            <div class="form-group" style="width: 100%;">
-                                <label for="su-cambio" >Su cambio</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">$</span>
-
-                                    <label type="text" runat="server"  class="form-control form-control-lg" id="txtSuCambio" aria-label="Dollar amount (with dot and two decimal places)" ></label>
-                                </div>
-                            </div>
-
-                            <asp:Button Style="margin-top: 15px;" type="button" class="btn btn-success btn-lg" ID="btnTerminarVenta" runat="server" Text="Terminar venta" OnClick="btnTerminarVenta_Click"/>
-                            <asp:Button Style="margin-top: 15px;" type="button" class="btn btn-warning btn-lg" ID="ButtonCancelar" runat="server" Text="Cancelar" OnClick="ButtonCancelar_Click" />
-
-                        </div>
                     </div>
+
+
                 </div>
-
-
-            </form>
-
         </div>
     </div>
+
+
+    </form>
+
+     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
@@ -276,70 +226,18 @@
         var iva = document.getElementById("txtIva");
         var totalPagar = document.getElementById("txtTotalPagar");
         var subtotal = document.getElementById("subtotal");
-       
+
         var cambio = document.getElementById("txtSuCambio");
 
-        
-        
-        
-        
-        
-
-        txtBuscarProducto.addEventListener("input", function () {
-
-            var searchTerm = this.value.toLowerCase();
-            var rows = divGridView.querySelectorAll("table tr");
-
-            var resultsFound = false;
-
-            var headerRow = divGridView.querySelector("table tr:first-child");
 
 
 
 
-            for (var i = 0; i < rows.length; i++) {
-
-                var cells = rows[i].querySelectorAll("td");
-                var rowText = "";
 
 
-                for (var j = 0; j < cells.length; j++) {
 
-                    rowText += cells[j].textContent.toLowerCase() + " ";
-                }
-                if (rowText.indexOf(searchTerm) > -1) {
-                    rows[i].style.display = "";
-                    resultsFound = true;
-                } else {
-                    rows[i].style.display = "none";
-                }
-            }
-            if (resultsFound) {
-                headerRow.style.display = "";
-                divGridView.style.display = "";
-                divNoResults.style.display = "none";
-            } else {
-                headerRow.style.display = "none";
-                divGridView.style.display = "none";
-                divNoResults.style.display = "";
-            }
-            if (!searchTerm.trim()) {
-                headerRow.style.display = "none";
-                divGridView.style.display = "none";
-                divNoResults.style.display = "none";
-            }
-        });
 
-        const agregarProducto = (id_producto) => {
 
-            var cantidad = document.getElementById("<%= txtCantidad.ClientID %>").value;
-            
-
-           
-
-            location.href = `Ventas.aspx?idProducto=${id_producto}&cantidad=${cantidad}`;
-
-        }
 
         document.addEventListener("DOMContentLoaded", function () {
 
@@ -353,7 +251,7 @@
 
             var dropDownlist = tipoID.value;
             totalPagado.addEventListener('input', actualizarData);
-            
+
 
             function actualizarData() {
 
@@ -384,7 +282,7 @@
                         txtCambio.textContent = resta;
                     }
 
-                } else if (dropDownlist==1) {
+                } else if (dropDownlist == 1) {
                     const pagado = parseFloat(totalPagado.value);
                     const total2 = parseFloat(total.innerText);
                     const resta = pagado - total2;
@@ -411,9 +309,9 @@
                     }
                 }
 
-               
 
-                
+
+
 
                 if (isNaN(pagado)) {
                     txtPendiente.textContent = "";
@@ -421,17 +319,17 @@
                     return false;
                 }
 
-               
 
-               
-                
 
-            } 
+
+
+
+            }
 
         })
 
-         
-       
+
+
 
 
 
@@ -466,3 +364,4 @@
 
 </body>
 </html>
+

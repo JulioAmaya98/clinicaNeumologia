@@ -14,6 +14,13 @@ namespace CapaNegocio
     {
         Ventas ObjVentas = new Ventas();
 
+
+        public DataTable mostrarHistorialVenta()
+        {
+            DataTable tabla = new DataTable();
+            tabla = ObjVentas.mostrarHistorialVenta();
+            return tabla;
+        }
         public DataTable mostrarProductosBuscados()
         {
             DataTable tabla = new DataTable();
@@ -64,6 +71,24 @@ namespace CapaNegocio
         public bool InsertVenta(EVenta venta)
         {
             return ObjVentas.InsertVenta(venta);
+        }
+
+        public bool EliminarVenta(int id, string comprobante)
+        {
+            return ObjVentas.EliminarVenta(id, comprobante);
+        }
+        public DataTable VerDetalleVenta(EVenta venta)
+        {
+            DataTable table = new DataTable();
+            table = ObjVentas.VerDetalleVenta(venta);
+            return table;
+        }
+
+        public DataTable VerClienteData(EVenta venta)
+        {
+            DataTable table = new DataTable();
+            table = ObjVentas.VerClienteData(venta);
+            return table;
         }
     }
 }

@@ -19,7 +19,7 @@
 <body>
     <div>
         <form id="form1" runat="server">
-            <div>
+         <div>
             <div class="container mt-3">
                 <ul class="nav nav-tabs justify-content-end " role="tablist">
                     <li class="nav-item">
@@ -29,7 +29,7 @@
                         <a class="nav-link" runat="server" id="navProductos" href="#">Productos</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link  active " runat="server" id="navProveedores" href="#">Proveedores</a>
+                        <a class="nav-link active" runat="server" id="navProveedores" href="#">Proveedores</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " runat="server" data-bs-toggle="tab" id="navEmpleados" href="#">Empleados</a>
@@ -38,7 +38,10 @@
                         <a class="nav-link " runat="server" id="navInventario" href="#">Inventario</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link " runat="server" data-bs-toggle="tab" id="navCompras" href="#">Compras</a>
+                        <a class="nav-link   " runat="server" data-bs-toggle="tab" id="navCompras" href="#">Compras</a>
+                    </li>
+                      <li class="nav-item">
+                        <a class="nav-link " runat="server" data-bs-toggle="tab" id="Ventasnav" href="#">Ventas</a>
                     </li>
                     <li class="nav-item">
                         <asp:Button ID="Cerrar" runat="server" CssClass="btn btn-danger" Text="Cerrar Session" OnClick="Cerrar_Click" />

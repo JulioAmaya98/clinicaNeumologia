@@ -1,5 +1,4 @@
-﻿
-<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="HistorialCompras.aspx.cs" Inherits="CapaPresentacion.Modulos.HistorialCompras" %>
+﻿<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="HistorialVenta.aspx.cs" Inherits="CapaPresentacion.Modulos.WebForm1" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -20,6 +19,7 @@
 <body>
     <div>
             <form id="form1" runat="server">
+        
      <div>
             <div class="container mt-3">
                 <ul class="nav nav-tabs justify-content-end " role="tablist">
@@ -39,10 +39,10 @@
                         <a class="nav-link " runat="server" id="navInventario" href="#">Inventario</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link  active " runat="server" data-bs-toggle="tab" id="navCompras" href="#">Compras</a>
+                        <a class="nav-link   " runat="server" data-bs-toggle="tab" id="navCompras" href="#">Compras</a>
                     </li>
                       <li class="nav-item">
-                        <a class="nav-link " runat="server" data-bs-toggle="tab" id="Ventasnav" href="#">Ventas</a>
+                        <a class="nav-link active" runat="server" data-bs-toggle="tab" id="Ventasnav" href="#">Ventas</a>
                     </li>
                     <li class="nav-item">
                         <asp:Button ID="Cerrar" runat="server" CssClass="btn btn-danger" Text="Cerrar Session" OnClick="Cerrar_Click" />
@@ -59,7 +59,7 @@
                     <div class="ALL">
                     <div  id="conten">
                         <div id="encabezado">
-                            <h5>Historial de compras</h5>
+                            <h5>Historial de ventas</h5>
                             <nav class="navbar navbar-expand-lg">
                                 
                               
@@ -86,29 +86,30 @@
                         <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 
                          
-                            <asp:GridView ID="GridViewUs" runat="server" DataKeyNames="id_compra" DataSourceID="Sql"  AutoGenerateColumns="false" CssClass="table  table-hover myGridView"  HorizontalAlign="Center">
+                            <asp:GridView ID="GridViewUs" runat="server" DataKeyNames="id_venta" DataSourceID="Sql"  AutoGenerateColumns="false" CssClass="table  table-hover myGridView"  HorizontalAlign="Center">
 
                                 <Columns>
                                  
-                                   <asp:BoundField DataField="id_compra" HeaderText="id_compra" Visible="false" InsertVisible="False" ReadOnly="True" SortExpression="id_compra"  />
-                                   <asp:BoundField DataField="comprobante_compra" HeaderText="comprobante_compra" SortExpression="comprobante_compra"  />
-                                    <asp:BoundField DataField="Vendedor" HeaderText="Vendedor"   SortExpression="Vendedor" />
-                                    <asp:BoundField DataField="Fecha de compra" HeaderText="Fecha de compra" SortExpression="Fecha de compra" />
-                                    <asp:BoundField DataField="total" HeaderText="total" SortExpression="total" />
+                                   <asp:BoundField DataField="id_venta" HeaderText="id_venta" Visible="false" InsertVisible="False" ReadOnly="True" SortExpression="id_venta"  />
+                                   <asp:BoundField DataField="Numero Comprobante" HeaderText="Numero Comprobante" SortExpression="Numero Comprobante"  />
+                                    <asp:BoundField DataField="Nombre Cliente" HeaderText="Nombre Cliente"   SortExpression="Nombre Cliente" />
+                                    <asp:BoundField DataField="Tipo Documento" HeaderText="Tipo Documento" SortExpression="Tipo Documento" />
+                                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" />
+                                    <asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" />
                                     
 
                                     <asp:TemplateField ItemStyle-CssClass="ancho" HeaderText="Opciones">
                                         <ItemTemplate>
                                             
-                                            <button type="button" class="btn  btn-danger btn-icon" style="background-color: #8B0000" onclick="eliminarEmpleado(<%#Eval("id_compra") %>, this.parentNode.parentNode.cells[0].innerHTML)">
+                                            <button type="button" class="btn  btn-danger btn-icon" style="background-color: #8B0000" onclick="eliminarVenta(<%#Eval("id_venta") %>, this.parentNode.parentNode.cells[0].innerHTML)" >
                                                 <span><i class="bi bi-trash3"></i></i></span>
                                             </button>
-                                            <button type="button" class="btn  btn-icon" style="background-color: #808080ff" onclick="verCompra(<%#Eval("id_compra") %>, this.parentNode.parentNode.cells[0].innerHTML)"  >                                                <span><i class="bi bi-eye-fill"></i></span>                                            </button>
+                                            <button type="button" class="btn  btn-icon" style="background-color: #808080ff" onclick="verVenta(<%#Eval("id_venta") %>, this.parentNode.parentNode.cells[0].innerHTML)">                                                <span><i class="bi bi-eye-fill"></i></span>                                            </button>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
-                         <asp:SqlDataSource ID="Sql" runat="server" ConnectionString="<%$ ConnectionStrings:clinicConnectionString2 %>" SelectCommand="sp_mostrar_historial_compras" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                         <asp:SqlDataSource ID="Sql" runat="server" ConnectionString="<%$ ConnectionStrings:clinicConnectionString2 %>" SelectCommand="sp_mostrar_historial_venta" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 
                          
                     </div>
@@ -124,9 +125,9 @@
 
           var rol = window.location.search.substring(1);
           rol = rol.split("rol=")[1];
-          const eliminarEmpleado = (id_compra, comprobante_compra) => {
+          const eliminarVenta = (id_venta, comprobante) => {
               Swal.fire({
-                  title: 'Quieres borrar esta Compra?',
+                  title: 'Quieres borrar esta Venta?',
                   icon: 'warning',
                   showCancelButton: true,
                   confirmButtonColor: '#3085d6',
@@ -135,13 +136,13 @@
               }).then((result) => {
                   if (result.isConfirmed) {
                       setTimeout(() => {
-                          location.href = "HistorialCompras.aspx?rol=" + rol + "&id=" + id_compra + "&comprobante=" + encodeURIComponent(comprobante_compra);
+                          location.href = "HistorialVenta.aspx?rol=" + rol + "&id=" + id_venta + "&comprobante=" + encodeURIComponent(comprobante);
                       }, 500);
                   }
               })
           }
 
-          const verCompra = (id, comprobante) => {                      setTimeout(() => {                          location.href = "verCompra.aspx?rol=" + rol + "&nFactura=" + comprobante;                      }, 200);                            }
+          const verVenta = (id, comprobante) => {                                    setTimeout(() => {                          location.href = "verVenta.aspx?rol=" + rol + "&nFactura=" + comprobante;                      }, 500);                                          }
       </script>
 
     
@@ -153,4 +154,5 @@
  
      
 </html>
+
 
